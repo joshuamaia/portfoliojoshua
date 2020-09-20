@@ -1,0 +1,113 @@
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: white;">Carregando...</p></ngx-spinner
+>
+<div class="container covid">
+  <div class="card card-stats cardCovid">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h3 class="card-title cardCovidText text-muted mb-2">
+            COVID Paraíba - Atualizado em
+            {{ paraiba.date | date: "dd/MM/yyyy" }}
+          </h3>
+          <div class="row">
+            <div class="col-xl-6 col-md6">
+              <div class="card cardCovidInternal card-stats">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">
+                        Casos Confirmados
+                      </h5>
+
+                      <span class="h3 font-weight-bold mb-0">
+                        {{ paraiba.confirmed | number }} Pessoas
+                      </span>
+                    </div>
+
+                    <div class="col-auto">
+                      <div
+                        class="icon icon-shape bg-gradient-info text-white rounded-circle shadow"
+                      >
+                        <i class="fas fa-clinic-medical"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-md-6">
+              <div class="card cardCovidInternal card-stats">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">
+                        Casos de Óbitos
+                      </h5>
+
+                      <span class="h3 font-weight-bold mb-0">
+                        {{ paraiba.deaths | number }} Pessoas
+                      </span>
+
+                      <p class="mb-0 text-sm">
+                        <span class="text-danger mr-2">
+                          Letalidade
+                          {{
+                            (paraiba.deaths / paraiba.confirmed) * 100
+                              | number: "1.2-2"
+                          }}
+                          %
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="col-auto">
+                      <div
+                        class="icon icon-shape cruz text-white rounded-circle shadow"
+                      >
+                        <i class="fas fa-cross"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-stats cardCovid">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="card">
+                <div class="card-header">
+                  <h6 class="surtitle">
+                    COVID na Paraíba - Evolução nos Últimos 30 dias
+                  </h6>
+                </div>
+
+                <highcharts-chart
+                  [Highcharts]="highcharts"
+                  [options]="chartOptions"
+                  style="width: 100%; height: 350px; display: block;"
+                >
+                </highcharts-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+.covid {
+  min-height: 60vh;
+  position: relative;
+  -webkit-print-color-adjust: exact;
+}
+
+.textoConfirmados {
+  color: rgb(248, 245, 64);
+}
+
+.textoRecuperados {
+  color: rgb(101, 221, 155);
+}
+
+.textoObitos {
+  color: #ffc0cb;
+}
+
+.cardCovid {
+  box-shadow: 0 0 4px 4px #b0e2ff;
+  background-color: #3b1d98;
+}
+
+.cardCovidInternal {
+  min-height: 100px;
+  border: 1px solid #fff;
+  background: #3b1d98;
+}
+
+.cardCovidPesquisa {
+  /* border: 2px solid #364061; */
+  box-shadow: 0 0 4px 4px #b0e2ff;
+  background-color: #3b1d98;
+}
+
+.grafico {
+  background: #445175;
+}
+
+.bandeira {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 30px;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+.cruz {
+  background: #4f4f4f;
+  background-image: linear-gradient(to bottom, #4f4f4f, #808080);
+}
+
+.texto {
+  text-align: right;
+}
+
+.botoes {
+  width: 100%;
+}
+
+.titulo {
+  font-size: 30px;
+}
+
+@media (max-width: 576px) {
+  .titulo {
+    font-size: 16px;
+    margin: 5px;
+  }
+}

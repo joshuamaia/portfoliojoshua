@@ -3,13 +3,28 @@
   height: 80px;
   width: 100%;
 
+  border-top: 2px solid #b0e2ff;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: #9c27b0;
-  background-image: linear-gradient(to bottom, #4b0082, #9c27b0);
+  background: #220b5e;
+  background-image: linear-gradient(to top, #220b5e, #220b5e);
   color: white;
 
   -webkit-print-color-adjust: exact;
+}
+
+a:hover {
+  color: #b0e0e6;
+}
+
+.texto {
+  font-size: 30px;
+}
+
+@media (max-width: 576px) {
+  .texto {
+    font-size: 16px;
+  }
 }
