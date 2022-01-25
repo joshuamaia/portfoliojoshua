@@ -1,0 +1,41 @@
+.utils {
+  min-height: 62vh;
+  position: relative;
+  -webkit-print-color-adjust: exact;
+}
+
+.cardCovidInternal {
+  /* border: 1px solid #fff; */
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.input-container {
+  border-radius: 5px;
+  margin: 10px;
+  padding-top: 17px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.link {
+  color: #000;
+}
+
+.link:hover {
+  color: #696969;
+}
+
+h3,
+.h3 {
+  font-size: 1.0625rem;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  h3,
+  .h3 {
+    font-size: 0.7625rem;
+  }
+}

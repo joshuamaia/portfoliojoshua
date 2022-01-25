@@ -35,8 +35,12 @@ import { CovidcidadeComponent } from './covidcidade/covidcidade.component';
 import { CovidbrasiltempoComponent } from './covidbrasiltempo/covidbrasiltempo.component';
 import { CovidpbtempoComponent } from './covidpbtempo/covidpbtempo.component';
 import { CertificacoesComponent } from './certificacoes/certificacoes.component';
+import { InputExemplosComponent } from './input-exemplos/input-exemplos.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { UtilsComponent } from './utils/utils.component';
 
-registerLocaleData(localePt);
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
@@ -56,6 +60,10 @@ registerLocaleData(localePt);
     CovidbrasiltempoComponent,
     CovidpbtempoComponent,
     CertificacoesComponent,
+    InputExemplosComponent,
+    CursosComponent,
+    PipesComponent,
+    UtilsComponent,
   ],
   imports: [
     BrowserModule,

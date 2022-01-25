@@ -35,7 +35,7 @@ export class CovidbrasilComponent implements OnInit {
     this.chartOptions = {
       chart: {
         type: 'column',
-        backgroundColor: '#add8e6',
+        backgroundColor: '#fff',
         color: '#000',
       },
       colors: ['#FF4500', '#DC143C'],
@@ -73,7 +73,7 @@ export class CovidbrasilComponent implements OnInit {
         },
       },
       tooltip: {
-        backgroundColor: '#add8e6',
+        backgroundColor: '#fff',
         headerFormat:
           '<span style="font-size:10px; color: #000">{point.key}</span><table>',
         pointFormat:

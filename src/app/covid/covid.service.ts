@@ -12,16 +12,20 @@ export class CovidService {
   public URL_PAISES = 'https://covid19.mathdro.id/api/countries';
   public URL_PAIS = 'https://covid19.mathdro.id/api/countries';
   public URL_ESTADOS =
-    'https://brasil.io/api/dataset/covid19/caso/data/?is_last=True&place_type=state';
+    'https://api.brasil.io/dataset/covid19/caso/data/?is_last=True&place_type=state';
   public URL_COVID_PB =
-    'https://brasil.io/api/dataset/covid19/caso/data/?is_last=True&state=PB';
+    'https://api.brasil.io/dataset/covid19/caso/data/?is_last=True&state=PB';
   public URL_COVID_CIDADE =
-    'https://brasil.io/api/dataset/covid19/caso/data/?is_last=True&state=';
+    'https://api.brasil.io/dataset/covid19/caso/data/?is_last=True&state=';
   private headers: HttpHeaders = new HttpHeaders({
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Credentials': 'true',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Origin',
+  });
+
+  private headersApiBrasil: HttpHeaders = new HttpHeaders({
+    Authorization: 'Token 535b36d764bc91a077cb0f544e91c0c156fb6bc5',
   });
 
   constructor(private http: HttpClient) {}
@@ -32,7 +36,7 @@ export class CovidService {
 
   public getCovidBrasil(): Observable<any> {
     return this.http
-      .get(`${this.URL_ESTADOS}`)
+      .get(`${this.URL_ESTADOS}`, { headers: this.headersApiBrasil })
       .pipe(catchError(this.handleError));
   }
 
@@ -56,13 +60,13 @@ export class CovidService {
 
   public getCovidPb(): Observable<any> {
     return this.http
-      .get(`${this.URL_COVID_PB}`)
+      .get(`${this.URL_COVID_PB}`, { headers: this.headersApiBrasil })
       .pipe(catchError(this.handleError));
   }
 
   public getCovidCidade(uf: string): Observable<any> {
     return this.http
-      .get(`${this.URL_COVID_CIDADE}${uf}`)
+      .get(`${this.URL_COVID_CIDADE}${uf}`, { headers: this.headersApiBrasil })
       .pipe(catchError(this.handleError));
   }
 

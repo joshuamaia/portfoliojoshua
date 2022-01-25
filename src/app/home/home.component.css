@@ -6,8 +6,9 @@
 
 .cardCovidInternal {
   /* border: 1px solid #fff; */
-  box-shadow: 0 0 4px 4px #b0e2ff;
-  background-color: #3b1d98;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: #fff;
   min-height: 140px;
 }
 

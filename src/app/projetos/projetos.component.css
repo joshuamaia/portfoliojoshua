@@ -29,14 +29,15 @@
 
 .cardCovidInternal {
   /* border: 1px solid #fff; */
-  box-shadow: 0 0 4px 4px #b0e2ff;
-  background-color: #3b1d98;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: #fff;
 }
 
 .cardCovidInternalProjetos {
-  border: 1px solid #fff;
-  /* box-shadow: 2px 3px 2px #fff; */
-  background-color: #3b1d98;
+  border: 1px solid #4b0082;
+
+  background-color: #fff;
 }
 
 .cardInternalHomem {
@@ -50,7 +51,7 @@
 }
 
 .cardInternalSomaIdade {
-  border: 1px solid #8b4513;
+  border: 1px solid #deb887;
   min-height: 100px;
 }
 
@@ -96,24 +97,25 @@ h3,
 }
 
 .input-entrada label {
-  color: #b0e2ff !important;
+  color: #000 !important;
   font-size: 18px !important;
   margin: 5px !important;
 }
 
 .input-container {
   padding: 10px;
-  box-shadow: 0 0 4px 4px #b0e2ff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .input-resultado label {
-  color: #ee82ee !important;
+  color: #000 !important;
   font-size: 18px !important;
   margin: 5px !important;
 }
 
 .input-resultado input {
-  color: #220b5e !important;
+  color: #021440 !important;
   font-size: 18px !important;
   margin: 5px !important;
 }
@@ -121,27 +123,43 @@ h3,
 .input-container-resultado {
   margin: 15px;
   padding: 10px;
-  box-shadow: 0 0 4px 4px #ee82ee;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .card-container {
   margin-top: 10px !important;
-  box-shadow: 0 0 4px 4px #b0e2ff !important;
+  box-shadow: 0 0 4px 4px #dcdcdc !important;
 }
 
 .card-container-calculos {
   margin-top: 20px !important;
-  box-shadow: 0 0 4px 4px #ee82ee !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .titulo {
   font-size: 40px !important;
-  color: #b0e2ff !important;
+  color: #000 !important;
 }
 
 .titulo-calculos {
   font-size: 40px !important;
-  color: #ee82ee !important;
+  color: #000 !important;
+}
+
+.link-projeto {
+  margin-left: 10px;
+}
+
+.link-projeto:hover {
+  color: #363636;
+}
+
+.pf-char:before {
+  font-family: Arial; /* your font family here! */
+  font-weight: bold;
+  content: attr(data-char-content);
 }
 
 @media (max-width: 576px) {
@@ -152,10 +170,10 @@ h3,
 
   .titulo {
     font-size: 25px !important;
-    color: #b0e2ff !important;
+    color: #000 !important;
   }
   .titulo-calculos {
     font-size: 25px !important;
-    color: #ee82ee !important;
+    color: #000 !important;
   }
 }

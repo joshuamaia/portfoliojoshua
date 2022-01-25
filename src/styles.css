@@ -2,12 +2,16 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+* {
+  -webkit-print-color-adjust: exact !important;
+}
+
 body {
   font-family: "Roboto", sans-serif !important;
 
   border-color: #fff;
-  background: #e6e6fa;
-  background-image: linear-gradient(to bottom, #6a5acd, #6a5acd);
+  background: #fff;
+  background-image: linear-gradient(to bottom, #fff, #fff);
 }
 
 .animacaoTopDown {
@@ -24,9 +28,9 @@ body {
 }
 
 .modalcss {
-  border-left: 3px solid #220b5e !important;
-  border-right: 3px solid #220b5e !important;
-  border-bottom: 3px solid #220b5e !important;
+  border-left: 3px solid #4b0082 !important;
+  border-right: 3px solid #4b0082 !important;
+  border-bottom: 3px solid #4b0082 !important;
 }
 
 .header-modal {
@@ -34,8 +38,14 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: #6a5acd !important;
-  border: 3px solid #220b5e !important;
+  background: #4b0082 !important;
+  border: 3px solid #4b0082 !important;
+  color: white;
+}
+
+.header-table {
+  background: #4b0082 !important;
+  border: 3px solid #4b0082 !important;
   color: white;
 }
 
@@ -48,16 +58,16 @@ body {
 }
 
 .botoes {
-  background-color: #220b5e !important;
-  border: 2px solid #b0e2ff !important;
+  background-color: #4b0082 !important;
+  border: 2px solid #fff !important;
   color: #fff !important;
   margin: 5px;
 }
 
 .botoes:hover {
-  background-color: #b0e2ff !important;
-  border: 2px solid #220b5e !important;
-  color: #220b5e !important;
+  background-color: #fff !important;
+  border: 2px solid #4b0082 !important;
+  color: #4b0082 !important;
   margin: 5px;
 }
 
@@ -68,13 +78,13 @@ body {
   margin-bottom: 10px;
 }
 
-.labels {
+.labels-destaque {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  color: #b0e2ff;
-  background: #6a5acd;
+  color: #fff;
+  background: #4b0082;
   margin: 0 !important;
   padding: 8px;
   border-radius: 4px;
@@ -82,14 +92,84 @@ body {
   font-size: 16px;
 }
 
+.cardCovidInternalDestaque {
+  /* border: 1px solid #fff; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px !important;
+  background-color: #3f51b5 !important;
+  min-height: 140px !important;
+}
+
+.font-destaque {
+  color: #fff !important;
+}
+
+.list-group-item-dark {
+  color: #111315 !important;
+  background-color: #fff !important;
+}
+
+.list-group-item-dark:hover {
+  color: #fff !important;
+  background-color: #4b0082 !important;
+}
+
+.labels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  background: #4b0082;
+  margin: 0 !important;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.labels-internal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 3px 0 3px;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+  color: #000;
+  background: #fff;
+
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.labels-internal span {
+  margin-left: 10px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
 .labelsCovid {
-  color: #b0e2ff;
+  color: #000;
   font-weight: bold;
   font-size: 14px;
 }
 
+.textCurriculo {
+  color: #000 !important;
+}
+
+.textCurriculoDestaque {
+  color: #fff !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
 .cardCovidText {
-  color: #b0e2ff !important;
+  color: #000 !important;
 }
 
 .pesquisar-card {
@@ -99,11 +179,30 @@ body {
 }
 
 .pesquisar-texto {
-  color: #b0e2ff;
-  background-color: #6a5acd;
+  color: #000;
+  background-color: #dcdcdc;
   padding: 8px;
   border-radius: 4px;
   margin: 5px;
+}
+
+.card-header {
+  background-color: #000 !important;
+}
+
+.card-header-title {
+  color: #fff !important;
+}
+
+.card-header-flag {
+  box-shadow: 0 0 4px 4px #fff !important;
+  margin-right: 10px;
+}
+
+.centralizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 576px) {
@@ -112,8 +211,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: #b0e2ff;
-    background: #6a5acd;
+    color: #fff;
+    background: #4b0082;
     padding: 8px;
     border-radius: 4px;
     font-weight: bold;
@@ -121,6 +220,6 @@ body {
   }
 
   .cardCovidText {
-    color: #b0e2ff !important;
+    color: #000 !important;
   }
 }

@@ -1,0 +1,456 @@
+<div class="container utils">
+  <div class="row animacaoTopDown">
+    <div class="col-xl-12 col-md-6">
+      <div class="card cardCovidInternal card-stats">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="cabecalho">
+                <h5 class="card-title text-uppercase mb-0 labels">Busca CEP</h5>
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon
+                      botoes
+                      icon-shape
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="row input-container">
+                <div class="form-group col-xl-6 col-md-6 centralizar">
+                  <div class="input-group input-group-merge">
+                    <input
+                      id="cep"
+                      [(ngModel)]="cepBuscado"
+                      class="form-control"
+                    />
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <small class="font-weight-bold"> CEP </small>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <button class="btn botoes btn" (click)="buscarCep()">
+                    Buscar
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    CEP: <span>{{ cep?.cep }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    Localidade: <span>{{ cep?.localidade }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    Logradouro: <span>{{ cep?.logradouro }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    Complemento: <span>{{ cep?.complemento }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    Bairro: <span>{{ cep?.bairro }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    UF: <span>{{ cep?.uf }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    IBGE: <span>{{ cep?.ibge }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    GIA: <span>{{ cep?.gia }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    DDD: <span>{{ cep?.ddd }}</span>
+                  </div>
+                </div>
+                <div class="form-group col-xl-6 col-md-6">
+                  <div class="labels-internal">
+                    SIAFI: <span>{{ cep?.siafi }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-12 col-md-6">
+          <div class="card cardCovidInternal card-stats">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="cabecalho">
+                    <h5 class="card-title text-uppercase mb-0 labels">
+                      Gerador e Validador de CPF e CNPJ
+                    </h5>
+                    <div class="col-auto">
+                      <div
+                        class="
+                          icon
+                          botoes
+                          icon-shape
+                          text-white
+                          rounded-circle
+                          shadow
+                        "
+                      >
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-container">
+                    <div class="form-group col-xl-6 col-md-6 centralizar">
+                      <div class="input-group input-group-merge">
+                        <input
+                          id="cefGerado"
+                          [(ngModel)]="cpfGerado"
+                          readonly="true"
+                          class="form-control"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text">
+                            <small class="font-weight-bold"> CPF Gerado </small>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-xl-6 col-md-6">
+                      <button class="btn botoes btn" (click)="geraCpf()">
+                        Gerar CPF
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row input-container">
+                    <div class="form-group col-xl-6 col-md-6 centralizar">
+                      <div class="input-group input-group-merge">
+                        <input
+                          id="validarCpf"
+                          [(ngModel)]="cpf"
+                          class="form-control"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text">
+                            <small class="font-weight-bold"> CPF </small>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-xl-6 col-md-6">
+                      <button class="btn botoes btn" (click)="validarCpf()">
+                        Validar CPF
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row input-container">
+                    <div class="form-group col-xl-6 col-md-6 centralizar">
+                      <div class="input-group input-group-merge">
+                        <input
+                          id="cnpjGerado"
+                          [(ngModel)]="cnpjGerado"
+                          readonly="true"
+                          class="form-control"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text">
+                            <small class="font-weight-bold">
+                              CNPJ Gerado
+                            </small>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-xl-6 col-md-6">
+                      <button class="btn botoes btn" (click)="geraCnpj()">
+                        Gerar CNPJ
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row input-container">
+                    <div class="form-group col-xl-6 col-md-6 centralizar">
+                      <div class="input-group input-group-merge">
+                        <input
+                          id="validarCnpj"
+                          [(ngModel)]="cnpj"
+                          class="form-control"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text">
+                            <small class="font-weight-bold"> CNPJ </small>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-xl-6 col-md-6">
+                      <button class="btn botoes btn" (click)="validarCnpj()">
+                        Validar CNPJ
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-12 col-md-6">
+          <div class="card cardCovidInternal card-stats">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="cabecalho">
+                    <h5 class="card-title text-uppercase mb-0 labels">
+                      SITES PARA ESTUDAR PROGRAMAÇÃO
+                    </h5>
+                    <div class="col-auto">
+                      <div
+                        class="
+                          icon
+                          botoes
+                          icon-shape
+                          text-white
+                          rounded-circle
+                          shadow
+                        "
+                      >
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-container">
+                    <div class="form-group col-xl-12 col-md-6">
+                      <h1>
+                        O presente conteúdo foi retirado de
+                        <a
+                          class="link"
+                          href="https://github.com/arthurspk/guiadevbrasil"
+                          >https://github.com/arthurspk/guiadevbrasil</a
+                        >
+                      </h1>
+                    </div>
+                    <div class="form-group col-xl-12 col-md-6">
+                      <div class="list-group">
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.rocketseat.com.br"
+                          >ROCKETSEAT</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.digitalinnovation.one"
+                          >DIO</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.youtube.com/c/CursoemV%C3%ADdeo"
+                          >Curso em video</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.udemy.com/"
+                          >UDEMY</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.hackerearth.com/"
+                          >Hackereath</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.hackerrank.com/"
+                          >HackerRank</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://coderbyte.com/"
+                          >Coderbyte</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.codechef.com/"
+                          >Coderchef</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.w3resource.com/"
+                          >W3resource</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://pt.coursera.org/"
+                          >Cousera</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://codepen.io/"
+                          >Codepen</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.codementor.io/"
+                          >Codementor</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.freecodecamp.org/"
+                          >FreeCodeCamp</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.geeksforgeeks.org/"
+                          >GeeksForGeeks</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.w3schools.com/"
+                          >W3Schools</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.udacity.com/"
+                          >Udacity</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://pt.khanacademy.org/"
+                          >Khan Academy</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.sololearn.com/"
+                          >Sololearn</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.edx.org/"
+                          >EdX</a
+                        >
+
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://teamtreehouse.com/"
+                          >Treehouse</a
+                        >
+                        <a
+                          class="
+                            list-group-item
+                            list-group-item-action
+                            list-group-item-dark
+                          "
+                          href="https://www.tutorialspoint.com/"
+                          >Tutorialspoint</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

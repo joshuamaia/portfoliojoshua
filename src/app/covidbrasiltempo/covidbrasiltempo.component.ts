@@ -44,7 +44,7 @@ export class CovidbrasiltempoComponent implements OnInit {
     this.chartOptions = {
       chart: {
         type: 'column',
-        backgroundColor: '#add8e6',
+        backgroundColor: '#fff',
         color: '#000',
       },
       colorAxis: [
@@ -53,7 +53,7 @@ export class CovidbrasiltempoComponent implements OnInit {
           tickColor: '#000',
         },
       ],
-      colors: ['#220b5e'],
+      colors: ['#000'],
       title: {
         text: `COVID no Brasil - Evolução nos Últimos 30 dias`,
         style: { color: '#000', fontSize: '18px' },

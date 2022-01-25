@@ -1,0 +1,31 @@
+.input {
+  min-height: 67vh;
+  position: relative;
+  -webkit-print-color-adjust: exact;
+}
+
+.cardCovidInternal {
+  /* border: 1px solid #fff; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: #fff;
+}
+
+.input-container {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+h3,
+.h3 {
+  font-size: 1.0625rem;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  h3,
+  .h3 {
+    font-size: 0.7625rem;
+  }
+}

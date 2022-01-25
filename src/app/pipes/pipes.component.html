@@ -1,0 +1,60 @@
+<div class="container pipes">
+  <div class="row animacaoTopDown">
+    <div class="col-xl-12 col-md-6">
+      <div class="card cardCovidInternal card-stats">
+        <div class="card-body">
+          <div class="row table-responsive">
+            <table class="table table-striped">
+              <thead class="header-table">
+                <tr>
+                  <th scope="col">Pipe</th>
+                  <th scope="col">Exemplo</th>
+                  <th scope="col">Resultado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>uppercase</td>
+                  <td>JosHua | uppercase</td>
+                  <td>{{ "JosHua" | uppercase }}</td>
+                </tr>
+                <tr>
+                  <td>lowercase</td>
+                  <td>JosHua | lowercase</td>
+                  <td>{{ "JosHua" | lowercase }}</td>
+                </tr>
+                <tr>
+                  <td>titlecase</td>
+                  <td>joshua maia rodrigues | titlecase</td>
+                  <td>{{ "joshua maia rodrigues" | titlecase }}</td>
+                </tr>
+                <tr>
+                  <td>number</td>
+                  <td>2567789.5567 | number:'1.2-2'</td>
+                  <td>{{ 2567789.5567 | number: "1.2-2" }}</td>
+                </tr>
+                <tr>
+                  <td>currency</td>
+                  <td>2567789.5567 | currency:'CAD':'symbol-narrow':'1.4-4'</td>
+                  <td>
+                    {{ 2567789.5567 | currency: "CAD":"symbol-narrow":"1.4-4" }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>percent</td>
+                  <td>0.897 | percent:'2.2-2'</td>
+                  <td>{{ 0.897 | percent: "2.2-2" }}</td>
+                </tr>
+                <tr>
+                  <td>date</td>
+                  <td>new Date() | date: "dd/MM/yy HH:mm:ss"</td>
+                  <td>{{ dataAtual | date: "dd/MM/yy HH:mm:ss" }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

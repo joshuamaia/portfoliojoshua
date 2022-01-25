@@ -29,7 +29,7 @@ export class CovidComponent implements OnInit {
         this.chartOptions = {
           chart: {
             type: 'column',
-            backgroundColor: '#add8e6',
+            backgroundColor: '#fff',
             color: '#000',
           },
           colorAxis: [
@@ -67,7 +67,7 @@ export class CovidComponent implements OnInit {
             },
           },
           tooltip: {
-            backgroundColor: '#add8e6',
+            backgroundColor: '#fff',
             headerFormat:
               '<span style="font-size:10px; color: #000">{point.key}</span><table>',
             pointFormat:
@@ -102,13 +102,19 @@ export class CovidComponent implements OnInit {
     });
   }
 
+  montaBandeira(bandeira: string) {
+    const bandeiraMontada: string = `https://flagcdn.com/32x24/${bandeira}.png`;
+    console.log(bandeiraMontada.toLowerCase());
+    return bandeiraMontada.toLowerCase();
+  }
+
   mudarPais() {
     this.covidService.getPais(this.pais.iso3).subscribe((resposta) => {
       this.detalhePais = resposta;
       this.chartOptions = {
         chart: {
           type: 'column',
-          backgroundColor: '#add8e6',
+          backgroundColor: '#fff',
           color: '#000',
         },
         colorAxis: [
@@ -146,7 +152,7 @@ export class CovidComponent implements OnInit {
           },
         },
         tooltip: {
-          backgroundColor: '#add8e6',
+          backgroundColor: '#fff',
           headerFormat:
             '<span style="font-size:10px; color: #000"">{point.key}</span><table>',
           pointFormat:

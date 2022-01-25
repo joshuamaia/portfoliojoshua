@@ -1,7 +1,6 @@
 .covid {
   min-height: 56vh;
   position: relative;
-  -webkit-print-color-adjust: exact;
 }
 
 .texto {
@@ -18,20 +17,20 @@
 }
 
 .cardCovid {
-  box-shadow: 0 0 4px 4px #b0e2ff;
-  background-color: #3b1d98;
+  box-shadow: 0 0 4px 4px #000;
+  background-color: #a9a9a9;
 }
 
 .cardCovidInternal {
   min-height: 100px;
-  border: 1px solid #fff;
-  background: #3b1d98;
+  border: 1px solid #000;
+  background: #696969;
 }
 
 .cardCovidPesquisa {
   /* border: 2px solid #364061; */
-  box-shadow: 0 0 4px 4px #b0e2ff;
-  background-color: #3b1d98;
+  box-shadow: 0 0 4px 4px #000;
+  background-color: #a9a9a9;
 }
 
 .textoConfirmados {

@@ -114,14 +114,12 @@
             class="NgSelect"
             [searchable]="true"
             [(ngModel)]="pais"
-            required="true"
             (change)="mudarPais()"
           >
             <ng-template ng-label-tmp let-item="item">
-              <img
-                class="bandeira"
-                src="https://www.countryflags.io/{{ item.iso2 }}/flat/64.png"
-              /><span class="ml-2">{{ item.name }}</span>
+              <img src="{{ montaBandeira(item.iso2) }}" /><span class="ml-2">{{
+                item.name
+              }}</span>
             </ng-template>
             <ng-template
               ng-option-tmp
@@ -129,10 +127,9 @@
               let-search="searchTerm"
               let-index="index"
             >
-              <img
-                class="bandeira"
-                src="https://www.countryflags.io/{{ item.iso2 }}/flat/64.png"
-              /><span class="ml-2">{{ item.name }}</span>
+              <img src="{{ montaBandeira(item.iso2) }}" /><span class="ml-2">{{
+                item.name
+              }}</span>
             </ng-template>
           </ng-select>
         </div>
@@ -247,12 +244,13 @@
           <div class="row">
             <div class="col-xl-12">
               <div class="card">
-                <div style="background-color: #220b5e" class="card-header">
-                  <h6 style="color: #fff" class="surtitle">
+                <div class="card-header">
+                  <h6 class="card-header-title surtitle">
                     <img
-                      src="https://www.countryflags.io/{{
-                        pais.iso2
-                      }}/flat/64.png"
+                      class="card-header-flag"
+                      src="https://flagcdn.com/40x30/{{
+                        pais.iso2.toLowerCase()
+                      }}.png"
                     />
                     COVID {{ pais.name }}
                   </h6>
