@@ -3,221 +3,24 @@
     <div class="row" style="max-width: 1024px">
       <div class="col">
         <div class="d-flex mt-2 justify-content-center">
-          <h1 style="color: #fff" class="texto">
+          <h1 style="color: #000" class="texto">
             <img
-              style="border: 2px solid #fff"
+              style="border: 2px solid #000"
               class="imagem"
-              src="../../assets/joshua.jpeg"
+              src="../../assets/joshua.jpg"
             />Joshua Maia Rodrigues -
             <a
               href="https://www.linkedin.com/in/joshua-maia-rodrigues-662634110/"
-              ><i class="fab fa-linkedin-in"></i
+              ><fa-icon [icon]="['fab', 'linkedin']"></fa-icon
             ></a>
             -
             <a href="https://github.com/joshuamaia"
-              ><i class="fab fa-github"></i
+              ><fa-icon [icon]="['fab', 'github']"></fa-icon
             ></a>
           </h1>
         </div>
       </div>
     </div>
-    <div class="row no-gutters barra" id="menu">
-      <div class="row menu">
-        <div class="col-6">
-          <div class="btn-group" dropdown>
-            <button
-              id="button-basic"
-              dropdownToggle
-              type="button"
-              class="btn btn-primary curriculoBackground dropdown-toggle"
-              aria-controls="dropdown-basic"
-            >
-              <i class="far fa-file-pdf"></i> Currículo
-              <span class="caret"></span>
-            </button>
-            <ul
-              id="dropdown-basic"
-              *dropdownMenu
-              class="dropdown-menu menuCurriculo"
-              role="menu"
-              aria-labelledby="button-basic"
-            >
-              <li
-                role="menuitem"
-                [routerLink]="['/home']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCurriculoLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fas fa-briefcase"></i><span> Home</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/escolaridade']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCurriculoLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fas fa-school"></i><span> Escolaridade</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/trabalho']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCurriculoLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fa fa-tasks"></i><span> Trabalho</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/projetos']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCurriculoLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fa fa-fax"></i><span> Projetos Pessoais</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/idioma']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCurriculoLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fa fa-language"></i><span> Idioma</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/certificacao']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCurriculoLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fa fa-certificate"></i><span> Certificações</span>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="btn-group" dropdown>
-            <button
-              id="button-basic"
-              dropdownToggle
-              type="button"
-              class="btn btn-primary covidBackground dropdown-toggle"
-              aria-controls="dropdown-basic"
-            >
-              <i class="fas fa-ambulance"></i> COVID <span class="caret"></span>
-            </button>
-            <ul
-              id="dropdown-basic"
-              *dropdownMenu
-              class="dropdown-menu menuCovid"
-              role="menu"
-              aria-labelledby="button-basic"
-            >
-              <li
-                role="menuitem"
-                [routerLink]="['/covid']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCovidLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fa fa-globe"></i><span> Covid - Mundo</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/covidbrasil']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCovidLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fas fa-flag"></i><span> Covid - Brasil</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/covidbrasiltempo']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCovidLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fas fa-clock"></i
-                    ><span>
-                      COVID no Brasil - Evolução nos Últimos 30 dias</span
-                    >
-                  </div>
-                </div>
-              </li>
-              <!-- <li
-                role="menuitem"
-                [routerLink]="['/covidpbtempo']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCovidLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fas fa-stopwatch"></i
-                    ><span>
-                      COVID na Paraíba - Evolução nos Últimos 30 dias</span
-                    >
-                  </div>
-                </div>
-              </li> -->
-              <li
-                role="menuitem"
-                [routerLink]="['/covidpb']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCovidLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fas fa-city"></i><span> Covid - Paraíba</span>
-                  </div>
-                </div>
-              </li>
-              <li
-                role="menuitem"
-                [routerLink]="['/covidcidade']"
-                routerLinkActive="router-link-active"
-                class="nav-item menuCovidLi"
-              >
-                <div class="row no-gutters">
-                  <div class="col-sm-12 ml-2 mr-2 mt-2 mb-2">
-                    <i class="fa fa-home"></i
-                    ><span> Covid - Cidades por Estado</span>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-menu></app-menu>
   </div>
 </div>

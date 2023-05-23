@@ -3,20 +3,19 @@
   height: 80px;
   width: 100%;
 
-  border-top: 2px solid #b0e2ff;
+  border-top: 3px solid #ffa500;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: #220b5e;
-  background-image: linear-gradient(to top, #220b5e, #220b5e);
-  color: white;
+  background: #faebd7 !important;
+  color: #000;
 
   -webkit-print-color-adjust: exact;
 }
 
 a:hover {
-  color: #b0e0e6;
+  color: #708090;
 }
 
 .texto {
