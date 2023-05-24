@@ -1,0 +1,11 @@
+.certificado {
+  min-height: 71vh;
+  position: relative;
+  -webkit-print-color-adjust: exact;
+}
+
+.imagens {
+  margin: 5px;
+  width: 100%;
+  height: auto;
+}
