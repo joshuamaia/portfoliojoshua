@@ -12,6 +12,13 @@ const routes: Routes = [
       import('./trabalho/trabalho.module').then((m) => m.TrabalhoModule),
   },
   {
+    path: 'escolaridades',
+    loadChildren: () =>
+      import('./escolaridades/escolaridades.module').then(
+        (m) => m.EscolaridadesModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
