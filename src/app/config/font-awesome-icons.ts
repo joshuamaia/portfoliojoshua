@@ -3,7 +3,8 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
   faTasks,
   faHouse,
-  faSchool,
+  faBookAtlas,
+  faBookBookmark,
   faBookOpen,
   faCertificate,
 } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +14,8 @@ export const fontAwesomeIcons = [
   faGithub,
   faTasks,
   faHouse,
-  faSchool,
+  faBookAtlas,
+  faBookBookmark,
   faBookOpen,
   faCertificate,
 ];
