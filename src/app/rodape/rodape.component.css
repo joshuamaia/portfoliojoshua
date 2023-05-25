@@ -14,10 +14,13 @@
   -webkit-print-color-adjust: exact;
 }
 
-a:hover {
-  color: #708090;
+a {
+  color: #ffa500;
 }
 
+a:hover {
+  color: #ffc107;
+}
 .texto {
   font-size: 30px;
 }
