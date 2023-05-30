@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SharedModule } from './shared/shared.module';
-import { MenuComponent } from './menu/menu.component';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
-  declarations: [AppComponent, TopoComponent, RodapeComponent, MenuComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  declarations: [AppComponent, TopoComponent, RodapeComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, MenuModule],
   exports: [SharedModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -14,56 +14,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/home"
-            ><fa-icon [icon]="['fas', 'house']"> </fa-icon> Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/trabalhos"
-            ><fa-icon [icon]="['fas', 'tasks']"> </fa-icon> Trabalhos</a
-          >
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <fa-icon [icon]="['fas', 'book-atlas']"> </fa-icon> Escolaridades
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                routerLink="/escolaridades"
-                ><fa-icon [icon]="['fas', 'book-bookmark']"> </fa-icon>
-                Escolaridades</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                routerLink="/escolaridades/extra"
-                ><fa-icon [icon]="['fas', 'book-open']"> </fa-icon>
-                Escolaridades Extra</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/certificados"
-            ><fa-icon [icon]="['fas', 'certificate']"> </fa-icon> Certificados
-          </a>
-        </li>
+        <app-menu-item
+          *ngFor="let menuItem of itensMenu()"
+          [menuItem]="menuItem"
+        ></app-menu-item>
       </ul>
     </div>
   </div>
