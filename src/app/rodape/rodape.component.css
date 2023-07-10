@@ -3,24 +3,25 @@
   height: 80px;
   width: 100%;
 
-  border-top: 3px solid #ffa500;
+  border-top: 3px solid #1e72da;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: #faebd7 !important;
-  color: #000;
+  background: #0b184c !important;
+  color: #fff;
 
   -webkit-print-color-adjust: exact;
 }
 
 a {
-  color: #ffa500;
+  color: #1e72da;
 }
 
 a:hover {
-  color: #ffc107;
+  color: #134788;
 }
+
 .texto {
   font-size: 30px;
 }
