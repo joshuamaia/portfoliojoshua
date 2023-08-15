@@ -1,8 +1,9 @@
 <li *ngIf="!temSubMenu(menuItem)" class="nav-item">
   <a
-    class="nav-link active"
+    class="nav-link"
     aria-current="page"
     [routerLink]="menuItem.routerLink"
+    routerLinkActive="active"
     ><fa-icon [icon]="menuItem.icon"> </fa-icon> {{ menuItem.title }}</a
   >
 </li>
@@ -20,9 +21,11 @@
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <li *ngFor="let subMenuItem of menuItem.subMenus" class="nav-item">
       <a
-        class="nav-link active"
+        class="nav-link"
         aria-current="page"
         [routerLink]="subMenuItem.routerLink"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
         ><fa-icon [icon]="subMenuItem.icon"> </fa-icon>
         {{ subMenuItem.title }}</a
       >

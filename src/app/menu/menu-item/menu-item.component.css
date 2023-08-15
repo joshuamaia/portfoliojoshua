@@ -1,3 +1,9 @@
 ul {
   background-color: #b5b9e8 !important;
 }
+
+.active {
+  background: #0b184c;
+  color: #fff !important;
+  border-radius: 4px;
+}
