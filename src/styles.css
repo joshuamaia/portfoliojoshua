@@ -5,7 +5,7 @@ body {
   font-family: "Roboto", sans-serif !important;
 
   border-color: #fff;
-  background: #87cefa !important;
+  background: #b0e0e6 !important;
 }
 
 .animacaoTopDown {
@@ -46,8 +46,8 @@ body {
 }
 
 .cardCovidInternal {
-  box-shadow: rgba(0, 0, 205, 0.4) 0px 10px 20px,
-    rgba(0, 0, 205, 0.32) 0px 10px 8px !important;
+  box-shadow: rgba(11, 24, 76, 0.4) 0px 10px 20px,
+    rgba(11, 24, 76, 0.32) 0px 10px 8px !important;
   background: #e0ffff !important;
   min-height: 140px;
   margin: 20px 20px;
@@ -55,8 +55,8 @@ body {
 
 .cardCovidInternalDestaque {
   /* border: 1px solid #fff; */
-  box-shadow: rgba(0, 0, 205, 0.4) 0px 10px 20px,
-    rgba(0, 0, 205, 0.32) 0px 10px 8px !important;
+  box-shadow: rgba(11, 24, 76, 0.4) 0px 10px 20px,
+    rgba(11, 24, 76, 0.32) 0px 10px 8px !important;
   background: #0000cd !important;
   min-height: 140px !important;
   margin: 20px 20px;

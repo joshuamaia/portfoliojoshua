@@ -14,10 +14,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <app-menu-item
-          *ngFor="let menuItem of itensMenu()"
-          [menuItem]="menuItem"
-        ></app-menu-item>
+        @for (menuItem of itensMenu(); track menuItem.title) {
+        <app-menu-item [menuItem]="menuItem"></app-menu-item>
+        } @empty { Nenhum menu cadastrado }
       </ul>
     </div>
   </div>

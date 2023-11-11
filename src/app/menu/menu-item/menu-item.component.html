@@ -1,4 +1,5 @@
-<li *ngIf="!temSubMenu(menuItem)" class="nav-item">
+@if (!temSubMenu(menuItem)) {
+<li class="nav-item">
   <a
     class="nav-link"
     aria-current="page"
@@ -7,7 +8,8 @@
     ><fa-icon [icon]="menuItem.icon"> </fa-icon> {{ menuItem.title }}</a
   >
 </li>
-<li *ngIf="temSubMenu(menuItem)" class="nav-item dropdown">
+} @else {
+<li class="nav-item dropdown">
   <a
     class="nav-link dropdown-toggle"
     href="#"
@@ -32,3 +34,4 @@
     </li>
   </ul>
 </li>
+}
