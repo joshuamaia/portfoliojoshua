@@ -7,6 +7,63 @@
             <div class="col">
               <div class="cabecalho">
                 <h5 class="card-title text-uppercase mb-4 labels">
+                  Certificações Cloud
+                </h5>
+                <div class="col-auto">
+                  <div
+                    class="icon botoes icon-shape text-white rounded-circle shadow"
+                  >
+                    <i class="fa fa-book"></i>
+                  </div>
+                </div>
+              </div>
+              <span class="h3 mb-4">
+                <ul>
+                  <li class="mb-2">
+                    <button
+                      class="btn btn-info"
+                      (click)="open(awsCloudPractitioner)"
+                    >
+                      Certificado
+                    </button>
+                    AWS Certified Cloud Practitioner (CLF-C02) (29/11/2023 -
+                    29/11/2026)
+                    <ng-template #awsCloudPractitioner>
+                      <div class="modal-header header-modal">
+                        <h4 class="modal-title pull-left">
+                          Arquiteturas incrementais e escaláveis
+                          <button
+                            type="button"
+                            class="close pull-right"
+                            aria-label="Close"
+                            (click)="close()"
+                          >
+                            <span class="header-modal-close" aria-hidden="true"
+                              >&times;</span
+                            >
+                          </button>
+                        </h4>
+                      </div>
+                      <div class="modal-body modalcss">
+                        <img
+                          class="imagens"
+                          src="../../assets/awsCloudPractitioner.jpeg"
+                        />
+                      </div>
+                    </ng-template>
+                  </li>
+                </ul>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card cardCovidInternal card-stats">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="cabecalho">
+                <h5 class="card-title text-uppercase mb-4 labels">
                   Arquitetura de Software
                 </h5>
                 <div class="col-auto">
