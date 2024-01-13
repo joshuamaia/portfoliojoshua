@@ -31,7 +31,7 @@
                     <ng-template #awsCloudPractitioner>
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
-                          Arquiteturas incrementais e escaláveis
+                          AWS Certified Cloud Practitioner
                           <button
                             type="button"
                             class="close pull-right"
@@ -48,6 +48,35 @@
                         <img
                           class="imagens"
                           src="../../assets/awsCloudPractitioner.jpeg"
+                        />
+                      </div>
+                    </ng-template>
+                  </li>
+                  <li class="mb-2">
+                    <button class="btn btn-info" (click)="open(awsAz900)">
+                      Certificado
+                    </button>
+                    Microsoft Certified: Azure Fundamentals
+                    <ng-template #awsAz900>
+                      <div class="modal-header header-modal">
+                        <h4 class="modal-title pull-left">
+                          Microsoft Certified: Azure Fundamentals
+                          <button
+                            type="button"
+                            class="close pull-right"
+                            aria-label="Close"
+                            (click)="close()"
+                          >
+                            <span class="header-modal-close" aria-hidden="true"
+                              >&times;</span
+                            >
+                          </button>
+                        </h4>
+                      </div>
+                      <div class="modal-body modalcss">
+                        <img
+                          class="imagens"
+                          src="../../assets/certificacaoAZ900.png"
                         />
                       </div>
                     </ng-template>
