@@ -106,6 +106,36 @@
               <span class="h3 mb-4">
                 <ul>
                   <li class="mb-2">
+                    <button class="btn btn-info" (click)="open(bpmn)">
+                      Certificado
+                    </button>
+                    BPMN
+
+                    <ng-template #bpmn>
+                      <div class="modal-header header-modal">
+                        <h4 class="modal-title pull-left">
+                          BPMN
+                          <button
+                            type="button"
+                            class="close pull-right"
+                            aria-label="Close"
+                            (click)="close()"
+                          >
+                            <span class="header-modal-close" aria-hidden="true"
+                              >&times;</span
+                            >
+                          </button>
+                        </h4>
+                      </div>
+                      <div class="modal-body modalcss">
+                        <img
+                          class="imagens"
+                          src="../../assets/bpmnJoshua.jpg"
+                        />
+                      </div>
+                    </ng-template>
+                  </li>
+                  <li class="mb-2">
                     <button
                       class="btn btn-info"
                       (click)="open(Arquiteturasincrementais)"
