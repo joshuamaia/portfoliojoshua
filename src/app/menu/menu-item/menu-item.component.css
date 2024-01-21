@@ -1,9 +1,10 @@
 ul {
-  background-color: #e0ffff !important;
+  background-color: #e6e6fa !important;
+  padding: 5px;
 }
 
 .active {
-  background: #0b184c;
+  background: #4b0082;
   color: #fff !important;
   border-radius: 4px;
 }

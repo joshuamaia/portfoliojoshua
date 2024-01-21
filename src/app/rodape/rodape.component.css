@@ -3,12 +3,12 @@
   height: 80px;
   width: 100%;
 
-  border-top: 3px solid #1e72da;
+  border-top: 3px solid #9932cc;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: #0b184c !important;
+  background: #4b0082 !important;
   color: #fff;
 
   -webkit-print-color-adjust: exact;

@@ -1,5 +1,9 @@
 .navbar {
-  background-color: #b0e0e6 !important;
+  background-color: #e6e6fa !important;
   z-index: 500;
   border-radius: 5px;
+}
+
+.nav-link {
+  color: #fff !important;
 }
