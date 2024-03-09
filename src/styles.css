@@ -24,6 +24,7 @@ body {
 .btn-info {
   color: #fff !important;
   background: #4b0082 !important;
+  margin: 3px;
 }
 
 .btn-info:hover {
