@@ -32,6 +32,14 @@ body {
   background: #8a2be2 !important;
 }
 
+.header-modal {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: #4b0082 !important;
+  color: #fff;
+}
+
 .labels {
   display: flex;
   justify-content: center;
@@ -54,10 +62,29 @@ body {
   border: 5px solid #4b0082 !important;
 }
 
+.cardCovidInternal:hover {
+  box-shadow: 4px 6px rgba(75, 0, 130, 0.7) !important;
+  background: #4169e1 !important;
+  min-height: 140px !important;
+  margin: 20px 20px;
+  border: 5px solid #4b0082 !important;
+}
+
+.cardCovidInternal:hover span {
+  color: #fff !important;
+}
+
 .cardCovidInternalDestaque {
-  /* border: 1px solid #fff; */
   box-shadow: 4px 6px rgba(75, 0, 130, 0.7) !important;
   background: #6a5acd !important;
+  min-height: 140px !important;
+  margin: 20px 20px;
+  border: 5px solid #4b0082 !important;
+}
+
+.cardCovidInternalDestaque:hover {
+  box-shadow: 4px 6px rgba(75, 0, 130, 0.7) !important;
+  background: #836fff !important;
   min-height: 140px !important;
   margin: 20px 20px;
   border: 5px solid #4b0082 !important;
