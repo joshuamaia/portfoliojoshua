@@ -63,7 +63,7 @@ body {
 }
 
 .cardCovidInternal:hover {
-  box-shadow: 4px 6px rgba(75, 0, 130, 0.7) !important;
+  box-shadow: 4px 6px rgba(0, 0, 128, 0.7) !important;
   background: #4169e1 !important;
   min-height: 140px !important;
   margin: 20px 20px;
@@ -83,7 +83,7 @@ body {
 }
 
 .cardCovidInternalDestaque:hover {
-  box-shadow: 4px 6px rgba(75, 0, 130, 0.7) !important;
+  box-shadow: 4px 6px rgba(0, 0, 128, 0.7) !important;
   background: #836fff !important;
   min-height: 140px !important;
   margin: 20px 20px;
