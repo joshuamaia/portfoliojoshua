@@ -3,3 +3,11 @@
   position: relative;
   -webkit-print-color-adjust: exact;
 }
+
+p {
+  margin: 10px;
+}
+
+.list-group-item {
+  background: #e6e6fa;
+}
