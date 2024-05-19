@@ -3,3 +3,9 @@
   position: relative;
   -webkit-print-color-adjust: exact;
 }
+
+.imagens {
+  margin: 5px;
+  width: 100%;
+  height: auto;
+}
