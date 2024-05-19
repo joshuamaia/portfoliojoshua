@@ -7,6 +7,9 @@ import {
   faBookBookmark,
   faBookOpen,
   faCertificate,
+  faFilePdf,
+  faWindowClose,
+  faDownload,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
@@ -18,4 +21,7 @@ export const fontAwesomeIcons = [
   faBookBookmark,
   faBookOpen,
   faCertificate,
+  faFilePdf,
+  faWindowClose,
+  faDownload,
 ];

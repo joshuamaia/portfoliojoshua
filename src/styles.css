@@ -21,6 +21,11 @@ body {
   }
 }
 
+:host ::ng-deep .ng2-pdf-viewer-container {
+  height: auto !important;
+  overflow-y: hidden !important;
+}
+
 .btn-info {
   color: #fff !important;
   background: #003366 !important;
@@ -76,7 +81,7 @@ body {
 
 .cardCovidInternalDestaque {
   box-shadow: 4px 6px rgba(0, 51, 102, 0.7) !important;
-  background: #d4af37 !important;
+  background: #c0c0c0 !important;
   min-height: 140px !important;
   margin: 20px 20px;
   border: 5px solid #003366 !important;
@@ -84,13 +89,17 @@ body {
 
 .cardCovidInternalDestaque:hover {
   box-shadow: 4px 6px rgba(0, 0, 128, 0.7) !important;
-  background: #b38a2d !important;
+  background: #36454f !important;
   min-height: 140px !important;
   margin: 20px 20px;
   border: 5px solid #003366 !important;
 }
 
 .cardCovidInternalDestaque span {
+  color: #000 !important;
+}
+
+.cardCovidInternalDestaque:hover span {
   color: #fff !important;
 }
 
