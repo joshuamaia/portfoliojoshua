@@ -22,7 +22,7 @@
                 ><fa-icon [icon]="['fab', 'github']"></fa-icon
               ></a>
               -
-              <a (click)="open(curriculo)"
+              <a style="cursor: pointer" (click)="open(curriculo)"
                 ><fa-icon [icon]="['fas', 'file-pdf']"></fa-icon
               ></a>
               <ng-template #curriculo>
@@ -32,7 +32,7 @@
                     <a class="m-2" (click)="downloadPDF()"
                       ><fa-icon [icon]="['fas', 'download']"></fa-icon
                     ></a>
-                    <a (click)="close()">
+                    <a style="cursor: pointer" (click)="close()">
                       <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                     </a>
                   </h4>

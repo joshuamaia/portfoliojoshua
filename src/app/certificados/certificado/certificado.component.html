@@ -32,7 +32,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           AWS Certified Cloud Practitioner
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -54,7 +58,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Microsoft Certified: Azure Fundamentals
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -92,6 +100,32 @@
               <span class="h3 mb-4">
                 <ul>
                   <li class="mb-2">
+                    <button class="btn btn-info" (click)="open(cursobranas)">
+                      Certificado
+                    </button>
+                    Clean Code e Clean Architecture - Rodrigo Branas
+                    <ng-template #cursobranas>
+                      <div class="modal-header header-modal">
+                        <h4 class="modal-title pull-left">
+                          Clean Code e Clean Architecture - Rodrigo Branas
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
+                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
+                          </a>
+                        </h4>
+                      </div>
+                      <div class="modal-body modalcss">
+                        <img
+                          class="imagens"
+                          src="../../assets/cleanCodeECleanArchitecture.jpg"
+                        />
+                      </div>
+                    </ng-template>
+                  </li>
+                  <li class="mb-2">
                     <button class="btn btn-info" (click)="open(bpmn)">
                       Certificado
                     </button>
@@ -101,7 +135,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           BPMN
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -128,7 +166,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Arquiteturas incrementais e escaláveis
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -154,7 +196,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Clean Architecture
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -177,7 +223,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Domain Driven Design
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -197,7 +247,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           SOLID
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -220,7 +274,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Fundamentoscde Arquitetura
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -269,16 +327,9 @@
                 <div class="modal-header header-modal">
                   <h4 class="modal-title pull-left">
                     Sun Certified Java Programmer 1.5
-                    <button
-                      type="button"
-                      class="close pull-right"
-                      aria-label="Close"
-                      (click)="close()"
-                    >
-                      <span class="header-modal-close" aria-hidden="true"
-                        >&times;</span
-                      >
-                    </button>
+                    <a style="cursor: pointer" class="m-2" (click)="close()">
+                      <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
+                    </a>
                   </h4>
                 </div>
                 <div class="modal-body modalcss">
@@ -292,16 +343,9 @@
                 <div class="modal-header header-modal">
                   <h4 class="modal-title pull-left">
                     Sun Certified Java Programmer 1.5
-                    <button
-                      type="button"
-                      class="close pull-right"
-                      aria-label="Close"
-                      (click)="close()"
-                    >
-                      <span class="header-modal-close" aria-hidden="true"
-                        >&times;</span
-                      >
-                    </button>
+                    <a style="cursor: pointer" class="m-2" (click)="close()">
+                      <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
+                    </a>
                   </h4>
                 </div>
                 <div class="modal-body modalcss">
@@ -341,7 +385,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Scrum Foundation Profissional Certificate
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -364,7 +412,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Scrum Fundamentals Certified
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -409,7 +461,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Docker
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
@@ -430,7 +486,11 @@
                       <div class="modal-header header-modal">
                         <h4 class="modal-title pull-left">
                           Devops Essentials Profissional Certificate
-                          <a class="m-2" (click)="close()">
+                          <a
+                            style="cursor: pointer"
+                            class="m-2"
+                            (click)="close()"
+                          >
                             <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
                           </a>
                         </h4>
