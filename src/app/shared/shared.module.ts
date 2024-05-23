@@ -7,11 +7,12 @@ import {
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { fontAwesomeIcons } from '../config/font-awesome-icons';
+import { CertificadoTemplateComponent } from './certificado-template/certificado-template.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [CertificadoTemplateComponent],
   imports: [CommonModule, FontAwesomeModule, NgbModule],
-  exports: [FontAwesomeModule],
+  exports: [FontAwesomeModule, CertificadoTemplateComponent],
 })
 export class SharedModule {
   constructor(private fontAwesomeLibrary: FaIconLibrary) {

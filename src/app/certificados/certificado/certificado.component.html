@@ -20,60 +20,16 @@
               <span class="h3 mb-4">
                 <ul>
                   <li class="mb-2">
-                    <button
-                      class="btn btn-info"
-                      (click)="open(awsCloudPractitioner)"
-                    >
-                      Certificado
-                    </button>
-                    AWS Certified Cloud Practitioner (CLF-C02) (29/11/2023 -
-                    29/11/2026)
-                    <ng-template #awsCloudPractitioner>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          AWS Certified Cloud Practitioner
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/awsCloudPractitioner.jpeg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="AWS Certified Cloud Practitioner (CLF-C02) (29/11/2023 - 29/11/2026)"
+                      srcImage="../../assets/awsCloudPractitioner.jpeg"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(awsAz900)">
-                      Certificado
-                    </button>
-                    Microsoft Certified: Azure Fundamentals
-                    <ng-template #awsAz900>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Microsoft Certified: Azure Fundamentals
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/certificacaoAZ900.png"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Microsoft Certified: Azure Fundamentals"
+                      srcImage="../../assets/certificacaoAZ900.png"
+                    ></app-certificado-template>
                   </li>
                 </ul>
               </span>
@@ -100,196 +56,47 @@
               <span class="h3 mb-4">
                 <ul>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(cursobranas)">
-                      Certificado
-                    </button>
-                    Clean Code e Clean Architecture - Rodrigo Branas
-                    <ng-template #cursobranas>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Clean Code e Clean Architecture - Rodrigo Branas
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/cleanCodeECleanArchitecture.jpg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Clean Code e Clean Architecture - Rodrigo Branas"
+                      srcImage="../../assets/cleanCodeECleanArchitecture.jpg"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(bpmn)">
-                      Certificado
-                    </button>
-                    BPMN
-
-                    <ng-template #bpmn>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          BPMN
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/bpmnJoshua.jpg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="BPMN"
+                      srcImage="../../assets/bpmnJoshua.jpg"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button
-                      class="btn btn-info"
-                      (click)="open(Arquiteturasincrementais)"
-                    >
-                      Certificado
-                    </button>
-                    Arquiteturas incrementais e escaláveis (2022 - Coffee and
-                    it)
-
-                    <ng-template #Arquiteturasincrementais>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Arquiteturas incrementais e escaláveis
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/Arquiteturasincrementais.jpg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Arquiteturas incrementais e escaláveis (2022 - Coffee and
+                      it)"
+                      srcImage="../../assets/Arquiteturasincrementais.jpg"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button
-                      class="btn btn-info"
-                      (click)="open(CleanArchitecture)"
-                    >
-                      Certificado
-                    </button>
-                    Clean Architecture (2022 - Full Cycle)
-
-                    <ng-template #CleanArchitecture>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Clean Architecture
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/CleanArchitecture.png"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Clean Architecture (2022 - Full Cycle)"
+                      srcImage="../../assets/CleanArchitecture.png"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(DDD)">
-                      Certificado
-                    </button>
-                    Domain Driven Design (2022 - Full Cycle)
-
-                    <ng-template #DDD>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Domain Driven Design
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img class="imagens" src="../../assets/DDD.png" />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Domain Driven Design (2022 - Full Cycle)"
+                      srcImage="../../assets/DDD.png"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(SOLID)">
-                      Certificado
-                    </button>
-                    SOLID (2022 - Full Cycle)
-
-                    <ng-template #SOLID>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          SOLID
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img class="imagens" src="../../assets/SOLID.png" />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="SOLID (2022 - Full Cycle)"
+                      srcImage="../../assets/SOLID.png"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button
-                      class="btn btn-info"
-                      (click)="open(FundamentosArquitetura)"
-                    >
-                      Certificado
-                    </button>
-                    Fundamentos de Arquitetura (2022 - Full Cycle)
-
-                    <ng-template #FundamentosArquitetura>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Fundamentoscde Arquitetura
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/FundamentosArquitetura.png"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Fundamentos de Arquitetura (2022 - Full Cycle)"
+                      srcImage="../../assets/FundamentosArquitetura.png"
+                    ></app-certificado-template>
                   </li>
                 </ul>
               </span>
@@ -303,7 +110,6 @@
             <div class="col">
               <div class="cabecalho">
                 <h5 class="card-title text-uppercase mb-4 labels">Java</h5>
-
                 <div class="col-auto">
                   <div
                     class="icon botoes icon-shape text-white rounded-circle shadow"
@@ -313,48 +119,21 @@
                 </div>
               </div>
               <span class="h3 mb-4">
-                <div>
-                  <button class="btn btn-info" (click)="open(resultadoJava)">
-                    Resultado
-                  </button>
-                  <button class="btn btn-info" (click)="open(certificadoJava)">
-                    Certificado
-                  </button>
-                  Sun Certified Java Programmer 1.5 (2007)
-                </div>
+                <ul>
+                  <li class="mb-2">
+                    <app-certificado-template
+                      titulo="Resultado Sun Certified Java Programmer 1.5 (2007)"
+                      srcImage="../../assets/certificacaoJava.jpg"
+                    ></app-certificado-template>
+                  </li>
+                  <li class="mb-2">
+                    <app-certificado-template
+                      titulo="Cerificado Sun Certified Java Programmer 1.5 (2007)"
+                      srcImage="../../assets/certificacaoJavaJoshua.jpg"
+                    ></app-certificado-template>
+                  </li>
+                </ul>
               </span>
-              <ng-template #resultadoJava>
-                <div class="modal-header header-modal">
-                  <h4 class="modal-title pull-left">
-                    Sun Certified Java Programmer 1.5
-                    <a style="cursor: pointer" class="m-2" (click)="close()">
-                      <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                    </a>
-                  </h4>
-                </div>
-                <div class="modal-body modalcss">
-                  <img
-                    class="imagens"
-                    src="../../assets/certificacaoJava.jpg"
-                  />
-                </div>
-              </ng-template>
-              <ng-template #certificadoJava>
-                <div class="modal-header header-modal">
-                  <h4 class="modal-title pull-left">
-                    Sun Certified Java Programmer 1.5
-                    <a style="cursor: pointer" class="m-2" (click)="close()">
-                      <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                    </a>
-                  </h4>
-                </div>
-                <div class="modal-body modalcss">
-                  <img
-                    class="imagens"
-                    src="../../assets/certificacaoJavaJoshua.jpg"
-                  />
-                </div>
-              </ng-template>
             </div>
           </div>
         </div>
@@ -376,58 +155,16 @@
               <span class="h3 mb-4">
                 <ul>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(scrumcertiprof)">
-                      Certificado
-                    </button>
-                    Scrum Foundation Profissional Certificate (2020 - CertiProf)
-
-                    <ng-template #scrumcertiprof>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Scrum Foundation Profissional Certificate
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/certificadoScrumCertiProf.jpg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Scrum Foundation Profissional Certificate (2020 - CertiProf)"
+                      srcImage="../../assets/certificadoScrumCertiProf.jpg"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(scrumcstudy)">
-                      Certificado
-                    </button>
-                    Scrum Fundamentals Certified (2020 - SCRUMStudy)
-
-                    <ng-template #scrumcstudy>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Scrum Fundamentals Certified
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/certificadoScrumStudy.jpg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Scrum Fundamentals Certified (2020 - SCRUMStudy)"
+                      srcImage="../../assets/certificadoScrumStudy.jpg"
+                    ></app-certificado-template>
                   </li>
                 </ul>
               </span>
@@ -452,56 +189,17 @@
               <span class="h3 mb-4">
                 <ul>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(docker)">
-                      Certificado
-                    </button>
-                    Docker (2022 -Full Cycle)
-
-                    <ng-template #docker>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Docker
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img class="imagens" src="../../assets/docker.png" />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Docker (2022 -Full Cycle)"
+                      srcImage="../../assets/docker.png"
+                    ></app-certificado-template>
                   </li>
                   <li class="mb-2">
-                    <button class="btn btn-info" (click)="open(devops)">
-                      Certificado
-                    </button>
-                    Devops Essentials Profissional Certificate (2020 -
-                    CertiProf)
-
-                    <ng-template #devops>
-                      <div class="modal-header header-modal">
-                        <h4 class="modal-title pull-left">
-                          Devops Essentials Profissional Certificate
-                          <a
-                            style="cursor: pointer"
-                            class="m-2"
-                            (click)="close()"
-                          >
-                            <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                          </a>
-                        </h4>
-                      </div>
-                      <div class="modal-body modalcss">
-                        <img
-                          class="imagens"
-                          src="../../assets/CertificateDevOps.jpg"
-                        />
-                      </div>
-                    </ng-template>
+                    <app-certificado-template
+                      titulo="Devops Essentials Profissional Certificate (2020 -
+                      CertiProf)"
+                      srcImage="../../assets/CertificateDevOps.jpg"
+                    ></app-certificado-template>
                   </li>
                 </ul>
               </span>

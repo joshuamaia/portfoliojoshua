@@ -1,0 +1,16 @@
+<button class="btn btn-info" (click)="open(certificado)">Certificado</button>
+{{ titulo }}
+
+<ng-template #certificado>
+  <div class="modal-header header-modal">
+    <h4 class="modal-title pull-left">
+      {{ titulo }}
+      <a style="cursor: pointer" class="m-2" (click)="close()">
+        <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
+      </a>
+    </h4>
+  </div>
+  <div class="modal-body modalcss">
+    <img class="imagens" [src]="srcImage" />
+  </div>
+</ng-template>
