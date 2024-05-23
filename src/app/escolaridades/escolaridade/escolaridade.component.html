@@ -1,110 +1,32 @@
 <div class="container escolaridade">
-  <div class="row animacaoTopDown">
-    <div class="col-xl-12 col-md-12">
-      <div class="card cardCovidInternalDestaque card-stats">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="cabecalho">
-                <h5 class="card-title text-uppercase mb-4 labels">
-                  Full Cycle
-                </h5>
-              </div>
-              <span class="h3 mb-4">
-                MBA em Arquitetura Full Cycle (Em andamento)
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row animacaoTopDown">
-    <div class="col-xl-12 col-md-12">
-      <div class="card cardCovidInternalDestaque card-stats">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="cabecalho">
-                <h5 class="card-title text-uppercase mb-4 labels">
-                  Full Cycle
-                </h5>
-              </div>
-              <span class="h3 mb-4">
-                Pós-graduação Go Expert (Em andamento)
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row animacaoTopDown">
-    <div class="col-xl-12 col-md-12">
-      <div class="card cardCovidInternal card-stats">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="cabecalho">
-                <h5 class="card-title text-uppercase mb-4 labels">Uniesp</h5>
-              </div>
-              <span class="h3 mb-4"> MBA - Full Stack Web Development </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row animacaoTopDown">
-    <div class="col-xl-12 col-md-12">
-      <div class="card cardCovidInternal card-stats">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="cabecalho">
-                <h5 class="card-title text-uppercase mb-4 labels">Estácio</h5>
-              </div>
-              <span class="h3 mb-4">
-                Especialista em Engenharia de Software
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row animacaoTopDown">
-    <div class="col-xl-12 col-md-12">
-      <div class="card cardCovidInternal card-stats">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="cabecalho">
-                <h5 class="card-title text-uppercase mb-4 labels">Uniespe</h5>
-              </div>
-              <span class="h3 mb-4">
-                Tecnólogo em Análise e Desenvolvimento de Sistemas
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row animacaoTopDown">
-    <div class="col-xl-12 col-md-12">
-      <div class="card cardCovidInternal card-stats">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="cabecalho">
-                <h5 class="card-title text-uppercase mb-4 labels">UFCG</h5>
-              </div>
-              <span class="h3 mb-4"> Licenciatura Plena em Matemática </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-escolaridade-item
+    titulo="Full Cycle"
+    descricao="MBA em Arquitetura Full Cycle (Em andamento)"
+    [destaque]="true"
+  ></app-escolaridade-item>
+  <app-escolaridade-item
+    titulo="Full Cycle"
+    descricao="Pós-graduação Go Expert (Em andamento)"
+    [destaque]="true"
+  ></app-escolaridade-item>
+  <app-escolaridade-item
+    titulo="Uniesp"
+    descricao="MBA - Full Stack Web Development"
+    [destaque]="false"
+  ></app-escolaridade-item>
+  <app-escolaridade-item
+    titulo="Estácio"
+    descricao="Especialista em Engenharia de Software"
+    [destaque]="false"
+  ></app-escolaridade-item>
+  <app-escolaridade-item
+    titulo="Uniespe"
+    descricao="Tecnólogo em Análise e Desenvolvimento de Sistemas"
+    [destaque]="false"
+  ></app-escolaridade-item>
+  <app-escolaridade-item
+    titulo="UFCG"
+    descricao="Licenciatura Plena em Matemática"
+    [destaque]="false"
+  ></app-escolaridade-item>
 </div>
