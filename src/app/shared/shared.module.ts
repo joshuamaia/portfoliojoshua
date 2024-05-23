@@ -8,11 +8,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { fontAwesomeIcons } from '../config/font-awesome-icons';
 import { CertificadoTemplateComponent } from './certificado-template/certificado-template.component';
+import { CertificadoEscolaridadeExtraComponent } from './certificado-escolaridade-extra/certificado-escolaridade-extra.component';
 
 @NgModule({
-  declarations: [CertificadoTemplateComponent],
+  declarations: [
+    CertificadoTemplateComponent,
+    CertificadoEscolaridadeExtraComponent,
+  ],
   imports: [CommonModule, FontAwesomeModule, NgbModule],
-  exports: [FontAwesomeModule, CertificadoTemplateComponent],
+  exports: [
+    FontAwesomeModule,
+    CertificadoTemplateComponent,
+    CertificadoEscolaridadeExtraComponent,
+  ],
 })
 export class SharedModule {
   constructor(private fontAwesomeLibrary: FaIconLibrary) {

@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-certificado-template',
-  templateUrl: './certificado-template.component.html',
-  styleUrl: './certificado-template.component.css',
+  selector: 'app-certificado-escolaridade-extra',
+  templateUrl: './certificado-escolaridade-extra.component.html',
+  styleUrl: './certificado-escolaridade-extra.component.css',
 })
-export class CertificadoTemplateComponent {
+export class CertificadoEscolaridadeExtraComponent {
   @Input() titulo!: string;
   @Input() srcImage!: string;
 
