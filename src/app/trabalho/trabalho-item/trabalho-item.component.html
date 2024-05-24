@@ -1,0 +1,26 @@
+<div class="row animacaoTopDown">
+  <div class="col-xl-12 col-md-12">
+    <div
+      [ngClass]="{
+        cardCovidInternalDestaque: destaque,
+        cardCovidInternal: !destaque
+      }"
+      class="card card-stats"
+    >
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="cabecalho">
+              <h2 class="card-title text-uppercase mb-4 labels">
+                {{ titulo }}
+              </h2>
+            </div>
+            <span class="h3 mb-4">
+              <ng-content></ng-content>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

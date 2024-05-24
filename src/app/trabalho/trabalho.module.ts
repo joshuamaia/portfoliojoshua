@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 
 import { TrabalhoRoutingModule } from './trabalho-routing.module';
 import { TrabalhosComponent } from './trabalhos/trabalhos.component';
+import { TrabalhoItemComponent } from './trabalho-item/trabalho-item.component';
 
 @NgModule({
-  declarations: [TrabalhosComponent],
+  declarations: [TrabalhosComponent, TrabalhoItemComponent],
   imports: [CommonModule, TrabalhoRoutingModule, SharedModule],
 })
 export class TrabalhoModule {}
