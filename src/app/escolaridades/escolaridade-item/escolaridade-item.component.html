@@ -1,24 +1,17 @@
-<div class="row animacaoTopDown">
-  <div class="col-xl-12 col-md-12">
-    <div
-      [ngClass]="{
-        cardCovidInternalDestaque: destaque,
-        cardCovidInternal: !destaque
-      }"
-      class="card card-stats"
-    >
-      <div class="card-body">
-        <div class="row">
-          <div class="col">
-            <div class="cabecalho">
-              <h5 class="card-title text-uppercase mb-4 labels">
-                {{ titulo }}
-              </h5>
-            </div>
-            <span class="h3 mb-4">
-              {{ descricao }}
-            </span>
-          </div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card mt-3">
+        <div
+          [ngClass]="{
+            'card-header': !destaque,
+            'card-header-destaque': destaque
+          }"
+        >
+          <h2>{{ titulo }}</h2>
+        </div>
+        <div class="card-content">
+          {{ descricao }}
         </div>
       </div>
     </div>

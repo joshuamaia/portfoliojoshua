@@ -12,6 +12,7 @@
   color: #fff;
 
   -webkit-print-color-adjust: exact;
+  margin-top: 20px !important;
 }
 
 a {
