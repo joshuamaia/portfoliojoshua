@@ -7,17 +7,10 @@ import { TopoComponent } from './topo/topo.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [AppComponent, TopoComponent, RodapeComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    MenuModule,
-    PdfViewerModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, MenuModule],
   exports: [SharedModule],
   providers: [],
   bootstrap: [AppComponent],

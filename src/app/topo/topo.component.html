@@ -4,11 +4,7 @@
       <div class="col">
         <div class="d-flex justify-content-center">
           <div>
-            <img
-              style="border: 2px solid #fff"
-              class="imagem"
-              src="../../assets/joshua.jpg"
-            />
+            <img class="imagem" src="../../assets/joshua.jpg" />
           </div>
           <div class="texto">
             <p>
@@ -22,33 +18,7 @@
                 ><fa-icon [icon]="['fab', 'github']"></fa-icon
               ></a>
               -
-              <a style="cursor: pointer" (click)="open(curriculo)"
-                ><fa-icon [icon]="['fas', 'file-pdf']"></fa-icon
-              ></a>
-              <ng-template #curriculo>
-                <div class="modal-header header-modal">
-                  <h4 class="modal-title pull-left">
-                    Currículo - Joshua Maia Rodrigues -
-                    <a
-                      style="cursor: pointer"
-                      class="m-2"
-                      (click)="downloadPDF()"
-                      ><fa-icon [icon]="['fas', 'download']"></fa-icon
-                    ></a>
-                    <a style="cursor: pointer" (click)="close()">
-                      <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-                    </a>
-                  </h4>
-                </div>
-                <div class="modal-body modalcss">
-                  <pdf-viewer
-                    [src]="pdfSrc"
-                    [render-text]="true"
-                    [original-size]="false"
-                    style="width: 100%; height: 600px"
-                  ></pdf-viewer>
-                </div>
-              </ng-template>
+              <app-exibir-download-curriculo></app-exibir-download-curriculo>
             </p>
             <p>Engenheiro de Software Full Stack Sênior</p>
           </div>
