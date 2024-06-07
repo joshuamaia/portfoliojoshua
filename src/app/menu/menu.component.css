@@ -1,9 +1,18 @@
+/* Estilos básicos da barra de navegação */
 .navbar {
-  background-color: #f2f2f2 !important;
+  border-radius: 6px;
+  background-color: #fff; /* Cor de fundo branca */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
   z-index: 500;
-  border-radius: 7px;
 }
 
-.nav-link {
-  color: #fff !important;
+.navbar-brand {
+  color: #007bff; /* Cor azul para o logo/marca */
+  font-weight: bold; /* Negrito para destacar a marca */
+  transition: color 0.3s; /* Transição suave para mudanças de cor */
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #0056b3; /* Cor mais escura no hover */
 }
