@@ -1,25 +1,22 @@
 .topo {
-  background: #1a237e !important;
-
-  border-bottom: 3px solid #4169e1 !important;
-  color: #fff;
+  background: #262626 !important; /* Fundo cinza muito escuro, quase preto */
+  border-bottom: 3px solid #444444 !important; /* Borda inferior em um cinza ainda mais escuro para sutil destaque */
+  color: #fff; /* Texto branco para contraste */
   background-size: 100% 100%;
   height: 176px;
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   -webkit-print-color-adjust: exact;
 }
 
 a {
-  color: #e0ffff;
+  color: #adb5bd; /* Um cinza claro para links, proporcionando contraste sutil */
 }
 
 a:hover {
-  color: #b0e0e6;
+  color: #ced4da; /* Cinza mais claro no hover, para destacar interações */
 }
 
 .imagem {
@@ -27,14 +24,14 @@ a:hover {
   height: 90px;
   border-radius: 50%;
   margin-right: 20px;
-  border: 2px solid #fff;
+  border: 2px solid #fff; /* Mantendo a borda branca para contraste */
 }
 
 .texto {
   font-size: 25px;
   text-align: center;
   margin: 0 0 0 0;
-  color: #fff;
+  color: #fff; /* Texto branco para contraste */
 }
 
 @media (max-width: 576px) {

@@ -2,33 +2,30 @@
   background-size: 100% 100%;
   height: 80px;
   width: 100%;
-
-  border-top: 3px solid #4169e1;
+  border-top: 3px solid #444444; /* Cor azul usada no topo para a borda */
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: #003366 !important;
-  color: #fff;
-
+  background: #262626 !important; /* Cor de fundo azul escuro do topo */
+  color: #fff; /* Texto branco para contraste */
   -webkit-print-color-adjust: exact;
   margin-top: 20px !important;
 }
 
 a {
-  color: #e0ffff;
+  color: #adb5bd; /* Um cinza claro para links, proporcionando contraste sutil */
 }
 
 a:hover {
-  color: #b0e0e6;
+  color: #ced4da; /* Cinza mais claro no hover, para destacar interações */
 }
 
 .texto {
-  font-size: 30px;
+  font-size: 30px; /* Mantido para destaque */
 }
 
 @media (max-width: 576px) {
   .texto {
-    font-size: 16px;
+    font-size: 16px; /* Ajuste para tamanhos de tela menores */
   }
 }

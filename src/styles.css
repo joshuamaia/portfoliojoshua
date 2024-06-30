@@ -3,7 +3,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #e0e0e0 !important; /* Cinza suave */
+  background-color: #121212 !important; /* Cinza suave */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,88 +15,94 @@ body {
 }
 
 .btn-info {
-  color: #fff !important;
-  background: #3f51b5 !important;
+  color: #fff !important; /* Manter o texto branco para contraste */
+  background: #28527a !important; /* Um azul mais escuro e suave */
   margin: 3px;
 }
 
 .btn-info:hover {
-  color: #fff !important;
-  background: #1a237e !important;
+  color: #fff !important; /* Manter o texto branco no hover */
+  background: #162e4d !important; /* Azul ainda mais escuro para hover */
 }
 
 .header-modal {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  background: #003366 !important;
-  color: #fff;
+  background: #1b1b2f !important; /* Fundo muito escuro, quase preto */
+  color: #fff; /* Texto branco para contraste */
 }
 
 .card {
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
   width: 100%;
   margin: 5px 0 !important;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  background: #121212; /* Fundo escuro geral */
+  color: #e0e0e0; /* Texto mais claro para contraste */
 }
 .card:hover {
   transform: translateY(-5px) rotateX(5deg) rotateY(-5deg);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
 }
+
 .card-header {
-  background: #3f51b5 !important;
+  background: #424242 !important; /* Um cinza médio para o cabeçalho padrão */
   color: #ffffff !important;
   padding: 12px !important;
   text-align: center !important;
 }
 
 .card-header-destaque {
-  background: #1a237e !important; /* Cor mais escura */
+  background: #1b1b2f !important; /* Um azul muito escuro, quase preto para o destaque */
   color: #ffffff !important;
   padding: 12px !important;
   text-align: center !important;
 }
-.card-header h2 {
-  margin: 0;
-  font-size: 1.3em !important;
-}
+
+.card-header h2,
 .card-header-destaque h2 {
   margin: 0;
   font-size: 1.3em !important;
 }
-.card-header-destaque .card-header p {
-  margin: 5px 0 0;
-}
+
 .card-content {
   padding: 20px;
+  background: #1c1c1c; /* Fundo do conteúdo um pouco mais claro que o card geral */
 }
+
 .card-content h3 {
   margin-top: 0;
 }
+
 .card-content p {
   margin: 10px 0;
 }
+
 .card-footer {
-  background: #e8eaf6;
+  background: #242424; /* Rodapé escuro */
   padding: 20px;
   text-align: center;
 }
+
 .card-footer a {
   text-decoration: none;
-  color: #3f51b5;
+  color: #bbb; /* Link mais claro para contraste */
   font-weight: bold;
-  border: 2px solid #3f51b5;
+  border: 2px solid #555; /* Borda dos botões ajustada para o tema dark */
   padding: 10px 20px;
   border-radius: 25px;
   transition: background 0.3s, color 0.3s;
 }
+
 .card-footer a:hover {
-  background: #3f51b5;
+  background: #555; /* Fundo do botão ao passar o mouse */
   color: #ffffff;
 }
 
 .list-group-item {
-  background: #f9f9f9 !important;
+  background: #2a2a2a !important; /* Fundo escuro para os itens da lista */
+  color: #fff !important; /* Cor clara para o texto, garantindo contraste e legibilidade */
 }

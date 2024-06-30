@@ -1,18 +1,17 @@
-/* Estilos básicos da barra de navegação */
 .navbar {
-  border-radius: 6px;
-  background-color: #fff; /* Cor de fundo branca */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+  border-radius: 6px !important;
+  background-color: #333333 !important; /* Cor de fundo escura para a barra de navegação */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Sombra mais intensa para maior destaque */
   z-index: 500;
 }
 
 .navbar-brand {
-  color: #007bff; /* Cor azul para o logo/marca */
-  font-weight: bold; /* Negrito para destacar a marca */
-  transition: color 0.3s; /* Transição suave para mudanças de cor */
+  color: #00ddff !important; /* Cor azul clara para o logo/marca, mantendo a tonalidade fria */
+  font-weight: bold !important; /* Negrito para destacar a marca */
+  transition: color 0.3s !important; /* Transição suave para mudanças de cor */
 }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
-  color: #0056b3; /* Cor mais escura no hover */
+  color: #0099cc !important; /* Cor mais escura no hover, ajustada para se destacar no tema escuro */
 }
