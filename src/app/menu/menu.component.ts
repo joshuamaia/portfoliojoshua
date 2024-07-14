@@ -42,6 +42,6 @@ export class MenuComponent {
 
   descricaoToggeTheme(): string {
     const savedTheme = localStorage.getItem('theme') as 'day' | 'night';
-    return savedTheme === 'day' ? 'Tema Claro' : 'Tema Escuro';
+    return savedTheme === 'day' ? 'Tema Escuro' : 'Tema Claro';
   }
 }
