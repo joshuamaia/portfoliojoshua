@@ -1,0 +1,37 @@
+.navbar {
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 500;
+}
+
+.navbar-brand {
+  font-weight: bold; /* Negrito para destacar a marca */
+  transition: color 0.3s; /* Transição suave para mudanças de cor */
+}
+
+.theme-night .navbar {
+  background-color: #333333 !important; /* Cor de fundo escura para a barra de navegação */
+}
+
+.theme-night .navbar-brand {
+  color: #00ddff; /* Cor azul clara para o logo/marca */
+}
+
+.theme-night .navbar-brand:hover,
+.theme-night .navbar-brand:focus {
+  color: #0099cc; /* Cor mais escura no hover */
+}
+
+.theme-day .navbar {
+  background-color: #ffffff !important; /* Fundo mais claro para o tema de dia */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Sombra mais suave para não sobrecarregar a visibilidade durante o dia */
+}
+
+.theme-day .navbar-brand {
+  color: #007bff; /* Cor azul, mais escura que a do tema noturno para melhor contraste com o fundo claro */
+}
+
+.theme-day .navbar-brand:hover,
+.theme-day .navbar-brand:focus {
+  color: #0056b3; /* Cor ainda mais escura no hover para manter a legibilidade e o destaque */
+}

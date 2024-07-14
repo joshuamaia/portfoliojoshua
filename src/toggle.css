@@ -1,0 +1,37 @@
+/* Estilos globais do botão de toggle */
+.toggle-theme-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4caf50; /* Verde como cor de fundo padrão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.toggle-theme-button:hover {
+  background-color: #45a049; /* Um verde mais escuro para o hover */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tema Diurno */
+.theme-day .toggle-theme-button {
+  color: #333; /* Cor de texto mais escura para melhor contraste no tema claro */
+  background-color: #ddd; /* Fundo mais claro */
+}
+
+.theme-day .toggle-theme-button:hover {
+  background-color: #ccc; /* Fundo mais escuro no hover no tema claro */
+}
+
+/* Tema Noturno */
+.theme-night .toggle-theme-button {
+  color: #fff; /* Texto branco para contraste no tema escuro */
+  background-color: #28527a; /* Fundo escuro */
+}
+
+.theme-night .toggle-theme-button:hover {
+  background-color: #007bff; /* Um cinza mais escuro para o hover no tema noturno */
+}

@@ -1,0 +1,91 @@
+.nav-link {
+  transition: color 0.3s; /* Transição suave para mudanças de cor */
+  padding: 5px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #00ddff; /* Cor azul clara ao passar o mouse ou focar, mantendo a paleta fria */
+}
+
+.nav-item a {
+  margin: 3px;
+}
+
+.nav-item a:hover {
+  border-radius: 6px;
+}
+
+.fa-icon {
+  margin-right: 5px; /* Espaçamento à direita dos ícones */
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .theme-night .navbar-collapse {
+    background-color: #333333; /* Cor de fundo no modo colapsado mais escura */
+  }
+  .theme-day .navbar-collapse {
+    background-color: #fff; /* Cor de fundo no modo colapsado mais escura */
+  }
+}
+
+.theme-night ul {
+  background-color: #2a2a2a;
+  padding: 5px;
+  border-radius: 6px; /* Cor de fundo escura para a lista */
+}
+
+.theme-night .active {
+  background: #28527a !important; /* Fundo mais escuro para itens ativos */
+  color: #fff !important; /* Texto branco para contraste */
+  border-radius: 7px;
+}
+
+.theme-night .dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Sombra mais definida para o dropdown */
+  background-color: #333333 !important; /* Fundo escuro para o dropdown */
+}
+
+.theme-night .nav-link {
+  color: #ccc; /* Cor mais clara para os links, para melhor contraste */
+}
+
+.theme-night .nav-item a {
+  color: #bbb; /* Cor padrão dos itens do dropdown mais clara para contraste */
+}
+
+.theme-night .nav-item a:hover {
+  color: #fff; /* Cor do texto no hover */
+  background-color: #007bff !important; /* Cor de fundo azul no hover */
+}
+
+.theme-day ul {
+  background-color: #ffffff; /* Fundo claro para a lista */
+}
+
+.theme-day .active {
+  background: #0056b3; /* Fundo mais claro para itens ativos */
+  color: #fff !important; /* Texto escuro para contraste */
+  border-radius: 7px;
+}
+
+.theme-day .dropdown-menu {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais suave para o dropdown */
+  background-color: #f1f1f1; /* Fundo claro para o dropdown */
+}
+
+.theme-day .nav-link {
+  color: #666; /* Cor escura para os links, para melhor contraste */
+}
+
+.theme-day .nav-item a {
+  color: #555; /* Cor escura padrão dos itens do dropdown para contraste */
+}
+
+.theme-day .nav-item a:hover {
+  color: #fff; /* Cor do texto no hover */
+  background-color: #007bff; /* Cor de fundo azul no hover */
+}

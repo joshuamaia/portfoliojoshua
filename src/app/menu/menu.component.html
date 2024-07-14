@@ -18,6 +18,9 @@
         <app-menu-item [menuItem]="menuItem"></app-menu-item>
         } @empty { Nenhum menu cadastrado }
       </ul>
+      <button class="toggle-theme-button" (click)="toggleTheme()">
+        {{ descricaoToggeTheme() }}
+      </button>
     </div>
   </div>
 </nav>

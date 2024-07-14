@@ -40,23 +40,10 @@ a:hover {
 .theme-night .texto {
   color: #fff; /* Texto branco para contraste */
 }
-
 .theme-day .rodape {
   background: #f1f1f1; /* Fundo claro */
   border-top: 3px solid #ccc; /* Borda superior em cinza claro */
-  color: #333; /* Texto escuro para contraste */
-}
-
-.theme-day a {
-  color: #333; /* Cor escura para links */
-}
-
-.theme-day a:hover {
-  color: #555; /* Um cinza escuro no hover */
-}
-
-.theme-day .texto {
-  color: #333; /* Texto escuro para contraste */
+  color: #333 !important; /* Texto escuro para contraste */
 }
 
 @media (max-width: 576px) {

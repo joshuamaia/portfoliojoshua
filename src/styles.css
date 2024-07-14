@@ -1,108 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "./card.css";
+@import "./toggle.css";
+@import "./topo.css";
+@import "./rodape.css";
+@import "./navlink.css";
+@import "./navbar.css";
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212 !important; /* Cinza suave */
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.theme-night {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-:host ::ng-deep .ng2-pdf-viewer-container {
-  height: auto !important;
-  overflow-y: hidden !important;
-}
-
-.btn-info {
-  color: #fff !important; /* Manter o texto branco para contraste */
-  background: #28527a !important; /* Um azul mais escuro e suave */
-  margin: 3px;
-}
-
-.btn-info:hover {
-  color: #fff !important; /* Manter o texto branco no hover */
-  background: #162e4d !important; /* Azul ainda mais escuro para hover */
-}
-
-.header-modal {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background: #1b1b2f !important; /* Fundo muito escuro, quase preto */
-  color: #fff; /* Texto branco para contraste */
-}
-
-.card {
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
-  width: 100%;
-  margin: 5px 0 !important;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: #121212; /* Fundo escuro geral */
-  color: #e0e0e0; /* Texto mais claro para contraste */
-}
-.card:hover {
-  transform: translateY(-5px) rotateX(5deg) rotateY(-5deg);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
-}
-
-.card-header {
-  background: #424242 !important; /* Um cinza médio para o cabeçalho padrão */
-  color: #ffffff !important;
-  padding: 12px !important;
-  text-align: center !important;
-}
-
-.card-header-destaque {
-  background: #1b1b2f !important; /* Um azul muito escuro, quase preto para o destaque */
-  color: #ffffff !important;
-  padding: 12px !important;
-  text-align: center !important;
-}
-
-.card-header h2,
-.card-header-destaque h2 {
-  margin: 0;
-  font-size: 1.3em !important;
-}
-
-.card-content {
-  padding: 20px;
-  background: #1c1c1c; /* Fundo do conteúdo um pouco mais claro que o card geral */
-}
-
-.card-content h3 {
-  margin-top: 0;
-}
-
-.card-content p {
-  margin: 10px 0;
-}
-
-.card-footer {
-  background: #242424; /* Rodapé escuro */
-  padding: 20px;
-  text-align: center;
-}
-
-.card-footer a {
-  text-decoration: none;
-  color: #bbb; /* Link mais claro para contraste */
-  font-weight: bold;
-  border: 2px solid #555; /* Borda dos botões ajustada para o tema dark */
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.card-footer a:hover {
-  background: #555; /* Fundo do botão ao passar o mouse */
+.theme-night .btn {
+  background-color: #28527a;
   color: #ffffff;
 }
 
-.list-group-item {
-  background: #2a2a2a !important; /* Fundo escuro para os itens da lista */
-  color: #fff !important; /* Cor clara para o texto, garantindo contraste e legibilidade */
+/* Tema Diurno */
+.theme-day {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.theme-day .btn {
+  background-color: #e7e7e7;
+  color: #28527a;
 }

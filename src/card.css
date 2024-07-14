@@ -1,0 +1,126 @@
+/* Estilos compartilhados que não mudam com o tema */
+.header-modal,
+.card,
+.card-header,
+.card-footer,
+.list-group-item {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-night .list-group-item {
+  background: #424242 !important; /* Um cinza médio para o cabeçalho padrão */
+  color: #ffffff !important;
+  padding: 10px !important;
+}
+
+/* Tema Noturno */
+.theme-night .header-modal,
+.theme-night .card-header,
+.theme-night .card-footer {
+  background: #424242 !important; /* Um cinza médio para o cabeçalho padrão */
+  color: #ffffff !important;
+  padding: 12px !important;
+  text-align: center !important;
+}
+
+.theme-night .header-modal,
+.theme-night .card-header-destaque,
+.theme-night .card-footer {
+  background: #1b1b2f !important; /* Um azul muito escuro, quase preto para o destaque */
+  color: #ffffff !important;
+  padding: 12px !important;
+  text-align: center !important;
+}
+
+.card-header h2,
+.card-header-destaque h2 {
+  margin: 0;
+  font-size: 1.3em !important;
+}
+
+.theme-night .card-content {
+  padding: 20px;
+  background: #1c1c1c; /* Fundo do conteúdo um pouco mais claro que o card geral */
+}
+
+.theme-day .card-content {
+  padding: 20px;
+  background: #ffffff; /* Fundo do conteúdo um pouco mais claro que o card geral */
+}
+
+.card-content h3 {
+  margin-top: 0;
+}
+
+.card-content p {
+  margin: 10px 0;
+}
+
+.theme-night .card {
+  background: #121212; /* Fundo escuro geral */
+  color: #e0e0e0; /* Texto mais claro para contraste */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid #fff;
+}
+
+.theme-night .card:hover {
+  transform: translateY(-5px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.theme-night .card-footer a,
+.theme-night .card-footer a:hover {
+  color: #bbb; /* Link mais claro para contraste */
+}
+
+.theme-night .card-footer a:hover {
+  background: #555;
+}
+
+/* Tema Diurno */
+.theme-day .header-modal,
+.theme-day .card-header,
+.theme-day .card-footer,
+.theme-day .list-group-item {
+  background: #f1f1f1; /* Fundo claro */
+  color: #333; /* Texto escuro para contraste */
+  padding: 12px !important;
+  text-align: center !important;
+}
+
+.theme-day .header-modal,
+.theme-day .card-header-destaque,
+.theme-day .card-footer {
+  background: #0056b3 !important; /* Um azul muito escuro, quase preto para o destaque */
+  color: #ffffff !important;
+  padding: 12px !important;
+  text-align: center !important;
+}
+
+.theme-day .card {
+  background: #ffffff; /* Fundo claro geral */
+  color: #333; /* Texto escuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-day .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-day .card-footer a,
+.theme-day .card-footer a:hover {
+  color: #666; /* Link escuro para contraste */
+}
+
+.theme-day .card-footer a:hover {
+  background: #ccc;
+}
+
+.theme-day ul {
+  background: #ffffff !important;
+}
+
+.theme-night ul {
+  background: #1c1c1c !important;
+}

@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { MenuItem } from './menu-item/menu.item';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +8,8 @@ import { MenuItem } from './menu-item/menu.item';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
+  constructor(private themeService: ThemeService) {}
+
   itensMenu = signal<MenuItem[]>([
     { title: 'Home', icon: ['fas', 'house'], routerLink: '/home' },
     { title: 'Trabalhos', icon: ['fas', 'tasks'], routerLink: '/trabalhos' },
@@ -32,4 +35,13 @@ export class MenuComponent {
       routerLink: '/certificados',
     },
   ]);
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  descricaoToggeTheme(): string {
+    const savedTheme = localStorage.getItem('theme') as 'day' | 'night';
+    return savedTheme === 'day' ? 'Tema Claro' : 'Tema Escuro';
+  }
 }
