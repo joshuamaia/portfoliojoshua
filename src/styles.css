@@ -7,16 +7,6 @@
 @import "./navlink.css";
 @import "./navbar.css";
 
-.theme-night {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-.theme-night .btn {
-  background-color: #28527a;
-  color: #ffffff;
-}
-
 /* Tema Diurno */
 .theme-day {
   background-color: #ffffff;
@@ -26,4 +16,14 @@
 .theme-day .btn {
   background-color: #e7e7e7;
   color: #28527a;
+}
+
+.theme-night {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.theme-night .btn {
+  background-color: #28527a;
+  color: #ffffff;
 }
