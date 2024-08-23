@@ -7,6 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class EscolaridadeItemComponent {
   @Input() titulo!: string;
-  @Input() descricao!: string;
   @Input() destaque!: boolean;
 }
