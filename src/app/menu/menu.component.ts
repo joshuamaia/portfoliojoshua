@@ -12,10 +12,14 @@ export class MenuComponent {
 
   itensMenu = signal<MenuItem[]>([
     { title: 'Home', icon: ['fas', 'house'], routerLink: '/home' },
-    { title: 'Trabalhos', icon: ['fas', 'tasks'], routerLink: '/trabalhos' },
+    {
+      title: 'Trabalhos',
+      icon: ['fas', 'briefcase'],
+      routerLink: '/trabalhos',
+    },
     {
       title: 'Escolaridades',
-      icon: ['fas', 'book-atlas'],
+      icon: ['fas', 'school'],
       subMenus: [
         {
           title: 'Escolaridades',
@@ -24,7 +28,7 @@ export class MenuComponent {
         },
         {
           title: 'Escolaridades Extra',
-          icon: ['fas', 'tasks'],
+          icon: ['fas', 'school-flag'],
           routerLink: '/escolaridades/extra',
         },
       ],

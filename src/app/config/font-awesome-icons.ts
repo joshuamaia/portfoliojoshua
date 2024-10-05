@@ -10,6 +10,9 @@ import {
   faFilePdf,
   faWindowClose,
   faDownload,
+  faBriefcase,
+  faSchool,
+  faSchoolFlag,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
@@ -24,4 +27,7 @@ export const fontAwesomeIcons = [
   faFilePdf,
   faWindowClose,
   faDownload,
+  faBriefcase,
+  faSchool,
+  faSchoolFlag,
 ];

@@ -11,6 +11,7 @@
 
 .theme-night .navbar {
   background-color: #333333 !important; /* Cor de fundo escura para a barra de navegação */
+  border: 2px solid #194cff;
 }
 
 .theme-night .navbar-brand {
@@ -24,7 +25,7 @@
 
 .theme-day .navbar {
   background-color: #ffffff !important; /* Fundo mais claro para o tema de dia */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Sombra mais suave para não sobrecarregar a visibilidade durante o dia */
+  border: 2px solid #007bff; /* Borda azul clara na parte inferior da barra de navegação */
 }
 
 .theme-day .navbar-brand {
