@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { MenuItem } from './menu.item';
 
 @Component({
-  selector: 'app-menu-item',
-  templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.css'],
+    selector: 'app-menu-item',
+    templateUrl: './menu-item.component.html',
+    styleUrls: ['./menu-item.component.css'],
+    standalone: false
 })
 export class MenuItemComponent {
   @Input() menuItem: MenuItem = { title: 'Home', icon: ['fas', 'house'] };

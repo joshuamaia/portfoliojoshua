@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-exibir-download-curriculo',
-  templateUrl: './exibir-download-curriculo.component.html',
-  styleUrl: './exibir-download-curriculo.component.css',
+    selector: 'app-exibir-download-curriculo',
+    templateUrl: './exibir-download-curriculo.component.html',
+    styleUrl: './exibir-download-curriculo.component.css',
+    standalone: false
 })
 export class ExibirDownloadCurriculoComponent {
   pdfSrc = '../../assets/Joshua_MaiaRodrigues_Resume.pdf';
