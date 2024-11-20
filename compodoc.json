@@ -1,0 +1,6 @@
+{
+  "output": "documentation",
+  "tsconfig": "tsconfig.app.json",
+  "serve": true,
+  "open": true
+}
