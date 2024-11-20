@@ -18,11 +18,9 @@
               "pdfjs-dist/build/pdf",
               "pdfjs-dist/web/pdf_viewer"
             ],
-            "outputPath": {
-              "base": "docs"
-            },
+            "outputPath": "docs",
             "index": "src/index.html",
-            "polyfills": ["zone.js"],
+            "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
