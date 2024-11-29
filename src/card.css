@@ -59,7 +59,7 @@
 .theme-night .card {
   background: #121212; /* Fundo escuro geral */
   color: #e0e0e0; /* Texto mais claro para contraste */
-  border: 1px solid #194cff; /* Borda azul vibrante */
+  border: 1px solid #daa520; /* Borda azul vibrante */
 }
 
 .theme-night .card:hover {

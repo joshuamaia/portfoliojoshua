@@ -32,7 +32,7 @@ a:hover {
 
 .theme-night .topo {
   background: #262626; /* Fundo cinza muito escuro, quase preto */
-  border-bottom: 1px solid #194cff !important; /* Borda inferior em um cinza ainda mais escuro */
+  border-bottom: 1px solid #daa520 !important; /* Borda inferior em um cinza ainda mais escuro */
   color: #fff; /* Texto branco para contraste */
 }
 

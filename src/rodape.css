@@ -25,7 +25,7 @@ a:hover {
 
 .theme-night .rodape {
   background: #262626; /* Cor de fundo azul escuro do topo */
-  border-top: 1px solid #194cff; /* Cor azul usada no topo para a borda */
+  border-top: 1px solid #daa520; /* Cor azul usada no topo para a borda */
   color: #fff; /* Texto branco para contraste */
 }
 

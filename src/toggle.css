@@ -29,9 +29,9 @@
 /* Tema Noturno */
 .theme-night .toggle-theme-button {
   color: #fff; /* Texto branco para contraste no tema escuro */
-  background-color: #28527a; /* Fundo escuro */
+  background-color: #b8860b; /* Fundo escuro */
 }
 
 .theme-night .toggle-theme-button:hover {
-  background-color: #007bff; /* Um cinza mais escuro para o hover no tema noturno */
+  background-color: #c0a650; /* Um cinza mais escuro para o hover no tema noturno */
 }

@@ -11,16 +11,16 @@
 
 .theme-night .navbar {
   background-color: #333333 !important; /* Cor de fundo escura para a barra de navegação */
-  border: 1px solid #194cff;
+  border: 1px solid #daa520;
 }
 
 .theme-night .navbar-brand {
-  color: #00ddff; /* Cor azul clara para o logo/marca */
+  color: #b8860b; /* Cor azul clara para o logo/marca */
 }
 
 .theme-night .navbar-brand:hover,
 .theme-night .navbar-brand:focus {
-  color: #0099cc; /* Cor mais escura no hover */
+  color: #c0a650; /* Cor mais escura no hover */
 }
 
 .theme-day .navbar {

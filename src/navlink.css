@@ -36,7 +36,7 @@
 }
 
 .theme-night .active {
-  background: #28527a !important; /* Fundo mais escuro para itens ativos */
+  background: #b8860b !important; /* Fundo mais escuro para itens ativos */
   color: #fff !important; /* Texto branco para contraste */
   border-radius: 7px;
 }
@@ -57,7 +57,7 @@
 
 .theme-night .nav-item a:hover {
   color: #fff; /* Cor do texto no hover */
-  background-color: #007bff !important; /* Cor de fundo azul no hover */
+  background-color: #c0a650 !important; /* Cor de fundo azul no hover */
 }
 
 .theme-day ul {
