@@ -18,9 +18,27 @@
   color: #b8860b; /* Cor azul clara para o logo/marca */
 }
 
+.theme-night .navbar-toggler {
+  color: #b8860b !important; /* Cor azul clara para o logo/marca */
+}
+
+.theme-night .navbar-toggler-icon {
+  border-radius: 4px;
+  background-color: #b8860b; /* Define a cor do ícone */
+}
+
+.theme-day .navbar-toggler {
+  color: #007bff !important; /* Cor azul clara para o logo/marca */
+}
+
+.theme-day .navbar-toggler-icon {
+  border-radius: 4px;
+  background-color: #007bff; /* Define a cor do ícone */
+}
+
 .theme-night .navbar-brand:hover,
 .theme-night .navbar-brand:focus {
-  color: #c0a650; /* Cor mais escura no hover */
+  color: #007bff; /* Cor mais escura no hover */
 }
 
 .theme-day .navbar {
