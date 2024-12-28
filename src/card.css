@@ -63,10 +63,9 @@
 }
 
 .theme-night .card:hover {
-  transform: translateY(-5px) rotateX(5deg) rotateY(-5deg);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
+  box-shadow: 2px 2px 2px 4px #daa520;
 }
-
 .theme-night .card-footer a,
 .theme-night .card-footer a:hover {
   color: #bbb; /* Link mais claro para contraste */
@@ -103,8 +102,8 @@
 }
 
 .theme-day .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
+  box-shadow: 2px 2px 2px 4px #007bff;
 }
 
 .theme-day .card-footer a,
