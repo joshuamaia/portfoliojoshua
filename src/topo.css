@@ -40,6 +40,22 @@ a:hover {
   color: #adb5bd; /* Um cinza claro para links */
 }
 
+.theme-night a.textotopo {
+  color: #fff !important; /* Um cinza claro para links */
+
+  &:hover {
+    color: #daa520 !important;
+  }
+}
+
+.theme-night a.textopdf {
+  color: #fff !important; /* Um cinza claro para links */
+
+  &:hover {
+    color: #daa520 !important;
+  }
+}
+
 .theme-night a:hover {
   color: #ced4da; /* Cinza mais claro no hover */
 }
@@ -56,6 +72,22 @@ a:hover {
 
 .theme-day a {
   color: #333; /* Cor escura para links */
+}
+
+.theme-day a.textotopo {
+  color: #555 !important; /* Um cinza claro para links */
+
+  &:hover {
+    color: #007bff !important;
+  }
+}
+
+.theme-day a.textopdf {
+  color: #fff !important; /* Um cinza claro para links */
+
+  &:hover {
+    color: #007bff !important;
+  }
 }
 
 .theme-day a:hover {

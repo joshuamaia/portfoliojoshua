@@ -1,14 +1,14 @@
-<a style="cursor: pointer" (click)="open(curriculo)"
+<a class="textotopo" style="cursor: pointer" (click)="open(curriculo)"
   ><fa-icon [icon]="['fas', 'file-pdf']"></fa-icon
 ></a>
 <ng-template #curriculo>
   <div class="modal-header header-modal">
     <h4 class="modal-title pull-left">
       Currículo - Joshua Maia Rodrigues -
-      <a style="cursor: pointer" class="m-2" (click)="downloadPDF()"
+      <a style="cursor: pointer" class="m-2 textopdf" (click)="downloadPDF()"
         ><fa-icon [icon]="['fas', 'download']"></fa-icon
       ></a>
-      <a style="cursor: pointer" (click)="close()">
+      <a class="textopdf" style="cursor: pointer" (click)="close()">
         <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
       </a>
     </h4>

@@ -1,0 +1,7 @@
+.theme-day a {
+  color: #fff !important; /* Cor escura para links */
+
+  &:hover {
+    color: #007bff !important;
+  }
+}

@@ -16,6 +16,10 @@
 .theme-day .btn {
   background-color: #e7e7e7;
   color: #28527a;
+
+  &:hover {
+    color: #ffffff;
+  }
 }
 
 .theme-night {
@@ -26,4 +30,9 @@
 .theme-night .btn {
   background-color: #a67c00 !important;
   color: #ffffff;
+
+  &:hover {
+    background-color: #c89f40 !important;
+    color: #ffffff;
+  }
 }
