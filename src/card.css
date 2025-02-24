@@ -64,7 +64,7 @@
 
 .theme-night .card:hover {
   transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 2px 2px 2px 4px #daa520;
+  box-shadow: 1px 1px 1px 2px #daa520;
 }
 .theme-night .card-footer a,
 .theme-night .card-footer a:hover {
@@ -103,7 +103,7 @@
 
 .theme-day .card:hover {
   transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 2px 2px 2px 4px #007bff;
+  box-shadow: 1px 1px 1px 2px #007bff;
 }
 
 .theme-day .card-footer a,
