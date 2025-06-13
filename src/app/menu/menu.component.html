@@ -18,9 +18,14 @@
         <app-menu-item [menuItem]="menuItem"></app-menu-item>
         } @empty { Nenhum menu cadastrado }
       </ul>
-      <button class="toggle-theme-button" (click)="toggleTheme()">
-        {{ descricaoToggeTheme() }}
-      </button>
+      <div class="custom-toggle-wrapper" [class.tema-claro]="!toggeTheme()" [class.tema-escuro]="toggeTheme()">
+        <span class="toggle-label">Tema Claro</span>
+        <label class="custom-toggle">
+          <input type="checkbox" (change)="toggleTheme()" [checked]="toggeTheme()">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Tema Escuro</span>
+      </div>
     </div>
   </div>
 </nav>

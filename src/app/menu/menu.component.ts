@@ -9,6 +9,7 @@ import { ThemeService } from './theme.service';
     standalone: false
 })
 export class MenuComponent {
+
   constructor(private themeService: ThemeService) {}
 
   itensMenu = signal<MenuItem[]>([
@@ -45,8 +46,8 @@ export class MenuComponent {
     this.themeService.toggleTheme();
   }
 
-  descricaoToggeTheme(): string {
+  toggeTheme(): boolean {
     const savedTheme = localStorage.getItem('theme') as 'day' | 'night';
-    return savedTheme === 'day' ? 'Tema Escuro' : 'Tema Claro';
+    return savedTheme !== 'day';
   }
 }
