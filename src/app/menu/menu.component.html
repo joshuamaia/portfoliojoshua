@@ -16,15 +16,15 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @for (menuItem of itensMenu(); track menuItem.title) {
         <app-menu-item [menuItem]="menuItem"></app-menu-item>
-        } @empty { Nenhum menu cadastrado }
+        } @empty { No menu items registered }
       </ul>
       <div class="custom-toggle-wrapper" [class.tema-claro]="!toggeTheme()" [class.tema-escuro]="toggeTheme()">
-        <span class="toggle-label">Tema Claro</span>
+        <span class="toggle-label">Light Theme</span>
         <label class="custom-toggle">
           <input type="checkbox" (change)="toggleTheme()" [checked]="toggeTheme()">
           <span class="slider"></span>
         </label>
-        <span class="toggle-label">Tema Escuro</span>
+        <span class="toggle-label">Dark Theme</span>
       </div>
     </div>
   </div>

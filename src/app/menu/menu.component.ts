@@ -3,40 +3,39 @@ import { MenuItem } from './menu-item/menu.item';
 import { ThemeService } from './theme.service';
 
 @Component({
-    selector: 'app-menu',
-    templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.css'],
-    standalone: false
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css'],
+  standalone: false,
 })
 export class MenuComponent {
-
   constructor(private themeService: ThemeService) {}
 
   itensMenu = signal<MenuItem[]>([
     { title: 'Home', icon: ['fas', 'house'], routerLink: '/home' },
     {
-      title: 'Trabalhos',
+      title: 'Work Experience',
       icon: ['fas', 'briefcase'],
       routerLink: '/trabalhos',
     },
     {
-      title: 'Escolaridades',
+      title: 'Education',
       icon: ['fas', 'school'],
       subMenus: [
         {
-          title: 'Escolaridades',
+          title: 'Education',
           icon: ['fas', 'book-bookmark'],
           routerLink: '/escolaridades',
         },
         {
-          title: 'Escolaridades Extra',
+          title: 'Extra Education',
           icon: ['fas', 'school-flag'],
           routerLink: '/escolaridades/extra',
         },
       ],
     },
     {
-      title: 'Certificados',
+      title: 'Certificates',
       icon: ['fas', 'certificate'],
       routerLink: '/certificados',
     },
