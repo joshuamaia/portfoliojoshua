@@ -8,28 +8,48 @@
 }
 
 .theme-night .list-group-item {
-  background: #424242 !important; /* Um cinza médio para o cabeçalho padrão */
-  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    rgba(36, 36, 62, 0.9) 0%,
+    rgba(48, 43, 99, 0.9) 100%
+  ) !important;
+  backdrop-filter: blur(10px);
+  color: #00d4ff !important;
   padding: 10px !important;
+  border: none;
 }
 
 /* Tema Noturno */
 .theme-night .header-modal,
 .theme-night .card-header,
 .theme-night .card-footer {
-  background: #424242 !important; /* Um cinza médio para o cabeçalho padrão */
-  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    rgba(36, 36, 62, 0.95) 0%,
+    rgba(48, 43, 99, 0.95) 100%
+  ) !important;
+  backdrop-filter: blur(10px);
+  color: #00d4ff !important;
   padding: 12px !important;
   text-align: center !important;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
 }
 
 .theme-night .header-modal,
 .theme-night .card-header-destaque,
 .theme-night .card-footer {
-  background: #b8860b !important; /* Um azul muito escuro, quase preto para o destaque */
+  background: linear-gradient(
+    135deg,
+    #00d4ff 0%,
+    #0096c7 50%,
+    #4facfe 100%
+  ) !important;
   color: #ffffff !important;
   padding: 12px !important;
   text-align: center !important;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
 }
 
 .card-header h2,
@@ -40,12 +60,39 @@
 
 .theme-night .card-content {
   padding: 20px;
-  background: #1c1c1c; /* Fundo do conteúdo um pouco mais claro que o card geral */
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.8) 0%,
+    rgba(36, 36, 62, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+  color: #e2e8f0;
+}
+
+.theme-night .card-content p,
+.theme-night .card-content li {
+  color: #e2e8f0;
+}
+
+.theme-night .card-content h3,
+.theme-night .card-content h4 {
+  color: #00d4ff;
 }
 
 .theme-day .card-content {
   padding: 20px;
-  background: #ffffff; /* Fundo do conteúdo um pouco mais claro que o card geral */
+  background: transparent;
+  color: #2d3748;
+}
+
+.theme-day .card-content p,
+.theme-day .card-content li {
+  color: #2d3748;
+}
+
+.theme-day .card-content h3,
+.theme-day .card-content h4 {
+  color: #1a202c;
 }
 
 .card-content h3 {
@@ -56,23 +103,64 @@
   margin: 10px 0;
 }
 
+/* Garantir legibilidade de textos em ambos os temas */
+.theme-day .card p:not(.card-header p):not(.card-footer p),
+.theme-day .card li:not(.card-header li):not(.card-footer li),
+.theme-day .card span:not(.card-header span):not(.card-footer span) {
+  color: #2d3748 !important;
+}
+
+.theme-night .card p:not(.card-header p):not(.card-footer p),
+.theme-night .card li:not(.card-header li):not(.card-footer li),
+.theme-night .card span:not(.card-header span):not(.card-footer span) {
+  color: #e2e8f0 !important;
+}
+
+.theme-day .card h1:not(.card-header h1),
+.theme-day .card h2:not(.card-header h2),
+.theme-day .card h3:not(.card-header h3),
+.theme-day .card h4:not(.card-header h4),
+.theme-day .card h5:not(.card-header h5),
+.theme-day .card h6:not(.card-header h6) {
+  color: #1a202c !important;
+}
+
+.theme-night .card h1:not(.card-header h1),
+.theme-night .card h2:not(.card-header h2),
+.theme-night .card h3:not(.card-header h3),
+.theme-night .card h4:not(.card-header h4),
+.theme-night .card h5:not(.card-header h5),
+.theme-night .card h6:not(.card-header h6) {
+  color: #00d4ff !important;
+}
+
 .theme-night .card {
-  background: #121212; /* Fundo escuro geral */
-  color: #e0e0e0; /* Texto mais claro para contraste */
-  border: 1px solid #daa520; /* Borda azul vibrante */
+  background: linear-gradient(
+    135deg,
+    rgba(22, 33, 62, 0.95) 0%,
+    rgba(36, 36, 62, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
+  color: #00d4ff;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
 }
 
 .theme-night .card:hover {
   transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 1px 1px 1px 2px #daa520;
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5);
 }
 .theme-night .card-footer a,
 .theme-night .card-footer a:hover {
-  color: #bbb; /* Link mais claro para contraste */
+  color: #4facfe;
 }
 
 .theme-night .card-footer a:hover {
-  background: #555;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 150, 199, 0.3) 0%,
+    rgba(0, 212, 255, 0.3) 100%
+  );
 }
 
 /* Tema Diurno */
@@ -80,39 +168,55 @@
 .theme-day .card-header,
 .theme-day .card-footer,
 .theme-day .list-group-item {
-  background: #f1f1f1; /* Fundo claro */
-  color: #333; /* Texto escuro para contraste */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(248, 249, 255, 0.9) 100%
+  );
+  color: #5a67d8;
   padding: 12px !important;
   text-align: center !important;
+  border: none;
 }
 
 .theme-day .header-modal,
 .theme-day .card-header-destaque,
 .theme-day .card-footer {
-  background: #0056b3 !important; /* Um azul muito escuro, quase preto para o destaque */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
   color: #ffffff !important;
   padding: 12px !important;
   text-align: center !important;
+  border: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .theme-day .card {
-  background: #ffffff; /* Fundo claro geral */
-  color: #333; /* Texto escuro */
-  border: 1px solid #007bff; /* Borda azul clara */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 249, 255, 0.95) 100%
+  );
+  color: #1a202c;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.25);
 }
 
 .theme-day .card:hover {
   transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 1px 1px 1px 2px #007bff;
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
 }
 
 .theme-day .card-footer a,
 .theme-day .card-footer a:hover {
-  color: #666; /* Link escuro para contraste */
+  color: #5a67d8;
 }
 
 .theme-day .card-footer a:hover {
-  background: #ccc;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.2) 0%,
+    rgba(118, 75, 162, 0.2) 100%
+  );
 }
 
 .theme-day ul {
@@ -120,5 +224,10 @@
 }
 
 .theme-night ul {
-  background: #1c1c1c !important;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.9) 0%,
+    rgba(36, 36, 62, 0.9) 100%
+  ) !important;
+  backdrop-filter: blur(10px);
 }

@@ -24,9 +24,10 @@ a:hover {
 }
 
 .theme-night .rodape {
-  background: #262626; /* Cor de fundo azul escuro do topo */
-  border-top: 1px solid #daa520; /* Cor azul usada no topo para a borda */
-  color: #fff; /* Texto branco para contraste */
+  background: linear-gradient(135deg, #302b63 0%, #24243e 50%, #1a1a2e 100%);
+  border-top: 2px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  box-shadow: 0 -4px 20px rgba(0, 212, 255, 0.2);
 }
 
 .theme-night a {
@@ -34,32 +35,33 @@ a:hover {
 }
 
 .theme-night a.textorodape {
-  color: #fff !important; /* Um cinza claro para links */
+  color: #00d4ff !important;
 
   &:hover {
-    color: #daa520 !important;
+    color: #4facfe !important;
   }
 }
 
 .theme-day a.textorodape {
-  color: #555 !important; /* Um cinza claro para links */
+  color: #ffffff !important;
 
   &:hover {
-    color: #007bff !important;
+    color: #f0f0f0 !important;
   }
 }
 
 .theme-night a:hover {
-  color: #ced4da; /* Cinza mais claro no hover, para destacar interações */
+  color: #4facfe;
 }
 
 .theme-night .texto {
-  color: #fff; /* Texto branco para contraste */
+  color: #00d4ff;
 }
 .theme-day .rodape {
-  background: #f1f1f1; /* Fundo claro */
-  border-top: 1px solid #007bff; /* Borda superior em cinza claro */
-  color: #333 !important; /* Texto escuro para contraste */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-top: 2px solid rgba(118, 75, 162, 0.3);
+  color: #ffffff !important;
+  box-shadow: 0 -4px 20px rgba(102, 126, 234, 0.2);
 }
 
 @media (max-width: 576px) {

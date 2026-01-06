@@ -20,71 +20,153 @@
   margin-right: 5px; /* Espaçamento à direita dos ícones */
 }
 
+.theme-day .navbar-collapse {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.theme-day .navbar-nav {
+  background: transparent !important;
+}
+
+.theme-night .navbar-collapse {
+  background: linear-gradient(135deg, #302b63 0%, #24243e 100%) !important;
+}
+
+.theme-night .navbar-nav {
+  background: transparent !important;
+}
+
 /* Responsividade */
 @media (max-width: 992px) {
   .theme-night .navbar-collapse {
-    background-color: #333333; /* Cor de fundo no modo colapsado mais escura */
+    background: linear-gradient(135deg, #302b63 0%, #24243e 100%) !important;
   }
   .theme-day .navbar-collapse {
-    background-color: #fff; /* Cor de fundo no modo colapsado mais escura */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  }
+
+  .theme-day .navbar-nav {
+    background: transparent !important;
+  }
+
+  .theme-night .navbar-nav {
+    background: transparent !important;
   }
 }
 
 .theme-night ul {
-  background-color: #2a2a2a;
-  border-radius: 6px; /* Cor de fundo escura para a lista */
+  background: linear-gradient(
+    135deg,
+    rgba(48, 43, 99, 0.95) 0%,
+    rgba(36, 36, 62, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
 }
 
 .theme-night .active {
-  background: #b8860b !important; /* Fundo mais escuro para itens ativos */
-  color: #fff !important; /* Texto branco para contraste */
+  background: linear-gradient(135deg, #00d4ff 0%, #0096c7 100%) !important;
+  color: #0f0c29 !important;
   border-radius: 7px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
 }
 
 .theme-night .dropdown-menu {
   border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Sombra mais definida para o dropdown */
-  background-color: #333333 !important; /* Fundo escuro para o dropdown */
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(48, 43, 99, 0.98) 0%,
+    rgba(36, 36, 62, 0.98) 100%
+  ) !important;
+  backdrop-filter: blur(10px);
+}
+
+.theme-night .dropdown-menu .dropdown-item {
+  color: #00d4ff !important;
+}
+
+.theme-night .dropdown-menu .dropdown-item:hover {
+  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.3) 0%,
+    rgba(0, 150, 199, 0.3) 100%
+  ) !important;
 }
 
 .theme-night .nav-link {
-  color: #ccc; /* Cor mais clara para os links, para melhor contraste */
+  color: #00d4ff;
 }
 
 .theme-night .nav-item a {
-  color: #bbb; /* Cor padrão dos itens do dropdown mais clara para contraste */
+  color: #4facfe;
 }
 
 .theme-night .nav-item a:hover {
-  color: #fff; /* Cor do texto no hover */
-  background-color: #c0a650 !important; /* Cor de fundo azul no hover */
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 150, 199, 0.6) 0%,
+    rgba(0, 212, 255, 0.6) 100%
+  ) !important;
+  border-radius: 6px;
 }
 
 .theme-day ul {
-  background-color: #ffffff; /* Fundo claro para a lista */
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.95) 0%,
+    rgba(118, 75, 162, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
 }
 
 .theme-day .active {
-  background: #0056b3; /* Fundo mais claro para itens ativos */
-  color: #fff !important; /* Texto escuro para contraste */
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+  color: #ffffff !important;
   border-radius: 7px;
+  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
 }
 
 .theme-day .dropdown-menu {
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais suave para o dropdown */
-  background-color: #f1f1f1; /* Fundo claro para o dropdown */
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.98) 0%,
+    rgba(118, 75, 162, 0.98) 100%
+  ) !important;
+  backdrop-filter: blur(10px);
+}
+
+.theme-day .dropdown-menu .dropdown-item {
+  color: #ffffff !important;
+}
+
+.theme-day .dropdown-menu .dropdown-item:hover {
+  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    rgba(118, 75, 162, 0.8) 0%,
+    rgba(102, 126, 234, 0.8) 100%
+  ) !important;
 }
 
 .theme-day .nav-link {
-  color: #666; /* Cor escura para os links, para melhor contraste */
+  color: #ffffff;
 }
 
 .theme-day .nav-item a {
-  color: #555; /* Cor escura padrão dos itens do dropdown para contraste */
+  color: #ffffff;
 }
 
 .theme-day .nav-item a:hover {
-  color: #fff; /* Cor do texto no hover */
-  background-color: #007bff; /* Cor de fundo azul no hover */
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(118, 75, 162, 0.6) 0%,
+    rgba(102, 126, 234, 0.6) 100%
+  ) !important;
+  border-radius: 6px;
 }

@@ -18,20 +18,24 @@
 
 /* Tema Diurno */
 .theme-day .toggle-theme-button {
-  color: #333; /* Cor de texto mais escura para melhor contraste no tema claro */
-  background-color: #ddd; /* Fundo mais claro */
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .theme-day .toggle-theme-button:hover {
-  background-color: #ccc; /* Fundo mais escuro no hover no tema claro */
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* Tema Noturno */
 .theme-night .toggle-theme-button {
-  color: #fff; /* Texto branco para contraste no tema escuro */
-  background-color: #b8860b; /* Fundo escuro */
+  color: #ffffff;
+  background: linear-gradient(135deg, #00d4ff 0%, #0096c7 50%, #4facfe 100%);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
 }
 
 .theme-night .toggle-theme-button:hover {
-  background-color: #c0a650; /* Um cinza mais escuro para o hover no tema noturno */
+  background: linear-gradient(135deg, #4facfe 0%, #0096c7 50%, #00d4ff 100%);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
 }

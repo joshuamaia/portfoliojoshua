@@ -10,30 +10,37 @@
 
 /* Tema Diurno */
 .theme-day {
-  background-color: #ffffff;
-  color: #333;
+  background-color: #f8f9ff;
+  color: #1a202c;
 }
 
 .theme-day .btn {
-  background-color: #e7e7e7;
-  color: #28527a;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 
   &:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
     color: #ffffff;
   }
 }
 
 .theme-night {
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #0f0c29;
+  color: #00d4ff;
 }
 
 .theme-night .btn {
-  background-color: #a67c00 !important;
+  background: linear-gradient(135deg, #00d4ff 0%, #0096c7 50%, #4facfe 100%) !important;
   color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
 
   &:hover {
-    background-color: #c89f40 !important;
+    background: linear-gradient(135deg, #4facfe 0%, #0096c7 50%, #00d4ff 100%) !important;
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
     color: #ffffff;
   }
 }

@@ -1,7 +1,15 @@
 .theme-day a {
-  color: #fff !important; /* Cor escura para links */
+  color: #ffffff !important;
 
   &:hover {
-    color: #007bff !important;
+    color: #f0f0f0 !important;
+  }
+}
+
+.theme-night a {
+  color: #00d4ff !important;
+
+  &:hover {
+    color: #4facfe !important;
   }
 }

@@ -10,47 +10,57 @@
 }
 
 .theme-night .navbar {
-  background-color: #333333 !important; /* Cor de fundo escura para a barra de navegação */
-  border: 1px solid #daa520;
+  background: linear-gradient(135deg, #302b63 0%, #24243e 100%) !important;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
+}
+
+.theme-night .navbar-nav {
+  background: transparent !important;
 }
 
 .theme-night .navbar-brand {
-  color: #b8860b; /* Cor azul clara para o logo/marca */
+  color: #00d4ff;
 }
 
 .theme-night .navbar-toggler {
-  color: #b8860b !important; /* Cor azul clara para o logo/marca */
+  color: #00d4ff !important;
 }
 
 .theme-night .navbar-toggler-icon {
   border-radius: 4px;
-  background-color: #b8860b; /* Define a cor do ícone */
+  background-color: #00d4ff;
 }
 
 .theme-day .navbar-toggler {
-  color: #007bff !important; /* Cor azul clara para o logo/marca */
+  color: #ffffff !important;
 }
 
 .theme-day .navbar-toggler-icon {
   border-radius: 4px;
-  background-color: #007bff; /* Define a cor do ícone */
+  background-color: #ffffff;
 }
 
 .theme-night .navbar-brand:hover,
 .theme-night .navbar-brand:focus {
-  color: #805f00; /* Cor mais escura no hover */
+  color: #4facfe;
 }
 
 .theme-day .navbar {
-  background-color: #ffffff !important; /* Fundo mais claro para o tema de dia */
-  border: 1px solid #007bff; /* Borda azul clara na parte inferior da barra de navegação */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.25);
+}
+
+.theme-day .navbar-nav {
+  background: transparent !important;
 }
 
 .theme-day .navbar-brand {
-  color: #007bff; /* Cor azul, mais escura que a do tema noturno para melhor contraste com o fundo claro */
+  color: #ffffff;
 }
 
 .theme-day .navbar-brand:hover,
 .theme-day .navbar-brand:focus {
-  color: #0056b3; /* Cor ainda mais escura no hover para manter a legibilidade e o destaque */
+  color: #f0f0f0;
 }
