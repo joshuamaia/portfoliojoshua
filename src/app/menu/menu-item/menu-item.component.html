@@ -1,37 +1,39 @@
 @if (!temSubMenu(menuItem)) {
-<li class="nav-item">
-  <a
-    class="nav-link"
-    aria-current="page"
-    [routerLink]="menuItem.routerLink"
-    routerLinkActive="active"
-    ><fa-icon [icon]="menuItem.icon"> </fa-icon> {{ menuItem.title }}</a
-  >
-</li>
-} @else {
-<li class="nav-item dropdown">
-  <a
-    class="nav-link dropdown-toggle"
-    href="#"
-    id="navbarDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <fa-icon [icon]="menuItem.icon"> </fa-icon> {{ menuItem.title }}
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li *ngFor="let subMenuItem of menuItem.subMenus" class="nav-item">
-      <a
-        class="nav-link"
-        aria-current="page"
-        [routerLink]="subMenuItem.routerLink"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        ><fa-icon [icon]="subMenuItem.icon"> </fa-icon>
-        {{ subMenuItem.title }}</a
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      aria-current="page"
+      [routerLink]="menuItem.routerLink"
+      routerLinkActive="active"
+      ><fa-icon [icon]="menuItem.icon"> </fa-icon> {{ menuItem.title }}</a
       >
     </li>
-  </ul>
-</li>
-}
+  } @else {
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        >
+        <fa-icon [icon]="menuItem.icon"> </fa-icon> {{ menuItem.title }}
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @for (subMenuItem of menuItem.subMenus; track subMenuItem) {
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              [routerLink]="subMenuItem.routerLink"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><fa-icon [icon]="subMenuItem.icon"> </fa-icon>
+              {{ subMenuItem.title }}</a
+              >
+            </li>
+          }
+        </ul>
+      </li>
+    }
