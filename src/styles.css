@@ -8,39 +8,79 @@
 @import "./navbar.css";
 @import "./menu.css";
 
-/* Tema Diurno */
+/* Tema Claro — fundo gelo, texto carvão, destaque azul sólido */
 .theme-day {
-  background-color: #f8f9ff;
-  color: #1a202c;
+  --color-bg: #f5f5f5;
+  --color-text: #2c2c2c;
+  --color-text-heading: #1e1e1e;
+  --color-accent: #4a90e2;
+  --color-accent-alt: #7b2cbf;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f4f9;
+  --color-on-accent: #ffffff;
+  --color-header-highlight: #4a90e2;
+  --color-header: #ffffff;
+  --color-header-text: #1e1e1e;
+  --color-link: #4a90e2;
+  --color-link-hover: #7b2cbf;
+  --color-navbar-bg: #ffffff;
+  --color-navbar-text: #1e1e1e;
+  --shadow-accent: rgba(74, 144, 226, 0.2);
+  --shadow-accent-strong: rgba(74, 144, 226, 0.35);
+  --color-border-accent: rgba(74, 144, 226, 0.35);
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .theme-day .btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
   border: none;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px var(--shadow-accent);
 
   &:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-    color: #ffffff;
+    background-color: var(--color-accent-alt);
+    box-shadow: 0 6px 16px var(--shadow-accent-strong);
+    color: var(--color-on-accent);
   }
 }
 
+/* Tema Escuro — fundo carvão, texto cinza-claro, destaque roxo sólido */
 .theme-night {
-  background-color: #0f0c29;
-  color: #00d4ff;
+  --color-bg: #121212;
+  --color-text: #e0e0e0;
+  --color-text-muted: rgba(255, 255, 255, 0.85);
+  --color-text-heading: rgba(255, 255, 255, 0.85);
+  --color-accent: #bb86fc;
+  --color-accent-alt: #0ff0fc;
+  --color-surface: #1a1a1a;
+  --color-surface-elevated: #1e1e1e;
+  --color-on-accent: #ffffff;
+  --color-header-highlight: #7b2cbf;
+  --color-header: #1e1e1e;
+  --color-header-text: #e0e0e0;
+  --color-link: #bb86fc;
+  --color-link-hover: #0ff0fc;
+  --color-navbar-bg: #1a1a1a;
+  --color-navbar-text: #e0e0e0;
+  --shadow-accent: rgba(123, 44, 191, 0.25);
+  --shadow-accent-strong: rgba(187, 134, 252, 0.35);
+  --color-border-accent: rgba(187, 134, 252, 0.25);
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .theme-night .btn {
-  background: linear-gradient(135deg, #00d4ff 0%, #0096c7 50%, #4facfe 100%) !important;
-  color: #ffffff;
+  background-color: var(--color-header-highlight) !important;
+  color: var(--color-on-accent);
   border: none;
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 4px 12px var(--shadow-accent);
 
   &:hover {
-    background: linear-gradient(135deg, #4facfe 0%, #0096c7 50%, #00d4ff 100%) !important;
-    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
-    color: #ffffff;
+    background-color: #9d4edd !important;
+    box-shadow: 0 6px 16px var(--shadow-accent-strong);
+    color: var(--color-on-accent);
   }
 }

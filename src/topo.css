@@ -13,7 +13,7 @@
   height: 90px;
   border-radius: 50%;
   margin-right: 20px;
-  border: 2px solid #fff; /* A borda é branca em ambos os temas para contraste */
+  border: 2px solid #fff;
 }
 
 .texto {
@@ -26,78 +26,54 @@ a {
   transition: color 0.2s ease-in-out;
 }
 
-a:hover {
-  transition: color 0.2s ease-in-out;
-}
-
-.theme-night .topo {
-  background: linear-gradient(135deg, #302b63 0%, #24243e 50%, #1a1a2e 100%);
-  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
-  color: #00d4ff;
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
-}
-
-.theme-night a {
-  color: #adb5bd; /* Um cinza claro para links */
-}
-
-.theme-night a.textotopo {
-  color: #00d4ff !important;
-
-  &:hover {
-    color: #4facfe !important;
-  }
-}
-
-.theme-night a.textopdf {
-  color: #00d4ff !important;
-
-  &:hover {
-    color: #4facfe !important;
-  }
-}
-
-.theme-night a:hover {
-  color: #ced4da; /* Cinza mais claro no hover */
-}
-
-.theme-night .texto {
-  color: #00d4ff;
-}
-
 .theme-day .topo {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-bottom: 2px solid rgba(118, 75, 162, 0.3);
-  color: #ffffff;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+  background: var(--color-surface);
+  border-bottom: 3px solid var(--color-accent);
+  color: var(--color-text-heading);
+  box-shadow: 0 2px 12px var(--shadow-accent);
 }
 
 .theme-day a {
-  color: #333; /* Cor escura para links */
+  color: var(--color-text);
 }
 
-.theme-day a.textotopo {
-  color: #ffffff !important;
-
-  &:hover {
-    color: #f0f0f0 !important;
-  }
-}
-
+.theme-day a.textotopo,
 .theme-day a.textopdf {
-  color: #ffffff !important;
-
-  &:hover {
-    color: #f0f0f0 !important;
-  }
+  color: var(--color-accent) !important;
 }
 
-.theme-day a:hover {
-  color: #f0f0f0;
+.theme-day a.textotopo:hover,
+.theme-day a.textopdf:hover {
+  color: var(--color-accent-alt) !important;
 }
 
 .theme-day .texto {
-  color: #ffffff;
+  color: var(--color-text-heading);
+}
+
+.theme-night .topo {
+  background: var(--color-surface);
+  border-bottom: 3px solid var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 0 2px 12px var(--shadow-accent);
+}
+
+.theme-night a {
+  color: var(--color-text-muted);
+}
+
+.theme-night a.textotopo,
+.theme-night a.textopdf {
+  color: var(--color-accent) !important;
+}
+
+.theme-night a.textotopo:hover,
+.theme-night a.textopdf:hover {
+  color: var(--color-accent-alt) !important;
+}
+
+.theme-night .texto {
+  color: var(--color-text-heading);
 }
 
 @media (max-width: 576px) {

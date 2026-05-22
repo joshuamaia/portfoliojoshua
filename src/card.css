@@ -1,4 +1,3 @@
-/* Estilos compartilhados que não mudam com o tema */
 .header-modal,
 .card,
 .card-header,
@@ -7,92 +6,92 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.theme-night .list-group-item {
-  background: linear-gradient(
-    135deg,
-    rgba(36, 36, 62, 0.9) 0%,
-    rgba(48, 43, 99, 0.9) 100%
-  ) !important;
-  backdrop-filter: blur(10px);
-  color: #00d4ff !important;
-  padding: 10px !important;
-  border: none;
-}
-
-/* Tema Noturno */
-.theme-night .header-modal,
-.theme-night .card-header,
-.theme-night .card-footer {
-  background: linear-gradient(
-    135deg,
-    rgba(36, 36, 62, 0.95) 0%,
-    rgba(48, 43, 99, 0.95) 100%
-  ) !important;
-  backdrop-filter: blur(10px);
-  color: #00d4ff !important;
-  padding: 12px !important;
-  text-align: center !important;
-  border: none;
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
-}
-
-.theme-night .header-modal,
-.theme-night .card-header-destaque,
-.theme-night .card-footer {
-  background: linear-gradient(
-    135deg,
-    #00d4ff 0%,
-    #0096c7 50%,
-    #4facfe 100%
-  ) !important;
-  color: #ffffff !important;
-  padding: 12px !important;
-  text-align: center !important;
-  border: none;
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
-}
-
 .card-header h2,
 .card-header-destaque h2 {
   margin: 0;
   font-size: 1.3em !important;
+  color: inherit !important;
+}
+
+/* Cabeçalho em destaque — cor sólida, texto branco legível */
+.theme-day .card-header-destaque,
+.theme-night .card-header-destaque,
+.theme-day .header-modal,
+.theme-night .header-modal {
+  background: var(--color-header-highlight) !important;
+  color: var(--color-on-accent) !important;
+  padding: 12px !important;
+  text-align: center !important;
+  border: none;
+  border-bottom: 3px solid var(--color-accent-alt);
+  box-shadow: 0 2px 8px var(--shadow-accent);
+}
+
+/* Cabeçalho normal */
+.theme-day .card-header,
+.theme-night .card-header {
+  background: var(--color-header) !important;
+  color: var(--color-header-text) !important;
+  padding: 12px !important;
+  text-align: center !important;
+  border: none;
+  border-bottom: 3px solid var(--color-accent);
+  box-shadow: none;
+}
+
+.theme-day .card-footer,
+.theme-night .card-footer {
+  background: var(--color-surface-elevated, var(--color-surface)) !important;
+  color: var(--color-text) !important;
+  padding: 12px !important;
+  text-align: center !important;
+  border-top: 1px solid var(--color-border-accent);
+}
+
+.theme-day .list-group-item {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  padding: 10px !important;
+  border: 1px solid var(--color-border-accent);
+}
+
+.theme-night .list-group-item {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  padding: 10px !important;
+  border: 1px solid var(--color-border-accent);
 }
 
 .theme-night .card-content {
   padding: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 26, 46, 0.8) 0%,
-    rgba(36, 36, 62, 0.8) 100%
-  );
-  backdrop-filter: blur(10px);
-  color: #e2e8f0;
+  background: var(--color-surface);
+  color: var(--color-text);
 }
 
 .theme-night .card-content p,
 .theme-night .card-content li {
-  color: #e2e8f0;
+  color: var(--color-text);
 }
 
 .theme-night .card-content h3,
 .theme-night .card-content h4 {
-  color: #00d4ff;
+  color: var(--color-accent);
 }
 
 .theme-day .card-content {
   padding: 20px;
-  background: transparent;
-  color: #2d3748;
+  background: var(--color-surface-muted);
+  color: var(--color-text);
 }
 
 .theme-day .card-content p,
 .theme-day .card-content li {
-  color: #2d3748;
+  color: var(--color-text);
 }
 
 .theme-day .card-content h3,
 .theme-day .card-content h4 {
-  color: #1a202c;
+  color: var(--color-text-heading);
 }
 
 .card-content h3 {
@@ -103,131 +102,80 @@
   margin: 10px 0;
 }
 
-/* Garantir legibilidade de textos em ambos os temas */
-.theme-day .card p:not(.card-header p):not(.card-footer p),
-.theme-day .card li:not(.card-header li):not(.card-footer li),
-.theme-day .card span:not(.card-header span):not(.card-footer span) {
-  color: #2d3748 !important;
+/* Títulos só no corpo do card — evita sobrescrever cabeçalhos */
+.theme-day .card-content h1,
+.theme-day .card-content h2,
+.theme-day .card-content h3,
+.theme-day .card-content h4,
+.theme-day .card-content h5,
+.theme-day .card-content h6 {
+  color: var(--color-text-heading);
 }
 
-.theme-night .card p:not(.card-header p):not(.card-footer p),
-.theme-night .card li:not(.card-header li):not(.card-footer li),
-.theme-night .card span:not(.card-header span):not(.card-footer span) {
-  color: #e2e8f0 !important;
+.theme-night .card-content h1,
+.theme-night .card-content h2,
+.theme-night .card-content h3,
+.theme-night .card-content h4,
+.theme-night .card-content h5,
+.theme-night .card-content h6 {
+  color: var(--color-text-heading);
 }
 
-.theme-day .card h1:not(.card-header h1),
-.theme-day .card h2:not(.card-header h2),
-.theme-day .card h3:not(.card-header h3),
-.theme-day .card h4:not(.card-header h4),
-.theme-day .card h5:not(.card-header h5),
-.theme-day .card h6:not(.card-header h6) {
-  color: #1a202c !important;
-}
-
-.theme-night .card h1:not(.card-header h1),
-.theme-night .card h2:not(.card-header h2),
-.theme-night .card h3:not(.card-header h3),
-.theme-night .card h4:not(.card-header h4),
-.theme-night .card h5:not(.card-header h5),
-.theme-night .card h6:not(.card-header h6) {
-  color: #00d4ff !important;
-}
-
-.theme-night .card {
-  background: linear-gradient(
-    135deg,
-    rgba(22, 33, 62, 0.95) 0%,
-    rgba(36, 36, 62, 0.95) 100%
-  );
-  backdrop-filter: blur(10px);
-  color: #00d4ff;
-  border: 1px solid transparent;
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
-}
-
-.theme-night .card:hover {
-  transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5);
-}
-.theme-night .card-footer a,
-.theme-night .card-footer a:hover {
-  color: #4facfe;
-}
-
-.theme-night .card-footer a:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 150, 199, 0.3) 0%,
-    rgba(0, 212, 255, 0.3) 100%
-  );
-}
-
-/* Tema Diurno */
-.theme-day .header-modal,
-.theme-day .card-header,
-.theme-day .card-footer,
-.theme-day .list-group-item {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(248, 249, 255, 0.9) 100%
-  );
-  color: #5a67d8;
-  padding: 12px !important;
-  text-align: center !important;
-  border: none;
-}
-
-.theme-day .header-modal,
-.theme-day .card-header-destaque,
-.theme-day .card-footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  color: #ffffff !important;
-  padding: 12px !important;
-  text-align: center !important;
-  border: none;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+.theme-day .card-content p,
+.theme-day .card-content li,
+.theme-day .card-content span,
+.theme-night .card-content p,
+.theme-night .card-content li,
+.theme-night .card-content span {
+  color: var(--color-text);
 }
 
 .theme-day .card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(248, 249, 255, 0.95) 100%
-  );
-  color: #1a202c;
-  border: 1px solid transparent;
-  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.25);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-accent);
+  box-shadow: 0 4px 16px var(--shadow-accent);
 }
 
 .theme-day .card:hover {
-  transform: translateY(-3px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--shadow-accent-strong);
+}
+
+.theme-night .card {
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-accent);
+  box-shadow: 0 4px 16px var(--shadow-accent);
+}
+
+.theme-night .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--shadow-accent-strong);
 }
 
 .theme-day .card-footer a,
 .theme-day .card-footer a:hover {
-  color: #5a67d8;
+  color: var(--color-accent);
 }
 
 .theme-day .card-footer a:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.2) 0%,
-    rgba(118, 75, 162, 0.2) 100%
-  );
+  background: rgba(74, 144, 226, 0.1);
+}
+
+.theme-night .card-footer a,
+.theme-night .card-footer a:hover {
+  color: var(--color-accent);
+}
+
+.theme-night .card-footer a:hover {
+  background: rgba(187, 134, 252, 0.15);
 }
 
 .theme-day ul {
-  background: #ffffff !important;
+  background: var(--color-surface) !important;
 }
 
 .theme-night ul {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 26, 46, 0.9) 0%,
-    rgba(36, 36, 62, 0.9) 100%
-  ) !important;
-  backdrop-filter: blur(10px);
+  background: var(--color-surface) !important;
 }

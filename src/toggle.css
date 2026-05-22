@@ -1,9 +1,6 @@
-/* Estilos globais do botão de toggle */
 .toggle-theme-button {
   padding: 10px 20px;
   font-size: 16px;
-  color: #fff;
-  background-color: #4caf50; /* Verde como cor de fundo padrão */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -11,31 +8,22 @@
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.toggle-theme-button:hover {
-  background-color: #45a049; /* Um verde mais escuro para o hover */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Tema Diurno */
 .theme-day .toggle-theme-button {
-  color: #ffffff;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  box-shadow: 0 4px 12px var(--shadow-accent);
 }
 
 .theme-day .toggle-theme-button:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background-color: var(--color-accent-alt);
 }
 
-/* Tema Noturno */
 .theme-night .toggle-theme-button {
-  color: #ffffff;
-  background: linear-gradient(135deg, #00d4ff 0%, #0096c7 50%, #4facfe 100%);
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+  color: var(--color-on-accent);
+  background-color: var(--color-header-highlight);
+  box-shadow: 0 4px 12px var(--shadow-accent);
 }
 
 .theme-night .toggle-theme-button:hover {
-  background: linear-gradient(135deg, #4facfe 0%, #0096c7 50%, #00d4ff 100%);
-  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+  background-color: #9d4edd;
 }

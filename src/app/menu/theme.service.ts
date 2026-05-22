@@ -9,7 +9,6 @@ export class ThemeService {
 
   constructor(rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);
-    this.setTheme('night');
     this.loadTheme();
   }
 
@@ -21,8 +20,9 @@ export class ThemeService {
   }
 
   loadTheme(): void {
-    const savedTheme = localStorage.getItem('theme') as 'day' | 'night'; // Default to night theme
-    this.setTheme(savedTheme);
+    const saved = localStorage.getItem('theme');
+    const theme: 'day' | 'night' = saved === 'day' ? 'day' : 'night';
+    this.setTheme(theme);
   }
 
   toggleTheme(): void {

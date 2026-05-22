@@ -1,55 +1,18 @@
 .navbar {
   border-radius: 6px !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 500;
 }
 
 .navbar-brand {
-  font-weight: bold; /* Negrito para destacar a marca */
-  transition: color 0.3s; /* Transição suave para mudanças de cor */
-}
-
-.theme-night .navbar {
-  background: linear-gradient(135deg, #302b63 0%, #24243e 100%) !important;
-  border: 1px solid transparent;
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
-}
-
-.theme-night .navbar-nav {
-  background: transparent !important;
-}
-
-.theme-night .navbar-brand {
-  color: #00d4ff;
-}
-
-.theme-night .navbar-toggler {
-  color: #00d4ff !important;
-}
-
-.theme-night .navbar-toggler-icon {
-  border-radius: 4px;
-  background-color: #00d4ff;
-}
-
-.theme-day .navbar-toggler {
-  color: #ffffff !important;
-}
-
-.theme-day .navbar-toggler-icon {
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-.theme-night .navbar-brand:hover,
-.theme-night .navbar-brand:focus {
-  color: #4facfe;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .theme-day .navbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  border: 1px solid transparent;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.25);
+  background: var(--color-navbar-bg) !important;
+  border-bottom: 2px solid var(--color-accent);
+  box-shadow: 0 2px 12px var(--shadow-accent);
 }
 
 .theme-day .navbar-nav {
@@ -57,10 +20,47 @@
 }
 
 .theme-day .navbar-brand {
-  color: #ffffff;
+  color: var(--color-accent);
 }
 
 .theme-day .navbar-brand:hover,
 .theme-day .navbar-brand:focus {
-  color: #f0f0f0;
+  color: var(--color-accent-alt);
+}
+
+.theme-day .navbar-toggler {
+  color: var(--color-accent) !important;
+}
+
+.theme-day .navbar-toggler-icon {
+  border-radius: 4px;
+  background-color: var(--color-accent);
+}
+
+.theme-night .navbar {
+  background: var(--color-navbar-bg) !important;
+  border-bottom: 2px solid var(--color-accent);
+  box-shadow: 0 2px 12px var(--shadow-accent);
+}
+
+.theme-night .navbar-nav {
+  background: transparent !important;
+}
+
+.theme-night .navbar-brand {
+  color: var(--color-accent);
+}
+
+.theme-night .navbar-brand:hover,
+.theme-night .navbar-brand:focus {
+  color: var(--color-accent-alt);
+}
+
+.theme-night .navbar-toggler {
+  color: var(--color-accent) !important;
+}
+
+.theme-night .navbar-toggler-icon {
+  border-radius: 4px;
+  background-color: var(--color-accent);
 }

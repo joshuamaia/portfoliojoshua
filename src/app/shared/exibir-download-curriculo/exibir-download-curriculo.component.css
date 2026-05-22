@@ -1,15 +1,15 @@
 .theme-day a {
-  color: #ffffff !important;
+  color: var(--color-accent, #4a90e2) !important;
+}
 
-  &:hover {
-    color: #f0f0f0 !important;
-  }
+.theme-day a:hover {
+  color: var(--color-accent-alt, #7b2cbf) !important;
 }
 
 .theme-night a {
-  color: #00d4ff !important;
+  color: var(--color-accent, #bb86fc) !important;
+}
 
-  &:hover {
-    color: #4facfe !important;
-  }
+.theme-night a:hover {
+  color: var(--color-accent-alt, #0ff0fc) !important;
 }
