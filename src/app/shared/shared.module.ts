@@ -5,18 +5,22 @@ import {
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { fontAwesomeIcons } from '../config/font-awesome-icons';
 import { CertificadoTemplateComponent } from './certificado-template/certificado-template.component';
 import { CertificadoEscolaridadeExtraComponent } from './certificado-escolaridade-extra/certificado-escolaridade-extra.component';
 import { ExibirDownloadCurriculoComponent } from './exibir-download-curriculo/exibir-download-curriculo.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { RevealDirective } from './reveal.directive';
 
 @NgModule({
   declarations: [
     CertificadoTemplateComponent,
     CertificadoEscolaridadeExtraComponent,
     ExibirDownloadCurriculoComponent,
+    PageHeaderComponent,
+    RevealDirective,
   ],
   imports: [CommonModule, FontAwesomeModule, NgbModule, PdfViewerModule],
   exports: [
@@ -24,6 +28,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CertificadoTemplateComponent,
     CertificadoEscolaridadeExtraComponent,
     ExibirDownloadCurriculoComponent,
+    PageHeaderComponent,
+    RevealDirective,
   ],
 })
 export class SharedModule {

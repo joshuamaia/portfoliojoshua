@@ -1,19 +1,44 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card mt-3">
-        <div
-          [ngClass]="{
-            'card-header': !destaque,
-            'card-header-destaque': destaque
-          }"
-        >
-          <h2>{{ titulo }}</h2>
-        </div>
-        <div class="card-content">
-          <ng-content></ng-content>
-        </div>
-      </div>
+<article class="card-x job">
+  <header class="job-head">
+    <div class="job-id">
+      <h2 class="job-company">{{ job.company }}</h2>
+      @if (job.role) {
+        <p class="job-role">{{ job.role }}</p>
+      }
+      @if (job.client) {
+        <p class="job-client">
+          <fa-icon [icon]="['fas', 'building']"></fa-icon> Client: {{ job.client }}
+        </p>
+      }
     </div>
+    <div class="job-meta">
+      @if (!job.end) {
+        <span class="badge-x badge-live"><span class="pulse"></span> Current</span>
+      }
+      <span class="job-period">
+        <fa-icon [icon]="['fas', 'calendar']"></fa-icon> {{ periodo }}
+      </span>
+      <span class="job-duration">{{ duracao }}</span>
+    </div>
+  </header>
+
+  <h3 class="label">Activities</h3>
+  <ul class="bullets">
+    @for (atividade of atividadesVisiveis(); track atividade) {
+      <li>{{ atividade }}</li>
+    }
+  </ul>
+  @if (job.activities.length > limite) {
+    <button type="button" class="link-btn" (click)="alternar()" [attr.aria-expanded]="aberto()">
+      {{ aberto() ? 'Show less' : 'Show all ' + job.activities.length + ' activities' }}
+      <fa-icon [icon]="['fas', 'chevron-down']" [class.rotated]="aberto()"></fa-icon>
+    </button>
+  }
+
+  <h3 class="label">Technologies</h3>
+  <div class="chips">
+    @for (tech of job.technologies; track tech) {
+      <span class="chip">{{ tech }}</span>
+    }
   </div>
-</div>
+</article>

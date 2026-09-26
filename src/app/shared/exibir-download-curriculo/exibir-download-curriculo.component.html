@@ -1,24 +1,50 @@
-<a class="textotopo" style="cursor: pointer" (click)="open(curriculo)"
-  ><fa-icon [icon]="['fas', 'file-pdf']"></fa-icon
-></a>
-<ng-template #curriculo>
-  <div class="modal-header header-modal">
-    <h4 class="modal-title pull-left">
-      Resume - Joshua Maia Rodrigues -
-      <a style="cursor: pointer" class="m-2 textopdf" (click)="downloadPDF()"
-        ><fa-icon [icon]="['fas', 'download']"></fa-icon
-      ></a>
-      <a class="textopdf" style="cursor: pointer" (click)="close()">
-        <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
+@if (variant === 'icon') {
+  <button
+    type="button"
+    class="icon-btn"
+    (click)="open(curriculo)"
+    aria-label="View resume"
+    title="Resume (PDF)"
+  >
+    <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon>
+  </button>
+} @else {
+  <button type="button" class="btn-x btn-primary-x" (click)="open(curriculo)">
+    <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon> View resume
+  </button>
+}
+
+<ng-template #curriculo let-modal>
+  <div class="modal-head">
+    <div>
+      <h2 class="modal-title-x">Resume</h2>
+      <p class="modal-sub">{{ nome }}</p>
+    </div>
+    <div class="modal-actions">
+      <a class="btn-x btn-ghost-x btn-sm-x" [href]="pdfSrc" [attr.download]="nomeArquivo">
+        <fa-icon [icon]="['fas', 'download']"></fa-icon> Download
       </a>
-    </h4>
+      <a
+        class="icon-btn"
+        [href]="pdfSrc"
+        target="_blank"
+        rel="noopener"
+        aria-label="Open in new tab"
+        title="Open in new tab"
+      >
+        <fa-icon [icon]="['fas', 'arrow-up-right-from-square']"></fa-icon>
+      </a>
+      <button type="button" class="icon-btn" (click)="modal.dismiss()" aria-label="Close">
+        <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+      </button>
+    </div>
   </div>
-  <div class="modal-body modalcss">
+  <div class="modal-pdf">
     <pdf-viewer
       [src]="pdfSrc"
       [render-text]="true"
       [original-size]="false"
-      style="width: 100%; height: 600px"
+      style="display: block; width: 100%; height: 100%"
     ></pdf-viewer>
   </div>
 </ng-template>

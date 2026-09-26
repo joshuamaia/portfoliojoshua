@@ -1,120 +1,19 @@
-<div class="container certificado">
-  <app-certificado-item titulo="Java">
-    <ul>
-      <li class="mb-2">
+<section class="container-x page">
+  <app-page-header
+    eyebrow="Credentials"
+    title="Certificates"
+    subtitle="Professional certifications in Java, cloud, software architecture, Scrum and DevOps. Click to view."
+  ></app-page-header>
+
+  @for (grupo of grupos; track grupo.title) {
+    <app-certificado-item [titulo]="grupo.title" [icon]="grupo.icon" [total]="grupo.items.length" appReveal>
+      @for (cert of grupo.items; track cert.image) {
         <app-certificado-template
-          titulo="Oracle Certified Professional, Java EE 7 Application Developer (2024)"
-          srcImage="../../assets/joshuaJavaEE7.png"
+          [titulo]="cert.title"
+          [meta]="cert.meta"
+          [srcImage]="cert.image"
         ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Sun Certified Java Programmer 1.5 (2007)"
-          srcImage="../../assets/certificacaoJavaJoshua.jpg"
-        ></app-certificado-template>
-      </li>
-    </ul>
-  </app-certificado-item>
-  <app-certificado-item titulo="Cloud Certifications">
-    <ul>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="AWS Certified Cloud Practitioner (CLF-C02) (29/11/2023 - 29/11/2026)"
-          srcImage="../../assets/awsCloudPractitioner.jpeg"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Microsoft Certified: Azure Fundamentals"
-          srcImage="../../assets/certificacaoAZ900.png"
-        ></app-certificado-template>
-      </li>
-    </ul>
-  </app-certificado-item>
-  <app-certificado-item titulo="Software Architecture">
-    <ul>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Clean Code e Clean Architecture - Rodrigo Branas"
-          srcImage="../../assets/cleanCodeECleanArchitecture.jpg"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="BPMN"
-          srcImage="../../assets/bpmnJoshua.jpg"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Incremental and Scalable Architectures (2022 - Coffee and
-          it)"
-          srcImage="../../assets/Arquiteturasincrementais.jpg"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Clean Architecture (2022 - Full Cycle)"
-          srcImage="../../assets/CleanArchitecture.png"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Domain Driven Design (2022 - Full Cycle)"
-          srcImage="../../assets/DDD.png"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="SOLID (2022 - Full Cycle)"
-          srcImage="../../assets/SOLID.png"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Architecture Fundamentals (2022 - Full Cycle)"
-          srcImage="../../assets/FundamentosArquitetura.png"
-        ></app-certificado-template>
-      </li>
-    </ul>
-  </app-certificado-item>
-  <app-certificado-item titulo="Scrum">
-    <ul>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Scrum Foundation Profissional Certificate (2024 - CertiProf)"
-          srcImage="../../assets/certificadoScrumCertiProf2024.png"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Scrum Fundamentals Certified (2020 - SCRUMStudy)"
-          srcImage="../../assets/certificadoScrumStudy.jpg"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Scrum Foundation Profissional Certificate (2020 - CertiProf)"
-          srcImage="../../assets/certificadoScrumCertiProf.jpg"
-        ></app-certificado-template>
-      </li>
-    </ul>
-  </app-certificado-item>
-  <app-certificado-item titulo="DevOps">
-    <ul>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Docker (2022 -Full Cycle)"
-          srcImage="../../assets/docker.png"
-        ></app-certificado-template>
-      </li>
-      <li class="mb-2">
-        <app-certificado-template
-          titulo="Devops Essentials Profissional Certificate (2020 -
-          CertiProf)"
-          srcImage="../../assets/CertificateDevOps.jpg"
-        ></app-certificado-template>
-      </li>
-    </ul>
-  </app-certificado-item>
-</div>
+      }
+    </app-certificado-item>
+  }
+</section>

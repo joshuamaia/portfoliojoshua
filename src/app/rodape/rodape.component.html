@@ -1,22 +1,23 @@
-<div class="rodape">
-  <div class="container">
-    <div class="row" style="max-width: 1024px">
-      <div class="col">
-        <div class="d-flex justify-content-center">
-          <h1 class="texto">
-            Joshua Maia Rodrigues -
-            <a
-              class="textorodape"
-              href="https://www.linkedin.com/in/joshuamaia/"
-              ><fa-icon [icon]="['fab', 'linkedin']"></fa-icon
-            ></a>
-            -
-            <a class="textorodape" href="https://github.com/joshuamaia"
-              ><fa-icon [icon]="['fab', 'github']"></fa-icon
-            ></a>
-          </h1>
-        </div>
-      </div>
+<footer class="site-footer">
+  <div class="container-x footer-inner">
+    <div class="footer-brand">
+      <span class="footer-name">{{ profile.name }}</span>
+      <span class="text-soft">{{ profile.role }}</span>
+    </div>
+    <div class="social">
+      <a class="icon-btn" [href]="profile.links.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+      </a>
+      <a class="icon-btn" [href]="profile.links.github" target="_blank" rel="noopener" aria-label="GitHub">
+        <fa-icon [icon]="['fab', 'github']"></fa-icon>
+      </a>
+      <a class="icon-btn" [href]="profile.links.website" target="_blank" rel="noopener" aria-label="Website">
+        <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+      </a>
     </div>
   </div>
-</div>
+  <div class="container-x footer-bottom">
+    <span>© {{ year }} {{ profile.name }}</span>
+    <span>Built with Angular</span>
+  </div>
+</footer>

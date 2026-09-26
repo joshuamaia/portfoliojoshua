@@ -1,73 +1,86 @@
-<div class="container home">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="card mt-3">
-          <div class="card-header">
-            <h2>About Me</h2>
-          </div>
-          <div class="card-content">
-            <p>
-              Software developer with 16 years of experience, specialized in a
-              wide range of technologies. With advanced skills in Front End and
-              Back End development, I have a proven track record of creating
-              efficient and robust solutions for information systems.
-            </p>
-            <p>Front End:</p>
-            <ul class="list-group">
-              <li class="list-group-item">
-                Languages and Frameworks: Proficient in Angular 18, PrimeNG 17,
-                Angular Material 12, Bootstrap 5, HTML, CSS, SASS/SCSS,
-                TypeScript, JavaScript, JSF 2 and PrimeFaces.
-              </li>
-              <li class="list-group-item">
-                Testing: Unit test development with Jasmine and Karma.
-              </li>
-            </ul>
-            <p>Back End:</p>
-            <ul class="list-group">
-              <li class="list-group-item">Programming Languages: Java.</li>
-              <li class="list-group-item">
-                Technologies: Experience with Spring Boot, JDBC, JPA, Hibernate,
-                RabbitMQ, Apache Kafka, Azure Service Bus, Retrofit, REST APIs
-                and system integration.
-              </li>
-              <li class="list-group-item">
-                Databases: Management and manipulation of MongoDB, MySQL, SQL
-                Server, DB2 and PostgreSQL.
-              </li>
-              <li class="list-group-item">
-                Testing: Unit test development with JUnit and Mockito.
-              </li>
-            </ul>
-            <p>Tools and Development Environments:</p>
-            <ul class="list-group">
-              <li class="list-group-item">
-                Advanced use of Git, Apache Maven, Yarn, npm and Docker / Docker
-                Compose.
-              </li>
-              <li class="list-group-item">
-                Architecture and Methodologies: Proficiency with Clean
-                Architecture, Hexagonal Architecture, Clean Code, SOLID, RESTful
-                Web Services, SOAP and Spring Cloud Netflix.
-              </li>
-              <li class="list-group-item">
-                Project Management: Experience with Jaspersoft Studio, Redmine
-                and Jira.
-              </li>
-              <li class="list-group-item">
-                Languages: English - basic/intermediate level.
-              </li>
-              <li class="list-group-item">
-                🔗 Explore more about my work and projects: joshuamr.com.br
-              </li>
-              <li class="list-group-item">
-                📍 Location: Brasília, Distrito Federal
-              </li>
-            </ul>
-          </div>
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container-x hero-inner">
+    <div class="hero-avatar" appReveal>
+      <img [src]="profile.photo" [alt]="profile.name" width="176" height="176" />
+    </div>
+
+    <div class="hero-text">
+      <span class="eyebrow" appReveal [revealDelay]="60">
+        <fa-icon [icon]="['fas', 'location-dot']"></fa-icon> {{ profile.location }}
+      </span>
+      <h1 class="hero-title" appReveal [revealDelay]="120">
+        Hi, I'm <span class="gradient-text">{{ profile.name }}</span>
+      </h1>
+      <p class="hero-role" appReveal [revealDelay]="180">{{ profile.role }}</p>
+      <p class="hero-summary" appReveal [revealDelay]="240">{{ profile.summary }}</p>
+
+      <div class="hero-cta" appReveal [revealDelay]="300">
+        <app-exibir-download-curriculo variant="button"></app-exibir-download-curriculo>
+        <a class="btn-x btn-ghost-x" routerLink="/trabalhos">
+          Work experience <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+        </a>
+        <div class="social">
+          <a class="icon-btn" [href]="profile.links.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+          </a>
+          <a class="icon-btn" [href]="profile.links.github" target="_blank" rel="noopener" aria-label="GitHub">
+            <fa-icon [icon]="['fab', 'github']"></fa-icon>
+          </a>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="container-x section" aria-label="Highlights">
+  <div class="stats">
+    @for (stat of stats; track stat.label; let i = $index) {
+      <a class="stat" [routerLink]="stat.link" appReveal [revealDelay]="i * 70">
+        <span class="stat-value gradient-text">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </a>
+    }
+  </div>
+</section>
+
+<section class="container-x section">
+  <div class="section-head" appReveal>
+    <span class="eyebrow">About me</span>
+    <h2 class="section-title">Skills &amp; technologies</h2>
+  </div>
+
+  <div class="skills-grid">
+    @for (group of skillGroups; track group.title; let i = $index) {
+      <article class="card-x skill-card" appReveal [revealDelay]="(i % 3) * 70">
+        <header class="skill-head">
+          <span class="icon-badge"><fa-icon [icon]="group.icon"></fa-icon></span>
+          <h3 class="card-title">{{ group.title }}</h3>
+        </header>
+        <div class="chips">
+          @for (skill of group.skills; track skill) {
+            <span class="chip">{{ skill }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+
+  <ul class="info-list" appReveal>
+    <li>
+      <span class="icon-badge"><fa-icon [icon]="['fas', 'location-dot']"></fa-icon></span>
+      <span><strong>Location</strong>{{ profile.location }}</span>
+    </li>
+    <li>
+      <span class="icon-badge"><fa-icon [icon]="['fas', 'language']"></fa-icon></span>
+      <span><strong>Languages</strong>{{ profile.languages }}</span>
+    </li>
+    <li>
+      <span class="icon-badge"><fa-icon [icon]="['fas', 'globe']"></fa-icon></span>
+      <span>
+        <strong>Website</strong>
+        <a [href]="profile.links.website" target="_blank" rel="noopener">joshuamr.com.br</a>
+      </span>
+    </li>
+  </ul>
+</section>

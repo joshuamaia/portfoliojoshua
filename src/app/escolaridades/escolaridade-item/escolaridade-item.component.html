@@ -1,17 +1,24 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card mt-3">
-        <div
-          [ngClass]="{
-            'card-header': !destaque,
-            'card-header-destaque': destaque
-          }"
-        >
-          <h2>{{ titulo }}</h2>
-        </div>
-        <div class="card-content"><ng-content></ng-content></div>
-      </div>
+<article class="card-x edu-card" [class.is-featured]="item.featured">
+  <span class="icon-badge"><fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon></span>
+  <div class="edu-body">
+    <div class="edu-top">
+      <h3 class="card-title">{{ item.title }}</h3>
+      @if (item.inProgress) {
+        <span class="badge-x badge-progress">In progress</span>
+      }
     </div>
+    @if (item.institution) {
+      <p class="edu-inst">{{ item.institution }}</p>
+    }
+    @if (item.description) {
+      <p class="text-soft">{{ item.description }}</p>
+    }
+    @if (item.bullets) {
+      <ul class="bullets">
+        @for (bullet of item.bullets; track bullet) {
+          <li>{{ bullet }}</li>
+        }
+      </ul>
+    }
   </div>
-</div>
+</article>

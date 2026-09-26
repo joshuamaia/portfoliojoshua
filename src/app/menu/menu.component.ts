@@ -1,52 +1,31 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MenuItem } from './menu-item/menu.item';
 import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css'],
   standalone: false,
 })
 export class MenuComponent {
-  constructor(private themeService: ThemeService) {}
+  private readonly themeService = inject(ThemeService);
 
-  itensMenu = signal<MenuItem[]>([
+  readonly isDark = this.themeService.isDark;
+  readonly menuAberto = signal(false);
+
+  readonly itensMenu: MenuItem[] = [
     { title: 'Home', icon: ['fas', 'house'], routerLink: '/home' },
-    {
-      title: 'Work Experience',
-      icon: ['fas', 'briefcase'],
-      routerLink: '/trabalhos',
-    },
-    {
-      title: 'Education',
-      icon: ['fas', 'school'],
-      subMenus: [
-        {
-          title: 'Education',
-          icon: ['fas', 'book-bookmark'],
-          routerLink: '/escolaridades',
-        },
-        {
-          title: 'Extra Education',
-          icon: ['fas', 'school-flag'],
-          routerLink: '/escolaridades/extra',
-        },
-      ],
-    },
-    {
-      title: 'Certificates',
-      icon: ['fas', 'certificate'],
-      routerLink: '/certificados',
-    },
-  ]);
+    { title: 'Experience', icon: ['fas', 'briefcase'], routerLink: '/trabalhos' },
+    { title: 'Education', icon: ['fas', 'graduation-cap'], routerLink: '/escolaridades' },
+    { title: 'Courses', icon: ['fas', 'book-open'], routerLink: '/escolaridades/extra' },
+    { title: 'Certificates', icon: ['fas', 'certificate'], routerLink: '/certificados' },
+  ];
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
 
-  toggeTheme(): boolean {
-    const savedTheme = localStorage.getItem('theme') as 'day' | 'night';
-    return savedTheme !== 'day';
+  fecharMenu(): void {
+    this.menuAberto.set(false);
   }
 }

@@ -1,34 +1,29 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card mt-3">
-        <div class="card-header">
-          <h2>{{ titulo }}</h2>
-        </div>
-        <div class="card-content">
-          <button class="btn btn-info" (click)="open(certificado)">
-            Certificate
-          </button>
-          <ng-content></ng-content>
-        </div>
-        <ng-template #certificado>
-          <div class="modal-header header-modal">
-            <h4 class="modal-title pull-left">
-              {{ titulo }}
-              <a style="cursor: pointer" class="m-2" (click)="close()">
-                <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-              </a>
-            </h4>
-          </div>
-          <div class="modal-body modalcss">
-            <img
-              style="width: 100%; height: auto"
-              class="imagens"
-              [src]="srcImage"
-            />
-          </div>
-        </ng-template>
-      </div>
-    </div>
+<article class="card-x course-card">
+  <button
+    type="button"
+    class="course-thumb"
+    (click)="open(certificado)"
+    [attr.aria-label]="'View certificate: ' + titulo"
+  >
+    <img [src]="srcImage" alt="" loading="lazy" decoding="async" />
+    <span class="course-thumb-overlay">
+      <fa-icon [icon]="['fas', 'expand']"></fa-icon> View certificate
+    </span>
+  </button>
+  <div class="course-body">
+    <h2 class="card-title">{{ titulo }}</h2>
+    <p class="text-soft">{{ descricao }}</p>
   </div>
-</div>
+</article>
+
+<ng-template #certificado let-modal>
+  <div class="modal-head">
+    <h2 class="modal-title-x">{{ titulo }}</h2>
+    <button type="button" class="icon-btn" (click)="modal.dismiss()" aria-label="Close">
+      <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+    </button>
+  </div>
+  <div class="modal-media">
+    <img [src]="srcImage" [alt]="'Certificate: ' + titulo" />
+  </div>
+</ng-template>

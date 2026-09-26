@@ -5,7 +5,11 @@ import { EscolaridadeExtraComponent } from './escolaridade-extra/escolaridade-ex
 
 const routes: Routes = [
   { path: '', component: EscolaridadeComponent },
-  { path: 'extra', component: EscolaridadeExtraComponent },
+  {
+    path: 'extra',
+    title: 'Bootcamps & Courses · Joshua Maia Rodrigues',
+    component: EscolaridadeExtraComponent,
+  },
 ];
 
 @NgModule({

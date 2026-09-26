@@ -1,23 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, TemplateRef, inject } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'app-certificado-template',
-    templateUrl: './certificado-template.component.html',
-    styleUrl: './certificado-template.component.css',
-    standalone: false
+  selector: 'app-certificado-template',
+  templateUrl: './certificado-template.component.html',
+  standalone: false,
 })
 export class CertificadoTemplateComponent {
-  @Input() titulo!: string;
-  @Input() srcImage!: string;
+  @Input({ required: true }) titulo!: string;
+  @Input({ required: true }) srcImage!: string;
+  @Input() meta?: string;
 
-  constructor(private modalService: NgbModal) {}
+  private readonly modalService = inject(NgbModal);
 
-  public open(modal: any): void {
-    this.modalService.open(modal);
-  }
-
-  public close(): void {
-    this.modalService.dismissAll();
+  open(modal: TemplateRef<unknown>): void {
+    this.modalService.open(modal, { size: 'xl', centered: true, windowClass: 'modal-x' });
   }
 }

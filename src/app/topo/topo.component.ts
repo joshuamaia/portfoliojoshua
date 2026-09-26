@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, HostListener, signal } from '@angular/core';
+import { profile } from '../data/profile';
 
 @Component({
   selector: 'app-topo',
   templateUrl: './topo.component.html',
-  styleUrls: ['./topo.component.css'],
   standalone: false,
 })
-export class TopoComponent implements OnInit {
-  ngOnInit(): void {}
+export class TopoComponent {
+  readonly profile = profile;
+  readonly scrolled = signal(false);
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.scrolled.set(window.scrollY > 8);
+  }
 }

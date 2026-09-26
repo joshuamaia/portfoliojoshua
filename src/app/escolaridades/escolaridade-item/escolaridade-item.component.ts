@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { Degree } from '../../data/education';
 
 @Component({
-    selector: 'app-escolaridade-item',
-    templateUrl: './escolaridade-item.component.html',
-    styleUrl: './escolaridade-item.component.css',
-    standalone: false
+  selector: 'app-escolaridade-item',
+  templateUrl: './escolaridade-item.component.html',
+  standalone: false,
 })
 export class EscolaridadeItemComponent {
-  @Input() titulo!: string;
-  @Input() destaque!: boolean;
+  @Input({ required: true }) item!: Degree;
 }

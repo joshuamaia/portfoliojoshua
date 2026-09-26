@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { certificateGroups } from '../../data/certificates';
 
 @Component({
-    selector: 'app-certificado',
-    templateUrl: './certificado.component.html',
-    styleUrls: ['./certificado.component.css'],
-    standalone: false
+  selector: 'app-certificado',
+  templateUrl: './certificado.component.html',
+  standalone: false,
 })
-export class CertificadoComponent {}
+export class CertificadoComponent {
+  readonly grupos = certificateGroups;
+}

@@ -1,19 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuItem } from './menu.item';
 
 @Component({
-    selector: 'app-menu-item',
-    templateUrl: './menu-item.component.html',
-    styleUrls: ['./menu-item.component.css'],
-    standalone: false
+  selector: 'app-menu-item',
+  templateUrl: './menu-item.component.html',
+  standalone: false,
+  host: { style: 'display: contents' },
 })
 export class MenuItemComponent {
-  @Input() menuItem: MenuItem = { title: 'Home', icon: ['fas', 'house'] };
-
-  temSubMenu(menuItem: MenuItem) {
-    if (menuItem && menuItem.subMenus && menuItem.subMenus.length > 0) {
-      return true;
-    }
-    return false;
-  }
+  @Input({ required: true }) menuItem!: MenuItem;
+  @Output() navigate = new EventEmitter<void>();
 }

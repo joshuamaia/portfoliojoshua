@@ -1,14 +1,10 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card mt-3">
-        <div class="card-header">
-          <h2>{{ titulo }}</h2>
-        </div>
-        <div class="card-content">
-          <ng-content></ng-content>
-        </div>
-      </div>
-    </div>
+<section class="cert-group">
+  <header class="cert-group-head">
+    <span class="icon-badge"><fa-icon [icon]="icon"></fa-icon></span>
+    <h2 class="section-title-sm">{{ titulo }}</h2>
+    <span class="count">{{ total }}</span>
+  </header>
+  <div class="cert-grid">
+    <ng-content></ng-content>
   </div>
-</div>
+</section>

@@ -2,10 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Currículo On Line Joshua</title>
+    <title>Joshua Maia Rodrigues · Software Architect</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Joshua Maia Rodrigues — Software Architect / Senior Full-Stack Developer with 16 years of experience in Angular, Java and Spring Boot."
+    />
+    <meta name="author" content="Joshua Maia Rodrigues" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Joshua Maia Rodrigues · Software Architect" />
+    <meta
+      property="og:description"
+      content="Software Architect / Senior Full-Stack Developer — Angular, Java, Spring Boot."
+    />
+    <meta property="og:image" content="assets/joshua.jpg" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
+    />
+    <script>
+      // Aplica o tema antes do Angular iniciar, evitando o "flash" de tema errado
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem('theme');
+        } catch (e) {}
+        if (theme === 'day') theme = 'light';
+        if (theme === 'night') theme = 'dark';
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>

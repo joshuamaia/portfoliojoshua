@@ -1,16 +1,34 @@
-<button class="btn btn-info" (click)="open(certificado)">Certificate</button>
-{{ titulo }}
+<button
+  type="button"
+  class="cert-card"
+  (click)="open(certificado)"
+  [attr.aria-label]="'View certificate: ' + titulo"
+>
+  <span class="cert-thumb">
+    <img [src]="srcImage" alt="" loading="lazy" decoding="async" />
+  </span>
+  <span class="cert-info">
+    <span class="cert-title">{{ titulo }}</span>
+    @if (meta) {
+      <span class="cert-meta">{{ meta }}</span>
+    }
+  </span>
+  <fa-icon class="cert-go" [icon]="['fas', 'expand']"></fa-icon>
+</button>
 
-<ng-template #certificado>
-  <div class="modal-header header-modal">
-    <h4 class="modal-title pull-left">
-      {{ titulo }}
-      <a style="cursor: pointer" class="m-2" (click)="close()">
-        <fa-icon [icon]="['fas', 'window-close']"></fa-icon>
-      </a>
-    </h4>
+<ng-template #certificado let-modal>
+  <div class="modal-head">
+    <div>
+      <h2 class="modal-title-x">{{ titulo }}</h2>
+      @if (meta) {
+        <p class="modal-sub">{{ meta }}</p>
+      }
+    </div>
+    <button type="button" class="icon-btn" (click)="modal.dismiss()" aria-label="Close">
+      <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+    </button>
   </div>
-  <div class="modal-body modalcss">
-    <img class="imagens" [src]="srcImage" />
+  <div class="modal-media">
+    <img [src]="srcImage" [alt]="'Certificate: ' + titulo" />
   </div>
 </ng-template>
