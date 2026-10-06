@@ -8,7 +8,7 @@ export interface SkillGroup {
 
 export const profile = {
   name: 'Joshua Maia Rodrigues',
-  role: 'Software Architect / Senior Full-Stack Developer',
+  role: 'Senior Full-Stack Developer',
   location: 'Brasília, Distrito Federal',
   languages: 'English - basic/intermediate level',
   yearsOfExperience: 16,

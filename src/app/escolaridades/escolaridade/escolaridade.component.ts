@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { degrees } from '../../data/education';
 
 @Component({
   selector: 'app-escolaridade',
   templateUrl: './escolaridade.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class EscolaridadeComponent {

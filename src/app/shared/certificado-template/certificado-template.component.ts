@@ -1,9 +1,10 @@
-import { Component, Input, TemplateRef, inject } from '@angular/core';
+import { Component, Input, TemplateRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-certificado-template',
   templateUrl: './certificado-template.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class CertificadoTemplateComponent {

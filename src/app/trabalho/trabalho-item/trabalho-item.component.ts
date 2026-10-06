@@ -1,9 +1,10 @@
-import { Component, Input, OnInit, computed, signal } from '@angular/core';
+import { Component, Input, OnInit, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Experience, formatDuration, formatPeriod } from '../../data/experience';
 
 @Component({
   selector: 'app-trabalho-item',
   templateUrl: './trabalho-item.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TrabalhoItemComponent implements OnInit {

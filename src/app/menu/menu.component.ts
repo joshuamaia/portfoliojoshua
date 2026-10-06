@@ -1,10 +1,11 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { MenuItem } from './menu-item/menu.item';
 import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MenuComponent {

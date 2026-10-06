@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { certificateCount } from '../../data/certificates';
 import { courses, degrees } from '../../data/education';
 import { profile, skillGroups } from '../../data/profile';
@@ -6,6 +6,7 @@ import { profile, skillGroups } from '../../data/profile';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class HomepageComponent {

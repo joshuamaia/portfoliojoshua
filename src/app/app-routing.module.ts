@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    title: `${SITE} · Software Architect`,
+    title: `${SITE} · Senior Full-Stack Developer`,
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-page-header',
@@ -11,6 +11,7 @@ import { Component, Input } from '@angular/core';
       }
     </header>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class PageHeaderComponent {

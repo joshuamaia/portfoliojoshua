@@ -1,9 +1,10 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, signal, ChangeDetectionStrategy } from '@angular/core';
 import { profile } from '../data/profile';
 
 @Component({
   selector: 'app-topo',
   templateUrl: './topo.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TopoComponent {

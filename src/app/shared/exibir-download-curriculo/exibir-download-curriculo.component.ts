@@ -1,10 +1,11 @@
-import { Component, Input, TemplateRef, inject } from '@angular/core';
+import { Component, Input, TemplateRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { profile } from '../../data/profile';
 
 @Component({
   selector: 'app-exibir-download-curriculo',
   templateUrl: './exibir-download-curriculo.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ExibirDownloadCurriculoComponent {
