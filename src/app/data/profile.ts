@@ -51,6 +51,8 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       'Java',
       'Spring Boot',
+      'Java EE / Jakarta EE',
+      'EJB',
       'JDBC',
       'JPA',
       'Hibernate',

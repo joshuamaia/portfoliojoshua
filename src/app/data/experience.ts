@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
   {
     company: 'Freelancer',
     role: 'Senior Full Stack Developer',
-    start: '2026-04',
+    start: '2026-08',
     activities: [
       'Work as a Senior Full Stack Developer on a sustaining engineering team, responsible for the maintenance, evolution, and stability of highly complex corporate systems;',
       'Analyze, diagnose, and resolve incidents in applications and corporate environments;',
