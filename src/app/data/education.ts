@@ -17,26 +17,17 @@ export interface Course {
 export const degrees: Degree[] = [
   {
     title: 'Applied AI Engineering Postgraduate Course',
+    inProgress: true,
     featured: true,
     description:
       'Learn how to integrate advanced AI models into real systems—and become the programmer who makes a direct impact on the business.',
   },
   {
     title: 'Postgraduate Java Elite',
+    inProgress: true,
     featured: true,
     description:
       'In Postgraduate Java Elite we break this problem into several small parts. You learn from solid Java fundamentals, modern architectures such as microservices, containers and automated tests…',
-  },
-  {
-    title: 'MBA in Postgraduate Studies in Artificial Intelligence and Strategic Management for Leaders',
-    inProgress: true,
-    featured: true,
-    bullets: [
-      'Manage and retain technology talent, leading diverse teams;',
-      'Manage culture and planning focused on technology;',
-      'Build trust through high-impact communication;',
-      'Use AI and data for strategic decisions and innovation.',
-    ],
   },
   {
     title: 'MBA in Software Engineering with AI',
@@ -45,14 +36,6 @@ export const degrees: Degree[] = [
     featured: true,
     description:
       'AI has changed the way we develop software. In many cases, code has become just an implementation detail. What really matters now is who pilots. Those who know how to use AI to be more productive, solve problems faster and make better decisions while developing.',
-  },
-  {
-    title: 'Postgraduate Go Expert',
-    institution: 'Full Cycle',
-    inProgress: true,
-    featured: true,
-    description:
-      'Reach the next level in programming with the postgraduate course in Go Lang. Learn in a practical and in-depth way about the Go programming language, its best practices and real applications.',
   },
   {
     title: 'MBA in Full Cycle Architecture',
