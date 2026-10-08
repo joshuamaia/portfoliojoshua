@@ -14,26 +14,19 @@ export const experiences: Experience[] = [
   {
     company: 'Freelancer',
     role: 'Senior Full Stack Developer',
-    start: '2026-08',
+    start: '2026-04',
     activities: [
-      'Work as a Senior Full Stack Developer on a sustaining engineering team, responsible for the maintenance, evolution, and stability of highly complex corporate systems;',
-      'Analyze, diagnose, and resolve incidents in applications and corporate environments;',
-      'Investigate root causes by analyzing source code, logs, data, and application behavior;',
-      'Perform corrective, evolutionary, and preventive maintenance on legacy systems;',
-      'Develop, implement, and evolve features using Java EE / Jakarta EE and EJB;',
-      'Develop and maintain REST APIs, services, and integrations between systems;',
-      'Analyze functional requirements and business rules to define and implement technical solutions;',
-      'Develop and execute unit tests, ensuring code quality, reliability, and maintainability;',
-      'Implement improvements in application performance, security, and quality;',
-      'Perform queries, data manipulation, and optimization of operations in Oracle databases;',
-      'Apply development best practices, object-oriented programming, SOLID, and Design Patterns;',
-      'Participate in technical analyses and decisions related to architecture, integrations, and application evolution;',
-      'Use Git and Maven for version control, dependency management, and the development process.',
+      'Work as a Senior Full Stack Developer in the development, maintenance, and evolution of corporate systems, using both modern and legacy technologies;',
+      'Responsible for developing new features, REST APIs, system integrations, messaging, incident resolution, performance optimization, and continuous improvement of applications;',
+      'Experience with software architecture, development best practices, automated testing, and relational databases.',
     ],
     technologies: [
       'Java',
+      'Spring Boot',
       'Java EE / Jakarta EE',
       'EJB',
+      'Kafka',
+      'RabbitMQ',
       'JPA',
       'Hibernate',
       'REST',
@@ -138,7 +131,20 @@ export const experiences: Experience[] = [
   },
 ];
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTHS = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
 
 function parseYearMonth(value: string): { year: number; month: number } {
   const [year, month] = value.split('-').map(Number);
@@ -160,7 +166,10 @@ export function formatDuration(exp: Experience, today = new Date()): string {
     ? parseYearMonth(exp.end)
     : { year: today.getFullYear(), month: today.getMonth() + 1 };
   // Conta o mês inicial e o final (abr–mar = 24 meses)
-  const total = Math.max(1, (end.year - start.year) * 12 + (end.month - start.month) + 1);
+  const total = Math.max(
+    1,
+    (end.year - start.year) * 12 + (end.month - start.month) + 1,
+  );
   const years = Math.floor(total / 12);
   const months = total % 12;
   const parts: string[] = [];
