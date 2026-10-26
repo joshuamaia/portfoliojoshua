@@ -12,8 +12,12 @@
       <h1 class="hero-title" appReveal [revealDelay]="120">
         Hi, I'm <span class="gradient-text">{{ profile.name }}</span>
       </h1>
-      <p class="hero-role" appReveal [revealDelay]="180">{{ profile.role }}</p>
-      <p class="hero-summary" appReveal [revealDelay]="240">{{ profile.summary }}</p>
+      <p class="hero-role" appReveal [revealDelay]="180">{{ profile.headline }}</p>
+      <div class="hero-summary" appReveal [revealDelay]="240">
+        @for (paragraph of profile.summary; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
 
       <div class="hero-cta" appReveal [revealDelay]="300">
         <app-exibir-download-curriculo variant="button"></app-exibir-download-curriculo>
@@ -57,11 +61,31 @@
           <span class="icon-badge"><fa-icon [icon]="group.icon"></fa-icon></span>
           <h3 class="card-title">{{ group.title }}</h3>
         </header>
-        <div class="chips">
-          @for (skill of group.skills; track skill) {
-            <span class="chip">{{ skill }}</span>
-          }
-        </div>
+        @if (group.skills) {
+          <div class="chips">
+            @for (skill of group.skills; track skill) {
+              <span class="chip">{{ skill }}</span>
+            }
+          </div>
+        }
+        @for (sub of group.subgroups; track sub.label) {
+          <div class="skill-sub">
+            <h4 class="skill-sub-label">{{ sub.label }}</h4>
+            @if (sub.skills) {
+              <div class="chips">
+                @for (skill of sub.skills; track skill) {
+                  <span class="chip">{{ skill }}</span>
+                }
+              </div>
+            }
+            @if (sub.description) {
+              <p class="skill-note">{{ sub.description }}</p>
+            }
+          </div>
+        }
+        @if (group.note) {
+          <p class="skill-note">{{ group.note }}</p>
+        }
       </article>
     }
   </div>
@@ -78,7 +102,7 @@
     <li>
       <span class="icon-badge"><fa-icon [icon]="['fas', 'globe']"></fa-icon></span>
       <span>
-        <strong>Website</strong>
+        <strong>Portfolio</strong>
         <a [href]="profile.links.website" target="_blank" rel="noopener">joshuamr.com.br</a>
       </span>
     </li>

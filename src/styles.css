@@ -869,6 +869,37 @@ img {
   margin-bottom: 16px;
 }
 
+.skill-sub + .skill-sub {
+  margin-top: 14px;
+}
+
+.skill-sub-label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.skill-note {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+}
+
+.skill-sub-label + .skill-note {
+  margin-top: 0;
+}
+
+.hero-summary p {
+  margin: 0;
+}
+
+.hero-summary p + p {
+  margin-top: 10px;
+}
+
 .info-list {
   list-style: none;
   margin: 24px 0 0;

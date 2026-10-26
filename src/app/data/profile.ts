@@ -1,16 +1,27 @@
 import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
+export interface SkillSubgroup {
+  label: string;
+  skills?: string[];
+  description?: string;
+}
+
 export interface SkillGroup {
   title: string;
   icon: [IconPrefix, IconName];
-  skills: string[];
+  skills?: string[];
+  subgroups?: SkillSubgroup[];
+  /** Texto complementar exibido abaixo das habilidades */
+  note?: string;
 }
 
 export const profile = {
   name: 'Joshua Maia Rodrigues',
   role: 'Senior Full-Stack Developer',
-  location: 'Brasília, Distrito Federal',
-  languages: 'English - basic/intermediate level',
+  headline: 'Senior Full Stack Developer | Java | Spring Boot | Angular | Software Architecture',
+  location: 'Brasília – DF, Brazil',
+  languages:
+    'Portuguese – native · English – basic/intermediate, with written communication supported by translation tools',
   yearsOfExperience: 16,
   photo: 'assets/joshua.jpg',
   resume: 'assets/Joshua_MaiaRodrigues_Resume.pdf',
@@ -19,79 +30,78 @@ export const profile = {
     github: 'https://github.com/joshuamaia',
     website: 'https://joshuamr.com.br',
   },
-  summary:
-    'Software developer with 16 years of experience, specialized in a wide range of technologies. ' +
-    'With advanced skills in Front End and Back End development, I have a proven track record of ' +
-    'creating efficient and robust solutions for information systems.',
+  summary: [
+    'Senior Full Stack Developer with 16 years of experience in software development, working on the analysis, architecture, implementation, integration, and support of corporate systems.',
+    'Experience in developing scalable, secure, and efficient solutions, applying software engineering best practices, architectural patterns, and modern technologies.',
+  ],
 };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Front End',
     icon: ['fas', 'code'],
-    skills: [
-      'Angular 18',
-      'PrimeNG 17',
-      'Angular Material 12',
-      'Bootstrap 5',
-      'HTML',
-      'CSS',
-      'SASS/SCSS',
-      'TypeScript',
-      'JavaScript',
-      'JSF 2',
-      'PrimeFaces',
-      'Jasmine',
-      'Karma',
+    subgroups: [
+      { label: 'Languages', skills: ['HTML5', 'CSS3', 'Sass/SCSS', 'JavaScript', 'TypeScript'] },
+      {
+        label: 'Frameworks & libraries',
+        skills: ['Angular', 'PrimeNG', 'Angular Material', 'Bootstrap', 'JSF 2', 'PrimeFaces'],
+      },
+      { label: 'Testing', skills: ['Jasmine', 'Karma'] },
     ],
   },
   {
     title: 'Back End',
     icon: ['fas', 'server'],
-    skills: [
-      'Java',
-      'Spring Boot',
-      'Java EE / Jakarta EE',
-      'EJB',
-      'JDBC',
-      'JPA',
-      'Hibernate',
-      'RabbitMQ',
-      'Apache Kafka',
-      'Azure Service Bus',
-      'Retrofit',
-      'REST APIs',
-      'System integration',
-      'JUnit',
-      'Mockito',
+    subgroups: [
+      { label: 'Language', skills: ['Java'] },
+      {
+        label: 'Frameworks & technologies',
+        skills: ['Spring Boot', 'Spring Data JPA', 'Hibernate', 'JDBC', 'EJB', 'Retrofit'],
+      },
+      { label: 'APIs & integrations', skills: ['REST', 'SOAP', 'Spring Cloud Netflix'] },
+      { label: 'Messaging', skills: ['Apache Kafka', 'RabbitMQ', 'Azure Service Bus'] },
+      { label: 'Testing', skills: ['JUnit', 'Mockito'] },
     ],
   },
   {
     title: 'Databases',
     icon: ['fas', 'database'],
-    skills: ['MongoDB', 'MySQL', 'SQL Server', 'DB2', 'PostgreSQL'],
+    skills: ['Oracle', 'PostgreSQL', 'SQL Server', 'MySQL', 'DB2', 'MongoDB'],
+    note: 'Experience with data modeling, SQL queries, persistence, and data integration.',
   },
   {
-    title: 'Architecture & Methodologies',
+    title: 'Architecture & Best Practices',
     icon: ['fas', 'layer-group'],
     skills: [
       'Clean Architecture',
       'Hexagonal Architecture',
-      'Clean Code',
       'SOLID',
-      'RESTful Web Services',
-      'SOAP',
-      'Spring Cloud Netflix',
+      'Clean Code',
+      'Design Patterns',
+      'Domain-Driven Design (DDD)',
+      'Microservices',
+      'Monolithic systems',
+      'Event-Driven Architecture',
     ],
   },
   {
-    title: 'Tools',
-    icon: ['fas', 'screwdriver-wrench'],
-    skills: ['Git', 'Apache Maven', 'Yarn', 'npm', 'Docker', 'Docker Compose'],
+    title: 'Process Automation & Reporting',
+    icon: ['fas', 'sitemap'],
+    subgroups: [
+      {
+        label: 'Flowable',
+        description:
+          'Modeling, execution, and orchestration of business processes with BPMN 2.0, integrated with Java and Spring Boot.',
+      },
+      {
+        label: 'Jaspersoft Studio',
+        description: 'Development and maintenance of corporate reports with JasperReports.',
+      },
+    ],
   },
   {
-    title: 'Project Management',
-    icon: ['fas', 'list-check'],
-    skills: ['Jaspersoft Studio', 'Redmine', 'Jira'],
+    title: 'Tools & DevOps',
+    icon: ['fas', 'screwdriver-wrench'],
+    skills: ['Git', 'Apache Maven', 'npm', 'Yarn', 'Docker', 'Docker Compose', 'Jira', 'Redmine'],
   },
 ];
