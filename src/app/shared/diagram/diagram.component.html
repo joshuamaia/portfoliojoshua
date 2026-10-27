@@ -1,0 +1,119 @@
+@let d = diagram();
+<div class="dg-scroll">
+  <div class="dg-canvas" [style.min-width.px]="minWidth()" [style.max-width.px]="maxWidth()" [class.has-selection]="selectedId() !== null">
+    <svg
+      class="dg-svg"
+      [attr.viewBox]="viewBox()"
+      role="group"
+      [attr.aria-label]="d.title + ' diagram. Select a component to see its details.'"
+    >
+      <defs>
+        <marker
+          [attr.id]="uid + '-arrow'"
+          viewBox="0 0 10 10"
+          refX="9"
+          refY="5"
+          markerWidth="7"
+          markerHeight="7"
+          orient="auto-start-reverse"
+        >
+          <path class="dg-arrow" d="M 0 0 L 10 5 L 0 10 z" />
+        </marker>
+        <marker
+          [attr.id]="uid + '-arrow-active'"
+          viewBox="0 0 10 10"
+          refX="9"
+          refY="5"
+          markerWidth="7"
+          markerHeight="7"
+          orient="auto-start-reverse"
+        >
+          <path class="dg-arrow is-active" d="M 0 0 L 10 5 L 0 10 z" />
+        </marker>
+      </defs>
+
+      @for (group of d.groups ?? []; track group.id) {
+        <g class="dg-group" aria-hidden="true">
+          <rect [attr.x]="group.x" [attr.y]="group.y" [attr.width]="group.w" [attr.height]="group.h" rx="16" />
+          <text [attr.x]="group.x + 14" [attr.y]="group.y + 20">{{ group.label }}</text>
+        </g>
+      }
+
+      @for (item of edges(); track item.key) {
+        @let active = isEdgeActive(item.edge.from, item.edge.to);
+        <g class="dg-edge" [class.is-async]="item.edge.mode === 'async'" [class.is-active]="active" aria-hidden="true">
+          <path
+            [attr.d]="item.path"
+            [attr.marker-end]="'url(#' + uid + (active ? '-arrow-active' : '-arrow') + ')'"
+          />
+          @if (item.edge.label) {
+            <text class="dg-edge-label" [attr.x]="item.labelAt.x" [attr.y]="item.labelAt.y">
+              {{ item.edge.label }}
+            </text>
+          }
+        </g>
+      }
+
+      @for (node of d.nodes; track node.id) {
+        <foreignObject [attr.x]="node.x" [attr.y]="node.y" [attr.width]="node.w" [attr.height]="node.h">
+          <button
+            type="button"
+            class="dg-node"
+            [class]="'tone-' + node.tone + ' shape-' + (node.shape ?? 'box')"
+            [class.is-selected]="selectedId() === node.id"
+            [class.is-related]="related().has(node.id)"
+            [attr.aria-pressed]="selectedId() === node.id"
+            [attr.aria-label]="node.label + (node.caption ? ', ' + node.caption : '') + '. ' + node.summary"
+            (click)="toggle(node)"
+            (mouseenter)="hover(node.id)"
+            (mouseleave)="hover(null)"
+            (focus)="hover(node.id)"
+            (blur)="hover(null)"
+          >
+            <span class="dg-icon"><fa-icon [icon]="node.icon"></fa-icon></span>
+            <span class="dg-text">
+              <span class="dg-label">{{ node.label }}</span>
+              @if (node.caption) {
+                <span class="dg-caption">{{ node.caption }}</span>
+              }
+            </span>
+          </button>
+        </foreignObject>
+      }
+    </svg>
+
+    @if (tooltip(); as tip) {
+      <div
+        class="dg-tooltip"
+        [class.is-below]="tip.below"
+        [style.left.%]="tip.left"
+        [style.top.%]="tip.below ? tip.bottom : tip.top"
+        aria-hidden="true"
+      >
+        {{ tip.node.summary }}
+      </div>
+    }
+  </div>
+</div>
+
+<div class="dg-legend" aria-hidden="true">
+  <span><i class="dg-line"></i> Synchronous call</span>
+  <span><i class="dg-line is-async"></i> Asynchronous message / event</span>
+  <span class="dg-scroll-hint"><fa-icon [icon]="['fas', 'right-left']"></fa-icon> Scroll sideways to see the whole diagram</span>
+</div>
+
+<details class="dg-text-alt">
+  <summary>Text description of the diagram</summary>
+  <h4>Components</h4>
+  <ul>
+    @for (node of d.nodes; track node.id) {
+      <li><strong>{{ node.label }}</strong>@if (node.caption) { ({{ node.caption }})}: {{ node.summary }}</li>
+    }
+  </ul>
+  <h4>Connections</h4>
+  <ul>
+    @for (text of textEdges(); track $index) {
+      <li>{{ text }}</li>
+    }
+  </ul>
+</details>

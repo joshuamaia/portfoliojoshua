@@ -1,0 +1,68 @@
+@let a = left();
+@let b = right();
+<div class="cmp card-x">
+  <div class="cmp-pickers">
+    <label class="cmp-field">
+      <span>Compare</span>
+      <select [value]="a.id" (change)="setLeft($any($event.target).value)">
+        @for (option of architectures; track option.id) {
+          <option [value]="option.id" [selected]="option.id === a.id">{{ option.shortName }}</option>
+        }
+      </select>
+    </label>
+    <button type="button" class="icon-btn cmp-swap" (click)="swap()" aria-label="Swap architectures" title="Swap">
+      <fa-icon [icon]="['fas', 'arrow-right-arrow-left']"></fa-icon>
+    </button>
+    <label class="cmp-field">
+      <span>with</span>
+      <select [value]="b.id" (change)="setRight($any($event.target).value)">
+        @for (option of architectures; track option.id) {
+          <option [value]="option.id" [selected]="option.id === b.id">{{ option.shortName }}</option>
+        }
+      </select>
+    </label>
+  </div>
+
+  <table class="cmp-table">
+    <caption class="visually-hidden">Qualitative comparison between {{ a.shortName }} and {{ b.shortName }}</caption>
+    <thead>
+      <tr>
+        <th scope="col">Criterion</th>
+        @for (arch of [a, b]; track arch.id) {
+          <th scope="col">
+            <span class="cmp-arch"><fa-icon [icon]="arch.icon"></fa-icon> {{ arch.shortName }}</span>
+          </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (criterion of criteria; track criterion.id) {
+        <tr>
+          <th scope="row">{{ criterion.label }}</th>
+          @for (arch of [a, b]; track arch.id) {
+            @let item = arch.assessment[criterion.id];
+            <td [attr.data-label]="arch.shortName">
+              <strong>{{ item.tendency }}</strong>
+              <span>{{ item.context }}</span>
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="cmp-footer">
+    <p>
+      <fa-icon [icon]="['fas', 'circle-info']"></fa-icon>
+      These are qualitative tendencies, not absolute ratings. The right choice depends on context, scale, team size
+      and requirements.
+    </p>
+    <div class="cmp-actions">
+      @for (arch of [a, b]; track arch.id) {
+        <button type="button" class="btn-x btn-ghost-x btn-sm-x" (click)="explore.emit(arch.id)">
+          Explore {{ arch.shortName }} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+        </button>
+      }
+    </div>
+  </div>
+</div>

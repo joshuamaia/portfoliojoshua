@@ -1,0 +1,248 @@
+@if (challenge(); as c) {
+  <article class="cd" aria-labelledby="cd-title">
+    <a class="link-btn cd-back" routerLink="..">
+      <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon> All challenges
+    </a>
+
+    <header class="cd-head">
+      <span class="icon-badge cd-icon"><fa-icon [icon]="c.icon"></fa-icon></span>
+      <div>
+        <div class="cd-meta">
+          <span class="ch-category">{{ c.category }}</span>
+          <span class="ch-complexity" [attr.data-level]="c.complexity">
+            <span class="ch-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>Scenario complexity: {{ c.complexity }}</span>
+          </span>
+        </div>
+        <h2 id="cd-title" class="section-title">{{ c.title }}</h2>
+      </div>
+    </header>
+
+    <ol class="cd-steps">
+      <li class="cd-step">
+        <h3 class="cd-step-title"><span class="cd-num">1</span> The problem</h3>
+        <div class="card-x cd-card">
+          <p class="cd-problem">{{ c.problem }}</p>
+          <div class="chips cd-topics">
+            @for (topic of c.topics; track topic) {
+              <span class="chip">{{ topic }}</span>
+            }
+          </div>
+        </div>
+      </li>
+
+      <li class="cd-step">
+        <h3 class="cd-step-title"><span class="cd-num">2</span> Requirements and constraints</h3>
+        <div class="cd-two">
+          <div class="card-x cd-card">
+            <h4 class="label">Requirements</h4>
+            <ul class="bullets cd-list">
+              @for (item of c.requirements; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
+          <div class="card-x cd-card">
+            <h4 class="label">Constraints</h4>
+            <ul class="bullets cd-list">
+              @for (item of c.constraints; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="cd-step">
+        <h3 class="cd-step-title" id="cd-options-title"><span class="cd-num">3</span> Choose an approach</h3>
+        <div class="cd-options" role="radiogroup" aria-labelledby="cd-options-title">
+          @for (option of c.strategies; track option.id; let i = $index) {
+            @let checked = strategy()?.id === option.id;
+            <button
+              type="button"
+              role="radio"
+              class="cd-option"
+              [class.active]="checked"
+              [attr.aria-checked]="checked"
+              [tabIndex]="checked || (!strategy() && i === 0) ? 0 : -1"
+              (click)="choose(option.id)"
+              (keydown)="onOptionKeydown($event, i)"
+            >
+              <span class="cd-radio" aria-hidden="true"></span>
+              <span class="cd-option-text">
+                <strong>{{ option.name }}</strong>
+                <span>{{ option.summary }}</span>
+              </span>
+            </button>
+          }
+        </div>
+        @if (!strategy()) {
+          <p class="cd-hint">
+            <fa-icon [icon]="['fas', 'circle-info']"></fa-icon> Select an approach to see its diagram, trade-offs and the
+            reference solution.
+          </p>
+        }
+      </li>
+
+      @if (strategy(); as s) {
+        <li class="cd-step" #analysis>
+          <h3 class="cd-step-title"><span class="cd-num">4</span> Analysis: {{ s.name }}</h3>
+          @for (current of [s]; track current.id) {
+            <div class="cd-analysis">
+              <div class="card-x cd-card">
+                <app-diagram
+                  [diagram]="current.diagram"
+                  [selectedId]="selectedNodeId()"
+                  (selectedIdChange)="selectedNodeId.set($event)"
+                ></app-diagram>
+                <p class="cd-node" aria-live="polite">
+                  @if (selectedNode(); as node) {
+                    <strong>{{ node.label }}:</strong> {{ node.summary }}
+                  } @else {
+                    <span class="text-soft">Select a component in the diagram to see its role.</span>
+                  }
+                </p>
+              </div>
+
+              <div class="card-x cd-card">
+                <div class="cd-tradeoffs">
+                  <div>
+                    <h4 class="label">Advantages</h4>
+                    <ul class="bullets cd-list">
+                      @for (item of current.advantages; track item) {
+                        <li>{{ item }}</li>
+                      }
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="label">Limitations</h4>
+                    <ul class="bullets cd-list">
+                      @for (item of current.limitations; track item) {
+                        <li>{{ item }}</li>
+                      }
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="label">Risks</h4>
+                    <ul class="bullets cd-list cd-risks">
+                      @for (item of current.risks; track item) {
+                        <li>{{ item }}</li>
+                      }
+                    </ul>
+                  </div>
+                </div>
+                <p class="cd-best"><strong>Best when:</strong> {{ current.bestWhen }}</p>
+              </div>
+            </div>
+          }
+
+          <div class="cd-actions">
+            <button type="button" class="btn-x btn-ghost-x btn-sm-x" (click)="nextApproach()">
+              <fa-icon [icon]="['fas', 'rotate-right']"></fa-icon> Explore Another Approach
+            </button>
+          </div>
+
+          <details class="card-x cd-compare">
+            <summary>
+              <fa-icon [icon]="['fas', 'scale-balanced']"></fa-icon> Compare all approaches side by side
+            </summary>
+            <div class="cd-compare-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col"><span class="visually-hidden">Aspect</span></th>
+                    @for (option of c.strategies; track option.id) {
+                      <th scope="col" [class.is-current]="option.id === s.id">{{ option.name }}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Best when</th>
+                    @for (option of c.strategies; track option.id) {
+                      <td [class.is-current]="option.id === s.id">{{ option.bestWhen }}</td>
+                    }
+                  </tr>
+                  <tr>
+                    <th scope="row">Main advantage</th>
+                    @for (option of c.strategies; track option.id) {
+                      <td [class.is-current]="option.id === s.id">{{ option.advantages[0] }}</td>
+                    }
+                  </tr>
+                  <tr>
+                    <th scope="row">Main limitation</th>
+                    @for (option of c.strategies; track option.id) {
+                      <td [class.is-current]="option.id === s.id">{{ option.limitations[0] }}</td>
+                    }
+                  </tr>
+                  <tr>
+                    <th scope="row">Main risk</th>
+                    @for (option of c.strategies; track option.id) {
+                      <td [class.is-current]="option.id === s.id">{{ option.risks[0] }}</td>
+                    }
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </li>
+
+        <li class="cd-step">
+          <h3 class="cd-step-title"><span class="cd-num">5</span> Reference solution</h3>
+          <div class="card-x cd-card cd-reference">
+            @if (reference(); as ref) {
+              <p class="cd-ref-name">
+                <fa-icon [icon]="['fas', 'circle-check']"></fa-icon> {{ ref.name }}
+                @if (ref.id === s.id) {
+                  <span class="badge-x badge-live">Your choice</span>
+                } @else {
+                  <button type="button" class="link-btn" (click)="choose(ref.id)">View this approach</button>
+                }
+              </p>
+            }
+            <p>{{ c.reference.summary }}</p>
+            <ul class="bullets cd-list">
+              @for (item of c.reference.rationale; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+            <p class="cd-ref-note">
+              <fa-icon [icon]="['fas', 'lightbulb']"></fa-icon>
+              This is a reference, not the only correct answer: the best option depends on volume, team, existing
+              infrastructure and business requirements.
+            </p>
+            @if (relatedArchitecture(); as arch) {
+              <a
+                class="btn-x btn-ghost-x btn-sm-x"
+                routerLink="/explore/architecture"
+                [queryParams]="{ pattern: arch.id }"
+              >
+                <fa-icon [icon]="arch.icon"></fa-icon> See {{ arch.shortName }} in the Architecture Explorer
+              </a>
+            }
+          </div>
+        </li>
+      }
+    </ol>
+
+    <nav class="cd-pager" aria-label="Other challenges">
+      @if (neighbours().previous; as prev) {
+        <a class="cd-pager-link" [routerLink]="['..', prev.id]">
+          <span>Previous</span><strong>{{ prev.title }}</strong>
+        </a>
+      } @else {
+        <span></span>
+      }
+      @if (neighbours().next; as next) {
+        <a class="cd-pager-link is-next" [routerLink]="['..', next.id]">
+          <span>Next</span><strong>{{ next.title }}</strong>
+        </a>
+      }
+    </nav>
+  </article>
+} @else {
+  <div class="card-x cd-card">
+    <p>This challenge does not exist.</p>
+    <a class="link-btn" routerLink="..">See all challenges</a>
+  </div>
+}

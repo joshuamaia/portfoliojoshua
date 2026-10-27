@@ -1,0 +1,260 @@
+.tl-head {
+  margin-bottom: 20px;
+}
+
+.tl-sub {
+  margin-top: 6px;
+  color: var(--text-soft);
+}
+
+.tl-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.tl-stats div {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.tl-stats dt {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.tl-stats dd {
+  margin: 2px 0 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tl-chart {
+  padding: 18px 20px 14px;
+  overflow-x: auto;
+}
+
+.tl-axis,
+.tl-row {
+  min-width: 560px;
+}
+
+.tl-axis {
+  position: relative;
+  height: 20px;
+  margin-left: 120px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-soft);
+}
+
+.tl-tick {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  height: 40px;
+  transition: opacity 0.25s ease;
+}
+
+.tl-row.is-dimmed {
+  opacity: 0.3;
+}
+
+.tl-row-label {
+  overflow: hidden;
+  padding-right: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--heading);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tl-track {
+  position: relative;
+  height: 100%;
+}
+
+.tl-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed var(--border);
+}
+
+.tl-bar {
+  position: absolute;
+  top: 10px;
+  height: 20px;
+  min-width: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gradient);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s ease;
+}
+
+.tl-bar:hover,
+.tl-bar:focus-visible {
+  transform: scaleY(1.25);
+  box-shadow: 0 6px 16px -6px var(--glow-1);
+}
+
+.tl-bar.is-current {
+  background: linear-gradient(90deg, var(--accent), var(--success));
+}
+
+.tl-filter {
+  margin: 8px 0 24px;
+}
+
+.tl-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.tl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: 500 0.82rem var(--font);
+  cursor: pointer;
+}
+
+.tl-chip:hover {
+  border-color: var(--accent-border);
+}
+
+.tl-chip.active {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
+.tl-chip-count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-soft);
+}
+
+.tl-result {
+  min-height: 1.4em;
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+}
+
+.tl-card {
+  padding: 0 22px 18px;
+}
+
+.tl-card-head {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  width: 100%;
+  padding: 18px 0 12px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-family: var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+
+.tl-id {
+  display: grid;
+  flex: 1 1 240px;
+  gap: 2px;
+}
+
+.tl-company {
+  font-size: 1.15rem;
+  color: var(--heading);
+}
+
+.tl-role {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.tl-client,
+.tl-duration {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.tl-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 0.88rem;
+}
+
+.tl-chevron {
+  margin-top: 4px;
+  color: var(--text-soft);
+  transition: transform 0.25s var(--ease);
+}
+
+.tl-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.chip.is-match {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.tl-body {
+  animation: tl-in 0.3s var(--ease);
+}
+
+.tl-bullets {
+  font-size: 0.92rem;
+}
+
+.tl-note {
+  display: flex;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+@keyframes tl-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 576px) {
+  .tl-stats dd {
+    font-size: 1.3rem;
+  }
+}

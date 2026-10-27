@@ -1,0 +1,94 @@
+@if (node(); as n) {
+  <div class="ap-view" [class]="'tone-' + n.tone">
+    <header class="ap-head">
+      <span class="ap-icon"><fa-icon [icon]="n.icon"></fa-icon></span>
+      <div class="ap-title">
+        <span class="ap-kicker">Component</span>
+        <h3 class="card-title">{{ n.label }}</h3>
+        @if (n.caption) {
+          <span class="ap-caption">{{ n.caption }}</span>
+        }
+      </div>
+      <button type="button" class="icon-btn ap-close" (click)="closed.emit()" aria-label="Back to architecture overview">
+        <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+      </button>
+    </header>
+
+    @if (detail(); as d) {
+      <h4 class="label">Responsibility</h4>
+      <p class="ap-text">{{ d.responsibility }}</p>
+
+      <h4 class="label">Technologies</h4>
+      <div class="chips">
+        @for (tech of d.technologies; track tech) {
+          <span class="chip">{{ tech }}</span>
+        }
+      </div>
+
+      <h4 class="label">Benefits</h4>
+      <ul class="bullets ap-list">
+        @for (item of d.benefits; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+
+      <h4 class="label">Trade-offs</h4>
+      <ul class="bullets ap-list">
+        @for (item of d.tradeOffs; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+
+      <h4 class="label">Common challenges</h4>
+      <ul class="bullets ap-list">
+        @for (item of d.challenges; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    }
+
+    <button type="button" class="link-btn ap-back" (click)="closed.emit()">
+      <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon> Back to overview
+    </button>
+  </div>
+} @else {
+  @let a = architecture();
+  <div class="ap-view">
+    <header class="ap-head">
+      <span class="ap-icon"><fa-icon [icon]="a.icon"></fa-icon></span>
+      <div class="ap-title">
+        <span class="ap-kicker">Overview</span>
+        <h3 class="card-title">{{ a.shortName }}</h3>
+      </div>
+    </header>
+    <p class="ap-text">{{ a.summary }}</p>
+
+    <h4 class="label">When to use</h4>
+    <ul class="bullets ap-list">
+      @for (item of a.whenToUse; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+
+    <h4 class="label">Advantages</h4>
+    <ul class="bullets ap-list">
+      @for (item of a.strengths; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+
+    <h4 class="label">Limitations</h4>
+    <ul class="bullets ap-list">
+      @for (item of a.limitations; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+
+    <h4 class="label">Scalability decisions</h4>
+    <ul class="bullets ap-list">
+      @for (item of a.scaling; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+}

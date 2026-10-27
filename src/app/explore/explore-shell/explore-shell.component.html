@@ -1,0 +1,25 @@
+<section class="container-x page">
+  <app-page-header
+    eyebrow="Explore"
+    title="Engineering in practice"
+    subtitle="Interactive, educational views of how I approach software architecture and engineering decisions."
+  ></app-page-header>
+
+  @if (sections.length > 1) {
+    <nav class="ex-nav" aria-label="Explore sections" appReveal>
+      @for (section of sections; track section.path) {
+        <a
+          class="ex-link"
+          [routerLink]="section.path"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          <fa-icon [icon]="section.icon"></fa-icon>
+          <span>{{ section.title }}</span>
+        </a>
+      }
+    </nav>
+  }
+
+  <router-outlet></router-outlet>
+</section>

@@ -1,0 +1,160 @@
+<section aria-labelledby="sm-title">
+  <header class="sm-head">
+    <div>
+      <h2 id="sm-title" class="section-title">Interactive Skills Map</h2>
+      <p class="sm-sub">Explore my technical expertise, professional experience, and areas of specialization.</p>
+    </div>
+    <div class="sm-toggle" role="group" aria-label="View mode">
+      <button type="button" [class.active]="view() === 'map'" [attr.aria-pressed]="view() === 'map'" (click)="setView('map')">
+        <fa-icon [icon]="['fas', 'circle-nodes']"></fa-icon> Map
+      </button>
+      <button type="button" [class.active]="view() === 'cards'" [attr.aria-pressed]="view() === 'cards'" (click)="setView('cards')">
+        <fa-icon [icon]="['fas', 'layer-group']"></fa-icon> Cards
+      </button>
+    </div>
+  </header>
+
+  <div class="sm-stage">
+    @if (view() === 'map') {
+      <div class="card-x sm-map-card">
+        <svg class="sm-map" [attr.viewBox]="'0 0 ' + size + ' ' + size" role="group" aria-label="Skills map. Select an area to see its details.">
+          <circle class="sm-orbit" [attr.cx]="center" [attr.cy]="center" r="228" />
+          <circle class="sm-orbit is-inner" [attr.cx]="center" [attr.cy]="center" r="128" />
+          @for (item of items; track item.category.id) {
+            <line
+              class="sm-spoke"
+              [class.is-active]="item.category.id === selected().id"
+              [attr.x1]="center"
+              [attr.y1]="center"
+              [attr.x2]="item.point.x"
+              [attr.y2]="item.point.y"
+            />
+          }
+          <g class="sm-hub" aria-hidden="true">
+            <circle [attr.cx]="center" [attr.cy]="center" r="74" />
+            <text class="sm-hub-value" [attr.x]="center" [attr.y]="center - 4">{{ years }}+</text>
+            <text class="sm-hub-label" [attr.x]="center" [attr.y]="center + 22">years of experience</text>
+          </g>
+          @for (item of items; track item.category.id; let i = $index) {
+            @let active = item.category.id === selected().id;
+            <foreignObject
+              [attr.x]="item.point.x - nodeW / 2"
+              [attr.y]="item.point.y - 30"
+              [attr.width]="nodeW"
+              [attr.height]="nodeH"
+            >
+              <button
+                type="button"
+                class="sm-node"
+                [class.is-active]="active"
+                [attr.data-skill]="item.category.id"
+                [attr.aria-pressed]="active"
+                [tabIndex]="active ? 0 : -1"
+                (click)="select(item.category.id)"
+                (keydown)="onKeydown($event, i)"
+              >
+                <span class="sm-dot"><fa-icon [icon]="item.category.icon"></fa-icon></span>
+                <span class="sm-name">{{ item.category.name }}</span>
+                <span class="sm-count">{{ item.category.technologies.length }} technologies</span>
+              </button>
+            </foreignObject>
+          }
+        </svg>
+        <p class="sm-hint">
+          <fa-icon [icon]="['fas', 'circle-info']"></fa-icon> Select an area, or use the arrow keys. No proficiency
+          percentages: counts reflect technologies, roles and certificates listed in this portfolio.
+        </p>
+      </div>
+    }
+    <!-- Em telas estreitas os cards substituem o mapa, mesmo na visão "Map" -->
+    <div class="sm-cards" [class.is-fallback]="view() === 'map'">
+      @for (item of items; track item.category.id; let i = $index) {
+        @let active = item.category.id === selected().id;
+        <button
+          type="button"
+          class="sm-card"
+          [class.is-active]="active"
+          [attr.data-skill]="item.category.id"
+          [attr.aria-pressed]="active"
+          (click)="select(item.category.id)"
+          (keydown)="onKeydown($event, i)"
+        >
+          <span class="sm-card-head">
+            <span class="icon-badge"><fa-icon [icon]="item.category.icon"></fa-icon></span>
+            <strong>{{ item.category.name }}</strong>
+          </span>
+          <span class="sm-card-text">{{ item.category.experience }}</span>
+          <span class="sm-card-meta">
+            {{ item.category.technologies.length }} technologies · {{ item.roles.length }}
+            {{ item.roles.length === 1 ? 'role' : 'roles' }}
+          </span>
+        </button>
+      }
+    </div>
+
+    @let d = detail();
+    <aside class="card-x sm-panel" aria-live="polite" [attr.aria-label]="d.category.name + ' details'">
+      @for (current of [d]; track current.category.id) {
+        <div class="sm-panel-body">
+          <header class="sm-panel-head">
+            <span class="icon-badge"><fa-icon [icon]="current.category.icon"></fa-icon></span>
+            <h3 class="card-title">{{ current.category.name }}</h3>
+          </header>
+
+          <dl class="sm-stats">
+            <div><dt>Technologies</dt><dd>{{ current.category.technologies.length }}</dd></div>
+            <div><dt>Roles</dt><dd>{{ current.roles.length }}</dd></div>
+            <div><dt>Certificates</dt><dd>{{ current.certificates.length }}</dd></div>
+          </dl>
+
+          <h4 class="label">Technologies</h4>
+          <div class="chips">
+            @for (tech of current.category.technologies; track tech) {
+              <span class="chip">{{ tech }}</span>
+            }
+          </div>
+
+          <h4 class="label">Experience</h4>
+          <p class="sm-text">{{ current.category.experience }}</p>
+
+          <h4 class="label">Responsibilities and practical applications</h4>
+          <ul class="bullets sm-list">
+            @for (item of current.category.applications; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+
+          @if (current.roles.length) {
+            <h4 class="label">Applied in</h4>
+            <ul class="sm-roles">
+              @for (role of current.roles; track role.job.company) {
+                <li>
+                  <strong>{{ role.job.company }}</strong>
+                  <span>{{ role.period }}</span>
+                </li>
+              }
+            </ul>
+          }
+
+          @if (current.certificates.length) {
+            <h4 class="label">Related certificates</h4>
+            <ul class="bullets sm-list">
+              @for (cert of current.certificates; track cert.title) {
+                <li>{{ cert.title }}</li>
+              }
+            </ul>
+          }
+
+          <h4 class="label">Related competencies</h4>
+          <div class="sm-related">
+            @for (rel of current.related; track rel.id) {
+              <button type="button" class="chip sm-related-btn" (click)="select(rel.id)">
+                <fa-icon [icon]="rel.icon"></fa-icon> {{ rel.name }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </aside>
+  </div>
+</section>

@@ -5,6 +5,11 @@
     [subtitle]="profile.yearsOfExperience + '+ years building corporate systems across the public and private sectors.'"
   ></app-page-header>
 
+  <a class="link-btn explore-link" routerLink="/explore/timeline" appReveal>
+    <fa-icon [icon]="['fas', 'timeline']"></fa-icon> Explore the interactive career timeline
+    <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+  </a>
+
   <ol class="timeline">
     @for (job of experiences; track job.company; let first = $first) {
       <li class="timeline-item" [class.is-current]="!job.end" appReveal>

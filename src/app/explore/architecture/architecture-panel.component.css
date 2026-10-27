@@ -1,0 +1,97 @@
+.ap-view {
+  --tone: var(--accent);
+  --tone-soft: var(--accent-soft);
+  animation: ap-in 0.3s var(--ease);
+}
+
+.tone-info {
+  --tone: var(--accent-2);
+  --tone-soft: color-mix(in srgb, var(--accent-2) 12%, transparent);
+}
+
+.tone-success {
+  --tone: var(--success);
+  --tone-soft: var(--success-soft);
+}
+
+.tone-warning {
+  --tone: var(--warning);
+  --tone-soft: var(--warning-soft);
+}
+
+.tone-danger {
+  --tone: var(--danger);
+  --tone-soft: var(--danger-soft);
+}
+
+.tone-neutral {
+  --tone: var(--text-soft);
+  --tone-soft: var(--surface-2);
+}
+
+.ap-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ap-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--tone-soft);
+  color: var(--tone);
+}
+
+.ap-title {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.ap-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.ap-caption {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.ap-close {
+  width: 36px;
+  height: 36px;
+  font-size: 0.95rem;
+}
+
+.ap-text {
+  margin-top: 14px;
+  font-size: 0.92rem;
+}
+
+.label + .ap-text {
+  margin-top: 0;
+}
+
+.ap-list {
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.ap-back {
+  margin-top: 20px;
+}
+
+@keyframes ap-in {
+  from {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+}

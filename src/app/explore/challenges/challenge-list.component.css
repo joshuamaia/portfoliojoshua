@@ -1,0 +1,98 @@
+.ch-head {
+  margin-bottom: 18px;
+}
+
+.ch-sub {
+  margin-top: 6px;
+  color: var(--text-soft);
+}
+
+.ch-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ch-filter {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font: 500 0.85rem var(--font);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.ch-filter:hover {
+  color: var(--heading);
+  border-color: var(--border-strong);
+}
+
+.ch-filter.active {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
+.ch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 16px;
+}
+
+.ch-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+}
+
+.ch-card:hover {
+  transform: translateY(-3px);
+}
+
+.ch-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ch-problem {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+.ch-more {
+  color: var(--text-soft);
+}
+
+.ch-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.ch-note {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.ch-note fa-icon {
+  margin-top: 2px;
+}

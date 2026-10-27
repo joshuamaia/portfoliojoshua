@@ -20,6 +20,7 @@ export class MenuComponent {
     { title: 'Education', icon: ['fas', 'graduation-cap'], routerLink: '/escolaridades' },
     { title: 'Courses', icon: ['fas', 'book-open'], routerLink: '/escolaridades/extra' },
     { title: 'Certificates', icon: ['fas', 'certificate'], routerLink: '/certificados' },
+    { title: 'Explore', icon: ['fas', 'compass'], routerLink: '/explore', exact: false },
   ];
 
   toggleTheme(): void {

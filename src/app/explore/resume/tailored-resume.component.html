@@ -1,0 +1,149 @@
+<section aria-labelledby="tr-title">
+  <header class="tr-head">
+    <h2 id="tr-title" class="section-title">Tailored Resume</h2>
+    <p class="tr-sub">Generate a resume tailored to your area of interest.</p>
+  </header>
+
+  <h3 class="label" id="tr-profiles-title">Choose a profile</h3>
+  <div class="tr-profiles" role="radiogroup" aria-labelledby="tr-profiles-title">
+    @for (option of profiles; track option.id; let i = $index) {
+      @let checked = option.id === selected().id;
+      <button
+        type="button"
+        role="radio"
+        class="tr-profile"
+        [class.active]="checked"
+        [attr.aria-checked]="checked"
+        [tabIndex]="checked ? 0 : -1"
+        (click)="select(option.id)"
+        (keydown)="onKeydown($event, i)"
+      >
+        <span class="tr-profile-head">
+          <span class="icon-badge"><fa-icon [icon]="option.icon"></fa-icon></span>
+          <strong>{{ option.name }}</strong>
+          @if (checked) {
+            <fa-icon class="tr-check" [icon]="['fas', 'circle-check']"></fa-icon>
+          }
+        </span>
+        <span class="tr-profile-text">{{ option.description }}</span>
+      </button>
+    }
+  </div>
+
+  @let r = resume();
+  <div class="tr-actions">
+    <button type="button" class="btn-x btn-primary-x" (click)="download()" [disabled]="status().kind === 'working'">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>
+      {{ status().kind === 'working' ? 'Generating…' : 'Download ' + selected().name + ' resume (PDF)' }}
+    </button>
+    <a class="btn-x btn-ghost-x" [href]="originalResume" target="_blank" rel="noopener">
+      <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon> Original resume
+    </a>
+    <p class="tr-status" role="status">
+      @switch (status().kind) {
+        @case ('done') {
+          <fa-icon [icon]="['fas', 'circle-check']"></fa-icon> Generated {{ $any(status()).fileName }}
+        }
+        @case ('error') {
+          <fa-icon [icon]="['fas', 'triangle-exclamation']"></fa-icon> The PDF could not be generated. Please try again.
+        }
+      }
+    </p>
+  </div>
+
+  <h3 class="label">Preview</h3>
+  <article class="tr-paper" aria-label="Resume preview">
+    @for (current of [r]; track current.profileId) {
+      <div class="tr-paper-body">
+        <header class="tr-paper-head">
+          <h4 class="tr-name">{{ current.name }}</h4>
+          <p class="tr-title">{{ current.title }} · Focus: {{ selected().focusTitle }}</p>
+          <p class="tr-muted">{{ current.headline }}</p>
+          <p class="tr-muted">
+            {{ current.location }}
+            @for (link of current.links; track link.url) {
+              · <a [href]="link.url" target="_blank" rel="noopener">{{ link.label }}</a>
+            }
+          </p>
+        </header>
+
+        <h5 class="tr-section">Summary</h5>
+        @for (paragraph of current.summary; track paragraph) {
+          <p class="tr-p">{{ paragraph }}</p>
+        }
+        @if (current.focus.length) {
+          <p class="tr-p"><strong>Focus areas:</strong> {{ current.focus.join(', ') }}.</p>
+        }
+
+        <h5 class="tr-section">Core skills</h5>
+        @for (group of current.skills; track group.title) {
+          <p class="tr-p tr-skill">
+            <strong>{{ group.title }}:</strong>{{ ' ' }}
+            @for (item of group.items; track item; let last = $last) {
+              <span [class.tr-mark]="isHighlighted(group, item)">{{ item }}</span>{{ last ? '' : ', ' }}
+            }
+          </p>
+        }
+
+        <h5 class="tr-section">Professional experience</h5>
+        @for (job of current.experience; track job.company + job.period) {
+          <div class="tr-job">
+            <div class="tr-job-head">
+              <strong>{{ job.company }}@if (job.role) { · {{ job.role }}}</strong>
+              <span class="tr-muted">{{ job.period }}</span>
+            </div>
+            @if (job.relevance !== 'low') {
+              <span class="tr-relevance" [attr.data-level]="job.relevance">
+                {{ job.relevance === 'high' ? 'Highly relevant' : 'Relevant' }} · {{ job.matched.length }} matching
+                {{ job.matched.length === 1 ? 'technology' : 'technologies' }}
+              </span>
+            }
+            @if (job.client) {
+              <p class="tr-muted">Client: {{ job.client }}</p>
+            }
+            <ul class="tr-list">
+              @for (activity of job.activities; track activity) {
+                <li>{{ activity }}</li>
+              }
+            </ul>
+            <p class="tr-p tr-skill">
+              <strong>Technologies:</strong>{{ ' ' }}
+              @for (tech of job.technologies; track tech; let last = $last) {
+                <span [class.tr-mark]="job.matched.includes(tech)">{{ tech }}</span>{{ last ? '' : ', ' }}
+              }
+            </p>
+          </div>
+        }
+
+        <h5 class="tr-section">Education</h5>
+        <ul class="tr-list">
+          @for (degree of current.education; track degree.title) {
+            <li>
+              {{ degree.title }}@if (degree.institution) { · {{ degree.institution }}}
+              @if (degree.inProgress) {
+                {{ ' ' }}<em class="tr-muted">(in progress)</em>
+              }
+            </li>
+          }
+        </ul>
+
+        <h5 class="tr-section">Certifications</h5>
+        <ul class="tr-list tr-columns">
+          @for (cert of current.certificates; track cert) {
+            <li>{{ cert }}</li>
+          }
+        </ul>
+
+        <h5 class="tr-section">Languages</h5>
+        <p class="tr-p">{{ current.languages }}</p>
+      </div>
+    }
+  </article>
+
+  <p class="tr-note">
+    <fa-icon [icon]="['fas', 'circle-info']"></fa-icon>
+    Generated from the same data as this portfolio: companies, roles, dates and activities are never changed, only
+    reordered and highlighted. The PDF uses selectable text and a simple single-column layout for reasonable ATS
+    compatibility, although no format is guaranteed to be parsed identically by every system.
+  </p>
+</section>

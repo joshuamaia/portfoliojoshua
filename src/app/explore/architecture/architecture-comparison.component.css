@@ -1,0 +1,190 @@
+.cmp {
+  padding: 22px;
+  animation: cmp-in 0.35s var(--ease);
+}
+
+.cmp-pickers {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cmp-field {
+  display: grid;
+  gap: 6px;
+  flex: 1 1 200px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.cmp-field select {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--heading);
+  font: 600 0.95rem var(--font);
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.cmp-field select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cmp-swap {
+  width: 44px;
+  height: 44px;
+}
+
+.cmp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.cmp-table th,
+.cmp-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.cmp-table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.cmp-arch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.cmp-table tbody th {
+  width: 22%;
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.cmp-table td {
+  width: 39%;
+}
+
+.cmp-table td strong {
+  display: block;
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.cmp-table td span {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-soft);
+}
+
+.cmp-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.cmp-table tbody tr:hover > * {
+  background: var(--surface-2);
+}
+
+.cmp-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.cmp-footer p {
+  display: flex;
+  gap: 8px;
+  max-width: 560px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.cmp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@keyframes cmp-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Em telas estreitas cada critério vira um bloco empilhado */
+@media (max-width: 640px) {
+  .cmp {
+    padding: 16px;
+  }
+
+  .cmp-table thead {
+    display: none;
+  }
+
+  .cmp-table,
+  .cmp-table tbody,
+  .cmp-table tr,
+  .cmp-table th,
+  .cmp-table td {
+    display: block;
+    width: auto;
+  }
+
+  .cmp-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cmp-table th,
+  .cmp-table td {
+    padding: 4px 0;
+    border: 0;
+  }
+
+  .cmp-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .cmp-table tbody tr:hover > * {
+    background: none;
+  }
+}

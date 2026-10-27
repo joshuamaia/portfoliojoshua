@@ -8,6 +8,8 @@ export interface Experience {
   end?: string;
   activities: string[];
   technologies: string[];
+  /** Destaques profissionais verificáveis (opcional; exibidos na Career Timeline) */
+  highlights?: string[];
 }
 
 export const experiences: Experience[] = [

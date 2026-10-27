@@ -1,0 +1,135 @@
+<section aria-labelledby="tl-title">
+  <header class="tl-head">
+    <h2 id="tl-title" class="section-title">Career Timeline</h2>
+    <p class="tl-sub">My professional journey through software engineering, technologies, and enterprise solutions.</p>
+  </header>
+
+  <dl class="tl-stats">
+    <div><dt>Years of experience</dt><dd>{{ years }}+</dd></div>
+    <div><dt>Companies</dt><dd>{{ stats.companies }}</dd></div>
+    <div><dt>Technologies used</dt><dd>{{ stats.technologies }}</dd></div>
+  </dl>
+
+  <div class="card-x tl-chart" role="group" aria-label="Timeline overview. Select a period to open its details.">
+    <div class="tl-axis" aria-hidden="true">
+      @for (tick of ticks; track tick.year) {
+        <span class="tl-tick" [style.left.%]="tick.left">{{ tick.year }}</span>
+      }
+    </div>
+    @for (entry of entries; track entry.key) {
+      <div class="tl-row" [class.is-dimmed]="!matches().has(entry.key)">
+        <span class="tl-row-label">{{ entry.job.company }}</span>
+        <div class="tl-track">
+          @for (tick of ticks; track tick.year) {
+            <i class="tl-grid" [style.left.%]="tick.left"></i>
+          }
+          <button
+            type="button"
+            class="tl-bar"
+            [class.is-current]="!entry.job.end"
+            [style.left.%]="entry.bar.left"
+            [style.width.%]="entry.bar.width"
+            [attr.aria-label]="entry.job.company + ', ' + entry.period + ', ' + entry.duration"
+            [title]="entry.period + ' · ' + entry.duration"
+            (click)="focusEntry(entry.key)"
+          ></button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="tl-filter">
+    <h3 class="label" id="tl-filter-title">Filter by technology</h3>
+    <div class="tl-filter-chips" role="group" aria-labelledby="tl-filter-title">
+      <button type="button" class="tl-chip" [class.active]="!filter()" [attr.aria-pressed]="!filter()" (click)="setFilter(null)">
+        All
+      </button>
+      @for (tech of visibleTechnologies(); track tech.name) {
+        <button
+          type="button"
+          class="tl-chip"
+          [class.active]="filter() === tech.name"
+          [attr.aria-pressed]="filter() === tech.name"
+          (click)="setFilter(tech.name)"
+        >
+          {{ tech.name }} <span class="tl-chip-count">{{ tech.count }}</span>
+        </button>
+      }
+      <button type="button" class="link-btn" (click)="showAllTechnologies.set(!showAllTechnologies())">
+        {{ showAllTechnologies() ? 'Show fewer' : 'Show all ' + technologies.length }}
+      </button>
+    </div>
+    <p class="tl-result" aria-live="polite">
+      @if (filter(); as tech) {
+        {{ visibleEntries().length }} of {{ entries.length }} experiences use <strong>{{ tech }}</strong>.
+      }
+    </p>
+  </div>
+
+  <ol class="timeline tl-list">
+    @for (entry of visibleEntries(); track entry.key) {
+      @let open = isExpanded(entry.key);
+      <li class="timeline-item" [class.is-current]="!entry.job.end" [id]="'tl-' + entry.key">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <article class="card-x tl-card">
+          <button
+            type="button"
+            class="tl-card-head"
+            [attr.aria-expanded]="open"
+            [attr.aria-controls]="'tl-body-' + entry.key"
+            (click)="toggle(entry.key)"
+          >
+            <span class="tl-id">
+              <strong class="tl-company">{{ entry.job.company }}</strong>
+              @if (entry.job.role) {
+                <span class="tl-role">{{ entry.job.role }}</span>
+              }
+              @if (entry.job.client) {
+                <span class="tl-client"><fa-icon [icon]="['fas', 'building']"></fa-icon> Client: {{ entry.job.client }}</span>
+              }
+            </span>
+            <span class="tl-meta">
+              @if (!entry.job.end) {
+                <span class="badge-x badge-live"><span class="pulse"></span> Current</span>
+              }
+              <span class="tl-period"><fa-icon [icon]="['fas', 'calendar']"></fa-icon> {{ entry.period }}</span>
+              <span class="tl-duration">{{ entry.duration }}</span>
+            </span>
+            <fa-icon class="tl-chevron" [class.rotated]="open" [icon]="['fas', 'chevron-down']"></fa-icon>
+          </button>
+
+          <div class="chips tl-techs">
+            @for (tech of entry.job.technologies; track tech) {
+              <span class="chip" [class.is-match]="tech === filter()">{{ tech }}</span>
+            }
+          </div>
+
+          @if (open) {
+            <div class="tl-body" [id]="'tl-body-' + entry.key">
+              <h4 class="label">Responsibilities</h4>
+              <ul class="bullets tl-bullets">
+                @for (activity of entry.job.activities; track activity) {
+                  <li>{{ activity }}</li>
+                }
+              </ul>
+              @if (entry.job.highlights?.length) {
+                <h4 class="label">Professional highlights</h4>
+                <ul class="bullets tl-bullets">
+                  @for (item of entry.job.highlights; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              }
+            </div>
+          }
+        </article>
+      </li>
+    }
+  </ol>
+
+  <p class="tl-note">
+    <fa-icon [icon]="['fas', 'circle-info']"></fa-icon>
+    Built from the same data as the
+    <a routerLink="/trabalhos">Work Experience</a> page.
+  </p>
+</section>

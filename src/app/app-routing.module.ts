@@ -36,13 +36,19 @@ const routes: Routes = [
         (m) => m.CertificadosModule
       ),
   },
+  {
+    path: 'explore',
+    loadChildren: () =>
+      import('./explore/explore.routes').then((m) => m.EXPLORE_ROUTES),
+  },
   { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'top',
+      // O topo é tratado por scrollToTopOnPageChange (AppComponent): mudanças só de query não rolam a página
+      scrollPositionRestoration: 'disabled',
       anchorScrolling: 'enabled',
     }),
   ],

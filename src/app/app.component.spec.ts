@@ -1,29 +1,49 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule, provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
+import { MenuModule } from './menu/menu.module';
+import { RodapeComponent } from './rodape/rodape.component';
+import { SharedModule } from './shared/shared.module';
+import { TopoComponent } from './topo/topo.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [RouterModule, SharedModule, MenuModule],
+      declarations: [AppComponent, TopoComponent, RodapeComponent],
+      providers: [provideRouter([])],
+    }),
+  );
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'new-portifolio-joshua'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('new-portifolio-joshua');
-  });
-
-  it('should render title', () => {
+  function render(): HTMLElement {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('new-portifolio-joshua app is running!');
+    return fixture.nativeElement as HTMLElement;
+  }
+
+  it('renders the header, main content area and footer', () => {
+    const el = render();
+    expect(el.querySelector('.site-header')).not.toBeNull();
+    expect(el.querySelector('main#conteudo router-outlet')).not.toBeNull();
+    expect(el.querySelector('app-rodape')).not.toBeNull();
+  });
+
+  it('keeps every existing navigation item and adds Explore', () => {
+    const links = Array.from(render().querySelectorAll<HTMLAnchorElement>('.nav-link-x')).map((a) => [
+      a.textContent?.trim(),
+      a.getAttribute('href'),
+    ]);
+    expect(links).toEqual([
+      ['Home', '/home'],
+      ['Experience', '/trabalhos'],
+      ['Education', '/escolaridades'],
+      ['Courses', '/escolaridades/extra'],
+      ['Certificates', '/certificados'],
+      ['Explore', '/explore'],
+    ]);
+  });
+
+  it('keeps the resume viewer available in the header', () => {
+    expect(render().querySelector('button[aria-label="View resume"]')).not.toBeNull();
   });
 });

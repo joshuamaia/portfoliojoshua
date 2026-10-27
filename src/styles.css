@@ -24,6 +24,8 @@
   --success-soft: rgba(4, 120, 87, 0.1);
   --warning: #b45309;
   --warning-soft: rgba(180, 83, 9, 0.1);
+  --danger: #b91c1c;
+  --danger-soft: rgba(185, 28, 28, 0.08);
   --glow-1: rgba(124, 58, 237, 0.18);
   --glow-2: rgba(14, 165, 233, 0.16);
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
@@ -51,6 +53,8 @@
   --success-soft: rgba(52, 211, 153, 0.12);
   --warning: #fbbf24;
   --warning-soft: rgba(251, 191, 36, 0.12);
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, 0.12);
   --glow-1: rgba(139, 92, 246, 0.28);
   --glow-2: rgba(34, 211, 238, 0.16);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -684,6 +688,14 @@ img {
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 800;
   letter-spacing: -0.03em;
+}
+
+.explore-link {
+  margin: -24px 0 32px;
+}
+
+.section-head .explore-link {
+  margin: 10px 0 0;
 }
 
 .section-title-sm {
@@ -1373,6 +1385,48 @@ app-certificado-item + app-certificado-item {
   .modal-actions .btn-x {
     padding: 0 12px;
   }
+}
+
+/* ==========================================================================
+   Explore — selos compartilhados (categoria e complexidade dos desafios)
+   ========================================================================== */
+
+.ch-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.ch-complexity {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.ch-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.ch-bars i {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--border-strong);
+}
+
+.ch-bars i:nth-child(1) { height: 6px; }
+.ch-bars i:nth-child(2) { height: 10px; }
+.ch-bars i:nth-child(3) { height: 14px; }
+
+.ch-complexity[data-level='Moderate'] .ch-bars i:nth-child(1),
+.ch-complexity[data-level='High'] .ch-bars i:nth-child(-n + 2),
+.ch-complexity[data-level='Very high'] .ch-bars i {
+  background: var(--accent);
 }
 
 /* ==========================================================================

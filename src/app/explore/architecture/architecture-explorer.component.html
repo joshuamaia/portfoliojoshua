@@ -1,0 +1,97 @@
+<section class="ax" aria-labelledby="ax-title">
+  <header class="ax-head">
+    <div>
+      <h2 id="ax-title" class="section-title">Architecture Explorer</h2>
+      <p class="ax-sub">Explore software architecture patterns, design decisions, and their trade-offs.</p>
+    </div>
+    <button
+      type="button"
+      class="btn-x btn-ghost-x btn-sm-x"
+      [attr.aria-pressed]="view() === 'compare'"
+      (click)="setView(view() === 'compare' ? 'explore' : 'compare')"
+    >
+      @if (view() === 'compare') {
+        <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon> Back to explorer
+      } @else {
+        <fa-icon [icon]="['fas', 'scale-balanced']"></fa-icon> Compare Architectures
+      }
+    </button>
+  </header>
+
+  @if (view() === 'explore') {
+    <div class="ax-tabs" role="tablist" aria-label="Architecture patterns">
+      @for (architecture of architectures; track architecture.id; let i = $index) {
+        @let selected = architecture.id === active().id;
+        <button
+          #tab
+          type="button"
+          role="tab"
+          class="ax-tab"
+          [id]="'ax-tab-' + architecture.id"
+          [class.active]="selected"
+          [attr.aria-selected]="selected"
+          aria-controls="ax-tabpanel"
+          [tabIndex]="selected ? 0 : -1"
+          (click)="select(architecture.id)"
+          (keydown)="onTabKeydown($event, i)"
+        >
+          <fa-icon [icon]="architecture.icon"></fa-icon>
+          <span>{{ architecture.shortName }}</span>
+        </button>
+      }
+    </div>
+
+    <div id="ax-tabpanel" role="tabpanel" [attr.aria-labelledby]="'ax-tab-' + active().id">
+      @for (architecture of [active()]; track architecture.id) {
+        <div class="ax-stage">
+          <article class="card-x ax-diagram-card">
+            <header class="ax-card-head">
+              <div>
+                <h3 class="card-title">{{ architecture.name }}</h3>
+                <p class="ax-tagline">{{ architecture.tagline }}</p>
+              </div>
+              <span class="ax-hint">
+                <fa-icon [icon]="['fas', 'circle-info']"></fa-icon> Select a component to inspect it
+              </span>
+            </header>
+            <app-diagram
+              [diagram]="architecture.diagram"
+              [selectedId]="selectedNodeId()"
+              (selectedIdChange)="onNodeSelected($event)"
+            ></app-diagram>
+          </article>
+
+          <app-architecture-panel
+            #panel
+            class="card-x ax-panel"
+            [architecture]="architecture"
+            [node]="selectedNode()"
+            [detail]="selectedDetail()"
+            (closed)="selectedNodeId.set(null)"
+          ></app-architecture-panel>
+        </div>
+
+        <h3 class="label">Key concepts</h3>
+        <div class="ax-concepts">
+          @for (concept of architecture.concepts; track concept.title) {
+            <article class="ax-concept">
+              <h4>{{ concept.title }}</h4>
+              <p>{{ concept.text }}</p>
+            </article>
+          }
+        </div>
+      }
+    </div>
+  } @else {
+    <app-architecture-comparison
+      [initial]="active().id"
+      (explore)="openInExplorer($event)"
+    ></app-architecture-comparison>
+  }
+
+  <p class="ax-disclaimer">
+    <fa-icon [icon]="['fas', 'circle-info']"></fa-icon>
+    These diagrams are educational examples of each pattern, not representations of systems from the companies I
+    have worked for.
+  </p>
+</section>

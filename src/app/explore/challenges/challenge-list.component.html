@@ -1,0 +1,56 @@
+<section aria-labelledby="ch-title">
+  <header class="ch-head">
+    <h2 id="ch-title" class="section-title">Engineering Challenges</h2>
+    <p class="ch-sub">Explore real-world engineering challenges and the architectural decisions behind their solutions.</p>
+  </header>
+
+  <div class="ch-filters" role="group" aria-label="Filter by category">
+    @for (item of categories; track item) {
+      <button
+        type="button"
+        class="ch-filter"
+        [class.active]="category() === item"
+        [attr.aria-pressed]="category() === item"
+        (click)="category.set(item)"
+      >
+        {{ item }}
+      </button>
+    }
+  </div>
+
+  <div class="ch-grid">
+    @for (challenge of visible(); track challenge.id) {
+      <article class="card-x ch-card">
+        <header class="ch-card-head">
+          <span class="icon-badge"><fa-icon [icon]="challenge.icon"></fa-icon></span>
+          <span class="ch-category">{{ challenge.category }}</span>
+        </header>
+        <h3 class="card-title">{{ challenge.title }}</h3>
+        <p class="ch-problem">{{ challenge.problem }}</p>
+        <div class="chips">
+          @for (topic of challenge.topics.slice(0, 4); track topic) {
+            <span class="chip">{{ topic }}</span>
+          }
+          @if (challenge.topics.length > 4) {
+            <span class="chip ch-more">+{{ challenge.topics.length - 4 }}</span>
+          }
+        </div>
+        <footer class="ch-card-foot">
+          <span class="ch-complexity" [attr.data-level]="challenge.complexity">
+            <span class="ch-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span><span class="visually-hidden">Scenario complexity: </span>{{ challenge.complexity }}</span>
+          </span>
+          <a class="btn-x btn-ghost-x btn-sm-x" [routerLink]="challenge.id">
+            Explore Solution <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+          </a>
+        </footer>
+      </article>
+    }
+  </div>
+
+  <p class="ch-note">
+    <fa-icon [icon]="['fas', 'circle-info']"></fa-icon>
+    Complexity describes how hard each scenario is, not a rating of skills. The scenarios are educational and do not
+    describe client projects.
+  </p>
+</section>
