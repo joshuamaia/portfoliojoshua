@@ -25,7 +25,7 @@ Besides the classic resume sections, the site includes an **Explore** area with 
 | **Engineering Challenges** | Six real-world scenarios (high-volume messaging, database performance, resilience, legacy modernization, concurrency, workflow automation). For each one, the visitor can choose between two or three approaches, see a diagram, compare advantages, limitations and risks, and read a reference solution. |
 | **Interactive Skills Map** | Radial map (or cards) of eight areas of expertise. It shows the technologies, practical applications, roles where they were used and related certificates. No arbitrary proficiency percentages: every number is a verifiable count. |
 | **Career Timeline** | Year-by-year chart and expandable list of every experience, with a technology filter. |
-| **Tailored Resume** | Generates a resume focused on *Backend Java*, *Frontend Angular* or *Full Stack Engineering*. It reorders and highlights skills and experiences, shows a live preview and exports a separate, text-based PDF. The original PDF stays available and unchanged. |
+| **Tailored Resume** | Generates a resume focused on *Backend Java*, *Frontend Angular* or *Tech Lead / Full Stack Engineering*. It reorders and highlights skills and experiences, shows a live preview and exports a separate, text-based PDF. The original PDF stays available and unchanged. |
 
 All Explore views keep their state in the URL (for example `?pattern=bpmn` or `?approach=kafka`), so any view can be shared through a link.
 

@@ -140,7 +140,7 @@ export const resumeProfiles: ResumeProfile[] = [
   },
   {
     id: 'fullstack',
-    name: 'Full Stack Engineering',
+    name: 'Tech Lead / Full Stack Engineering',
     icon: ['fas', 'layer-group'],
     description: 'Balanced view of backend, frontend, integration, architecture and data.',
     focusTitle: 'Full Stack Engineering',

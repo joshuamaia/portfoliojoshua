@@ -15,10 +15,10 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: 'Freelancer',
-    role: 'Senior Full Stack Developer',
+    role: 'Tech Lead / Senior Full Stack Developer',
     start: '2026-04',
     activities: [
-      'Work as a Senior Full Stack Developer, focused on the development, integration, and evolution of corporate systems, using modern technologies and software engineering best practices;',
+      'Work as a Tech Lead and Senior Full Stack Developer, focused on the development, integration, and evolution of corporate systems, using modern technologies and software engineering best practices;',
       'Responsible for developing new features, REST APIs, system integrations, asynchronous communication with messaging, and business process automation using Flowable and BPMN 2.0;',
       'Experience in software architecture, development of scalable solutions, performance optimization, incident resolution, automated testing, and continuous improvement of applications;',
       'Apply SOLID principles, Clean Code, Clean Architecture, and Hexagonal Architecture, aiming at quality, security, maintainability, and evolution of the systems.',

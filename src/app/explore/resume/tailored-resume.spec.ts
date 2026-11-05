@@ -14,7 +14,7 @@ const frontend = findResumeProfile('frontend')!;
 
 describe('tailored resume builder', () => {
   it('offers the three requested profiles', () => {
-    expect(resumeProfiles.map((p) => p.name)).toEqual(['Backend Java', 'Frontend Angular', 'Full Stack Engineering']);
+    expect(resumeProfiles.map((p) => p.name)).toEqual(['Backend Java', 'Frontend Angular', 'Tech Lead / Full Stack Engineering']);
   });
 
   for (const resumeProfile of resumeProfiles) {
@@ -27,7 +27,7 @@ describe('tailored resume builder', () => {
         expect(entry.activities).toEqual(experiences[i].activities);
         expect([...entry.technologies].sort()).toEqual([...experiences[i].technologies].sort());
       });
-      expect(resume.title).toBe(profile.role);
+      expect(resume.title).toBe('Tech Lead | Senior Full-Stack Developer');
       expect(resume.summary).toEqual(profile.summary);
     });
   }
@@ -107,7 +107,7 @@ describe('TailoredResumeComponent', () => {
 
   it('starts with Full Stack Engineering and keeps the original resume available', async () => {
     const el = await open();
-    expect(el.querySelector('[role="radio"][aria-checked="true"]')?.textContent).toContain('Full Stack Engineering');
+    expect(el.querySelector('[role="radio"][aria-checked="true"]')?.textContent).toContain('Tech Lead / Full Stack Engineering');
     expect(el.querySelector('.tr-actions a')?.getAttribute('href')).toBe(profile.resume);
   });
 

@@ -107,7 +107,7 @@ export function buildTailoredResume(resumeProfile: ResumeProfile): TailoredResum
     profileId: resumeProfile.id,
     fileName: `Joshua_MaiaRodrigues_Resume_${resumeProfile.fileSuffix}.pdf`,
     name: profile.name,
-    title: profile.role,
+    title: profile.resumeTitle,
     headline: profile.headline,
     location: profile.location,
     languages: profile.languages,

@@ -18,6 +18,8 @@ export interface SkillGroup {
 export const profile = {
   name: 'Joshua Maia Rodrigues',
   role: 'Senior Full-Stack Developer',
+  /** Título usado no Tailored Resume (prévia e PDF) */
+  resumeTitle: 'Tech Lead | Senior Full-Stack Developer',
   headline: 'Senior Full Stack Developer | Java | Spring Boot | Angular | Software Architecture',
   location: 'Brasília – DF, Brazil',
   languages:
