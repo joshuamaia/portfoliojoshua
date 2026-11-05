@@ -20,7 +20,7 @@ export const profile = {
   role: 'Senior Full-Stack Developer',
   /** Título usado no Tailored Resume (prévia e PDF) */
   resumeTitle: 'Tech Lead | Senior Full-Stack Developer',
-  headline: 'Senior Full Stack Developer | Java | Spring Boot | Angular | Software Architecture',
+  headline: 'Tech Lead | Senior Full Stack Developer | Java | Spring Boot | Angular | Software Architecture',
   location: 'Brasília – DF, Brazil',
   languages:
     'Portuguese – native · English – basic/intermediate, with written communication supported by translation tools',
