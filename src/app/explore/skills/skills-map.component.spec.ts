@@ -45,7 +45,7 @@ describe('SkillsMapComponent', () => {
 
     expect(TestBed.inject(Router).url).toContain('skill=workflow');
     expect(panelTitle(el)).toBe('Workflow Automation');
-    expect(el.querySelector('.sm-panel .chips')?.textContent).toContain('Flowable');
+    expect(el.querySelector('.sm-panel .chips')?.textContent).toContain('BPMN 2.0');
     const labels = Array.from(el.querySelectorAll('.sm-panel .label')).map((l) => l.textContent?.trim());
     expect(labels).toContain('Responsibilities and practical applications');
     expect(labels).toContain('Related competencies');

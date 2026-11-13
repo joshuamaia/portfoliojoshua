@@ -89,7 +89,6 @@ export const resumeProfiles: ResumeProfile[] = [
       'JUnit',
       'JUnit 5',
       'Mockito',
-      'Flowable',
       'BPMN 2.0',
       'Maven',
     ],

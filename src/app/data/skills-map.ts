@@ -135,9 +135,9 @@ export const skillCategories: SkillCategory[] = [
     id: 'workflow',
     name: 'Workflow Automation',
     icon: ['fas', 'diagram-project'],
-    technologies: ['Flowable', 'BPMN 2.0', 'Jaspersoft Studio'],
+    technologies: ['BPMN 2.0', 'Jaspersoft Studio'],
     experience:
-      'Business process automation with BPMN 2.0 and Flowable integrated with Java and Spring Boot, plus corporate reports with JasperReports.',
+      'Business process automation with BPMN 2.0 integrated with Java and Spring Boot, plus corporate reports with JasperReports.',
     applications: [
       'Modeling, executing and orchestrating business processes with BPMN 2.0.',
       'Developing and maintaining corporate reports with JasperReports.',

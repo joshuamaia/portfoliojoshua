@@ -91,9 +91,9 @@ export const skillGroups: SkillGroup[] = [
     icon: ['fas', 'sitemap'],
     subgroups: [
       {
-        label: 'Flowable',
+        label: 'BPMN 2.0',
         description:
-          'Modeling, execution, and orchestration of business processes with BPMN 2.0, integrated with Java and Spring Boot.',
+          'Modeling, execution, and orchestration of business processes, integrated with Java and Spring Boot.',
       },
       {
         label: 'Jaspersoft Studio',

@@ -675,13 +675,13 @@ const workflow: Challenge = {
     'Users work in an Angular application.',
     'Auditors require the full history of decisions.',
   ],
-  topics: ['BPMN', 'Flowable', 'User tasks', 'Service tasks', 'Exclusive gateways', 'Parallel gateways', 'Process state'],
+  topics: ['BPMN', 'Process engine', 'User tasks', 'Service tasks', 'Exclusive gateways', 'Parallel gateways', 'Process state'],
   strategies: [
     {
-      id: 'flowable',
-      name: 'BPMN process with Flowable',
+      id: 'bpmn-engine',
+      name: 'BPMN process with a process engine',
       summary:
-        'Model the flow in BPMN 2.0 and run it on Flowable: user tasks for approvals, an exclusive gateway for the amount rule, a parallel gateway for procurement and legal, and a service task that creates the purchase order.',
+        'Model the flow in BPMN 2.0 and run it on a process engine: user tasks for approvals, an exclusive gateway for the amount rule, a parallel gateway for procurement and legal, and a service task that creates the purchase order.',
       diagram: gridDiagram(
         'Purchase approval in BPMN',
         [
@@ -765,9 +765,9 @@ const workflow: Challenge = {
     },
   ],
   reference: {
-    strategyId: 'flowable',
+    strategyId: 'bpmn-engine',
     summary:
-      'Orchestrate the approval as a BPMN process on Flowable, keeping each step’s business logic in Spring Boot services.',
+      'Orchestrate the approval as a BPMN process on a process engine, keeping each step’s business logic in Spring Boot services.',
     rationale: [
       'User tasks with candidate groups replace e-mails and give every approver a task inbox.',
       'An exclusive gateway implements the amount rule and a parallel gateway runs procurement and legal together.',

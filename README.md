@@ -21,7 +21,7 @@ Besides the classic resume sections, the site includes an **Explore** area with 
 ### Explore (`/explore`)
 | Section | What it does |
 |---|---|
-| **Architecture Explorer** | Interactive SVG diagrams of four patterns: Modern Monolith, Microservices, Event-Driven (Kafka and RabbitMQ) and BPMN with Flowable. Select a component to see its responsibility, technologies, benefits, trade-offs and common challenges. A **Compare Architectures** mode compares two patterns on six qualitative criteria. |
+| **Architecture Explorer** | Interactive SVG diagrams of four patterns: Modern Monolith, Microservices, Event-Driven (Kafka and RabbitMQ) and BPMN. Select a component to see its responsibility, technologies, benefits, trade-offs and common challenges. A **Compare Architectures** mode compares two patterns on six qualitative criteria. |
 | **Engineering Challenges** | Six real-world scenarios (high-volume messaging, database performance, resilience, legacy modernization, concurrency, workflow automation). For each one, the visitor can choose between two or three approaches, see a diagram, compare advantages, limitations and risks, and read a reference solution. |
 | **Interactive Skills Map** | Radial map (or cards) of eight areas of expertise. It shows the technologies, practical applications, roles where they were used and related certificates. No arbitrary proficiency percentages: every number is a verifiable count. |
 | **Career Timeline** | Year-by-year chart and expandable list of every experience, with a technology filter. |

@@ -936,7 +936,7 @@ const bpmn: Architecture = {
   icon: ['fas', 'diagram-project'],
   tagline: 'Long-running business processes modeled in BPMN 2.0 and orchestrated by a process engine.',
   summary:
-    'The business flow is modeled as a BPMN 2.0 diagram and executed by a process engine such as Flowable. The engine persists each process instance, creates human tasks, calls services and decides the path through gateways, while the application code implements the individual steps.',
+    'The business flow is modeled as a BPMN 2.0 diagram and executed by a process engine. The engine persists each process instance, creates human tasks, calls services and decides the path through gateways, while the application code implements the individual steps.',
   whenToUse: [
     'Approval flows and processes with human steps, deadlines and escalations.',
     'Long-running processes that must survive restarts and be audited.',
@@ -1081,7 +1081,7 @@ const bpmn: Architecture = {
       },
       {
         id: 'engine',
-        label: 'Flowable engine',
+        label: 'Process engine',
         caption: 'Runtime · history · job executor',
         summary: 'Executes the BPMN model and persists every process instance.',
         icon: ['fas', 'diagram-project'],
@@ -1118,7 +1118,7 @@ const bpmn: Architecture = {
   components: {
     start: {
       responsibility: 'Starts a new process instance when a request is submitted, usually through a REST call or a message.',
-      technologies: ['Flowable RuntimeService', 'BPMN 2.0 start event'],
+      technologies: ['Process engine runtime API', 'BPMN 2.0 start event'],
       benefits: ['Every request gets a traceable instance with its own state.'],
       tradeOffs: ['Initial variables become part of the process contract.'],
       challenges: ['Validating input before starting the instance.'],
@@ -1132,7 +1132,7 @@ const bpmn: Architecture = {
     },
     inbox: {
       responsibility: 'Lists the tasks available to the user or their group and lets them claim and complete them.',
-      technologies: ['Angular', 'Flowable REST API / TaskService'],
+      technologies: ['Angular', 'Process engine task API (REST)'],
       benefits: ['One consistent place for people to act on processes.'],
       tradeOffs: ['Requires authorization rules mapped to candidate users and groups.'],
       challenges: ['Rendering task forms that evolve with the process version.'],
@@ -1168,7 +1168,7 @@ const bpmn: Architecture = {
     engine: {
       responsibility:
         'Interprets the BPMN model, manages process instances, tasks, timers and asynchronous jobs.',
-      technologies: ['Flowable', 'Spring Boot starter', 'Job executor'],
+      technologies: ['BPMN 2.0 process engine', 'Spring Boot', 'Job executor'],
       benefits: ['Durable state, retries and timers out of the box.', 'Process versions deployed side by side.'],
       tradeOffs: ['Another runtime component and database to maintain.'],
       challenges: ['Migrating running instances to new process versions.', 'Monitoring failed jobs.'],
